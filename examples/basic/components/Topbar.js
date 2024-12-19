@@ -77,7 +77,8 @@ export const Topbar = () => {
             onClick={() => {
               const json = query.serialize();
               console.log(query);
-              console.log(json);
+              console.log(query.parseReactElement());
+              console.log(JSON.parse(json));
               console.log(query.getNodes());
               console.log(actions);
               copy(lz.encodeBase64(lz.compress(json)));
