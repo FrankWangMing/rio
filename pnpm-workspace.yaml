@@ -1,11 +1,3 @@
 packages:
   - 'packages/*'
-  - 'examples/*'
-  - 'playground/*'
-  - 'website/*'
-  - 'scripts/*'
-  - 'pnpm-workspace.yaml'
-  - 'pnpm-lock.yaml'
-  - 'pnpm-workspace.yaml'
-  - 'pnpm-lock.yaml'
-  - 'tsconfig.json'
+  # - 'examples/**/*'

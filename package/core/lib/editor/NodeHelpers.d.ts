@@ -12,13 +12,13 @@ export declare function NodeHelpers(state: EditorState, id: NodeId): {
     isDragged(): boolean;
     get(): import("../interfaces").Node;
     ancestors(deep?: boolean): NodeId[];
-    descendants(deep?: boolean, includeOnly?: 'linkedNodes' | 'childNodes'): NodeId[];
+    descendants(deep?: boolean, includeOnly?: "linkedNodes" | "childNodes"): NodeId[];
     linkedNodes(): string[];
     childNodes(): string[];
     isDraggable(onError?: (err: string) => void): boolean;
     isDroppable(selector: NodeSelector, onError?: (err: string) => void): boolean;
     toSerializedNode(): import("../interfaces").SerializedNode;
-    toNodeTree(includeOnly?: 'linkedNodes' | 'childNodes'): {
+    toNodeTree(includeOnly?: "linkedNodes" | "childNodes"): {
         rootNodeId: string;
         nodes: any;
     };

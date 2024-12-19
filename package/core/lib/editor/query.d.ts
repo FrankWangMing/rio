@@ -31,12 +31,12 @@ export declare function QueryMethods(state: EditorState): {
         isHovered(): boolean;
         isDragged(): boolean;
         get(): Node;
-        ancestors(deep?: boolean): string[];
-        descendants(deep?: boolean, includeOnly?: "linkedNodes" | "childNodes"): string[];
+        ancestors(deep?: boolean): NodeId[];
+        descendants(deep?: boolean, includeOnly?: "linkedNodes" | "childNodes"): NodeId[];
         linkedNodes(): string[];
         childNodes(): string[];
         isDraggable(onError?: (err: string) => void): boolean;
-        isDroppable(selector: (string | string[]) | (Node | Node[]), onError?: (err: string) => void): boolean;
+        isDroppable(selector: NodeSelector, onError?: (err: string) => void): boolean;
         toSerializedNode(): SerializedNode;
         toNodeTree(includeOnly?: "linkedNodes" | "childNodes"): {
             rootNodeId: string;
@@ -50,7 +50,7 @@ export declare function QueryMethods(state: EditorState): {
      */
     getSerializedNodes(): SerializedNodes;
     getEvent(eventType: NodeEventTypes): {
-        contains(id: string): boolean;
+        contains(id: NodeId): boolean;
         isEmpty(): boolean;
         first(): any;
         last(): any;

@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { QueryCallbacksFor, Delete, PatchListenerAction } from '@craftjs/utils';
 import { Placement } from './events';
 import { Nodes, NodeEventTypes, NodeId, Node } from './nodes';

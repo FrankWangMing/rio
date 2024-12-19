@@ -4,5 +4,5 @@ type DeserialisedType = JSX.Element & {
     name: string;
 };
 export declare const deserializeComp: (data: ReducedComp, resolver: Resolver, index?: number) => DeserialisedType | void;
-export declare const deserializeNode: (data: SerializedNode, resolver: Resolver) => Omit<NodeData, 'event'>;
+export declare const deserializeNode: (data: SerializedNode, resolver: Resolver) => Omit<NodeData, "event">;
 export {};

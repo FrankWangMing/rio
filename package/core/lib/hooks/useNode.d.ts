@@ -16,7 +16,7 @@ export declare function useNode<S = null>(collect?: (node: Node) => S): Omit<Omi
         connect: (dom: HTMLElement) => HTMLElement;
         drag: (dom: HTMLElement) => HTMLElement;
     }, HTMLElement | import("react").ReactElement<any, string | import("react").JSXElementConstructor<any>>>;
-}, "id" | "actions" | "connectors" | "related" | "inNodeContext"> & {
+}, "actions" | "connectors" | "id" | "related" | "inNodeContext"> & {
     actions: {
         setProp: (cb: any, throttleRate?: number) => void;
         setCustom: (cb: any, throttleRate?: number) => void;

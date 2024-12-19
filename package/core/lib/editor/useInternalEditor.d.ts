@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { useCollectorReturnType, QueryCallbacksFor, EventHandlerConnectors } from '@craftjs/utils';
 import { QueryMethods } from './query';
 import { EditorStore } from './store';

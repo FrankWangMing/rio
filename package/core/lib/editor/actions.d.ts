@@ -59,7 +59,7 @@ declare const Methods: (state: EditorState, query: QueryCallbacksFor<typeof Quer
      * @param id
      * @param cb
      */
-    setCustom<T extends string>(selector: NodeSelector<NodeSelectorType.Id>, cb: (data: any) => void): void;
+    setCustom<T extends NodeId>(selector: NodeSelector<NodeSelectorType.Id>, cb: (data: EditorState["nodes"][T]["data"]["custom"]) => void): void;
     /**
      * Given a `id`, it will set the `dom` porperty of that node.
      *
@@ -83,7 +83,7 @@ declare const Methods: (state: EditorState, query: QueryCallbacksFor<typeof Quer
     selectNode(nodeIdSelector?: NodeSelector<NodeSelectorType.Id>): void;
 };
 export declare const ActionMethods: (state: EditorState, query: QueryCallbacksFor<typeof QueryMethods>) => {
-    setState(cb: (state: EditorState, actions: Delete<CallbacksFor<typeof Methods>, 'history'>) => void): void;
+    setState(cb: (state: EditorState, actions: Delete<CallbacksFor<typeof Methods>, "history">) => void): void;
     /**
      * @private
      * Add a new linked Node to the editor.
@@ -141,7 +141,7 @@ export declare const ActionMethods: (state: EditorState, query: QueryCallbacksFo
      * @param id
      * @param cb
      */
-    setCustom<T extends string>(selector: NodeSelector<NodeSelectorType.Id>, cb: (data: any) => void): void;
+    setCustom<T extends NodeId>(selector: NodeSelector<NodeSelectorType.Id>, cb: (data: EditorState["nodes"][T]["data"]["custom"]) => void): void;
     /**
      * Given a `id`, it will set the `dom` porperty of that node.
      *
