@@ -1,20 +1,24 @@
 {
   "name": "@rio/utils",
-  "description": "Utilities used internally across the craft.js monorepo",
   "version": "0.2.4",
-  "author": "Prev Wong <prevwong@gmail.com>",
-  "license": "MIT",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./lib/index.d.ts",
+  "author": "Frank",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/types/index.d.ts",
   "type": "module",
+  "exports":{
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
   "files": [
     "dist",
     "lib"
   ],
   "scripts": {
-    "dev": "rollup -c",
-    "start": "cross-env NODE_ENV=development ../../scripts/build.sh",
+    "dev": "pnpm run start -w",
+    "start": "cross-env NODE_ENV=development rollup -c",
     "build": "cross-env NODE_ENV=production ../../scripts/build.sh",
     "clean": "rimraf lib dist"
   },

@@ -2,17 +2,23 @@
   "name": "@rio/core",
   "version": "0.2.11",
   "author": "Frank",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/types/index.d.ts",
   "type": "module",
   "files": [
     "dist",
     "lib"
   ],
+  "exports":{
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development rollup -c -w ",
-    "start": "cross-env NODE_ENV=development ",
+    "dev": "pnpm run start -w",
+    "start": "cross-env NODE_ENV=development rollup -c",
     "build": "cross-env NODE_ENV=production  ",
     "clean": "rimraf lib dist"
   },

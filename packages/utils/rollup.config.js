@@ -1,5 +1,4 @@
 import config from '../../rollup.config.js';
-export default {
-  ...config,
-  input: './src/index.ts',
-};
+export default config.map(config => {
+    return {...config,input: './src/index.ts',};
+})

@@ -1,4 +1,3 @@
-// https://github.com/pelotom/use-methods
 import produce, {
   Patch,
   produceWithPatches,
@@ -36,42 +35,42 @@ export type CallbacksFor<
   M extends MethodsOrOptions
 > = M extends MethodsOrOptions<any, infer R>
   ? {
-      [T in ActionUnion<R>['type']]: (
-        ...payload: ActionByType<ActionUnion<R>, T>['payload']
-      ) => void;
-    } & {
-      history: {
-        undo: () => void;
-        redo: () => void;
-        clear: () => void;
-        throttle: (
-          rate?: number
-        ) => Delete<
-          {
-            [T in ActionUnion<R>['type']]: (
-              ...payload: ActionByType<ActionUnion<R>, T>['payload']
-            ) => void;
-          },
-          M extends Options ? M['ignoreHistoryForActions'][number] : never
-        >;
-        merge: () => Delete<
-          {
-            [T in ActionUnion<R>['type']]: (
-              ...payload: ActionByType<ActionUnion<R>, T>['payload']
-            ) => void;
-          },
-          M extends Options ? M['ignoreHistoryForActions'][number] : never
-        >;
-        ignore: () => Delete<
-          {
-            [T in ActionUnion<R>['type']]: (
-              ...payload: ActionByType<ActionUnion<R>, T>['payload']
-            ) => void;
-          },
-          M extends Options ? M['ignoreHistoryForActions'][number] : never
-        >;
-      };
-    }
+    [T in ActionUnion<R>['type']]: (
+      ...payload: ActionByType<ActionUnion<R>, T>['payload']
+    ) => void;
+  } & {
+    history: {
+      undo: () => void;
+      redo: () => void;
+      clear: () => void;
+      throttle: (
+        rate?: number
+      ) => Delete<
+        {
+          [T in ActionUnion<R>['type']]: (
+            ...payload: ActionByType<ActionUnion<R>, T>['payload']
+          ) => void;
+        },
+        M extends Options ? M['ignoreHistoryForActions'][number] : never
+      >;
+      merge: () => Delete<
+        {
+          [T in ActionUnion<R>['type']]: (
+            ...payload: ActionByType<ActionUnion<R>, T>['payload']
+          ) => void;
+        },
+        M extends Options ? M['ignoreHistoryForActions'][number] : never
+      >;
+      ignore: () => Delete<
+        {
+          [T in ActionUnion<R>['type']]: (
+            ...payload: ActionByType<ActionUnion<R>, T>['payload']
+          ) => void;
+        },
+        M extends Options ? M['ignoreHistoryForActions'][number] : never
+      >;
+    };
+  }
   : {};
 
 export type Methods<S = any, R extends MethodRecordBase<S> = any, Q = any> = (
@@ -108,8 +107,8 @@ export type ActionUnion<R extends MethodRecordBase> = {
 
 export type ActionByType<A, T> = A extends { type: infer T2 }
   ? T extends T2
-    ? A
-    : never
+  ? A
+  : never
   : never;
 
 export type QueryMethods<
@@ -123,15 +122,15 @@ export type QueryCallbacksFor<M extends QueryMethods> = M extends QueryMethods<
   infer R
 >
   ? {
-      [T in ActionUnion<R>['type']]: (
-        ...payload: ActionByType<ActionUnion<R>, T>['payload']
-      ) => ReturnType<R[T]>;
-    } & {
-      history: {
-        canUndo: () => boolean;
-        canRedo: () => boolean;
-      };
-    }
+    [T in ActionUnion<R>['type']]: (
+      ...payload: ActionByType<ActionUnion<R>, T>['payload']
+    ) => ReturnType<R[T]>;
+  } & {
+    history: {
+      canUndo: () => boolean;
+      canRedo: () => boolean;
+    };
+  }
   : {};
 
 export type PatchListenerAction<M extends MethodsOrOptions> = {
@@ -196,7 +195,7 @@ export function useMethods<
 
   let methodsFactory: Methods<S, R>;
   let ignoreHistoryForActionsRef = useRef([]);
-  let normalizeHistoryRef = useRef<any>();
+  let normalizeHistoryRef = useRef<any>(null);
 
   if (typeof methodsOrOptions === 'function') {
     methodsFactory = methodsOrOptions;

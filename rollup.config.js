@@ -1,10 +1,11 @@
+
 import path from 'path';
 
 import babel from '@rollup/plugin-babel';
-import resolve from '@rollup/plugin-node-resolve';
+import {nodeResolve} from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
-
+import commonjs from "@rollup/plugin-commonjs"
 const shouldMinify = process.env.NODE_ENV === 'production';
 const bundle = ['tslib'];
 
@@ -22,12 +23,12 @@ const bundle = ['tslib'];
 //   `;
 // };
 
-export default {
+export default [{
   input: './src/index.ts',
   output: [
     {
-      file: 'dist/esm/index.js',
-      format: 'esm',
+      file: 'dist/index.mjs', // 输出的单一文件
+      format: 'es',           // 模块格式
       // intro: injectPackageVersion(),
       globals: {
         react: 'React',
@@ -36,39 +37,30 @@ export default {
       sourcemap: true,
     },
     {
-      file: 'dist/cjs/index.js',
+      file: 'dist/index.cjs',
       // intro: injectPackageVersion(),
       format: 'cjs',
       sourcemap: true,
     },
   ],
+}].map((entry) => ({
+  ...entry,
   external: (id) => {
     return !id.startsWith('.') && !path.isAbsolute(id) && !bundle.includes(id);
   },
   plugins: [
-    resolve(),
+    nodeResolve({
+      extensions: ['.js', '.ts'],
+    }),
+    commonjs(),
     typescript({
-      // declaration: false,
-      // declarationDir: "dist/types",
-      // outputToFilesystem: true,
+      tsconfig: './tsconfig.json',
+      outputToFilesystem: true,
     }),
     babel({
       babelHelpers: 'bundled',
-      extensions: ['.ts'],
-      presets: [
-        ['@babel/preset-typescript'],
-        [
-          '@babel/preset-env',
-          {
-            modules: false,
-            targets: {
-              browsers: ['>0.25%, not dead'],
-            },
-          },
-        ],
-      ],
-      plugins: [
-      ],
+      include: ['src/**/*'],
+      extensions: ['.ts']
     }),
     shouldMinify &&
       terser({
@@ -85,4 +77,4 @@ export default {
         },
       }),
   ],
-};
+}));;

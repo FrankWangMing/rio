@@ -13,18 +13,24 @@
   ],
   "version": "0.2.6",
   "author": "Prev Wong <prevwong@gmail.com>",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "license": "MIT",
-  "types": "./lib/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/types/index.d.ts",
+  "type": "module",
+  "exports":{
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
   "files": [
     "dist",
     "lib"
   ],
   "scripts": {
-    "dev":"rollup -c",
-    "start": "cross-env NODE_ENV=development ../../scripts/build.sh",
-    "build": "cross-env NODE_ENV=production ../../scripts/build.sh",
+    "dev": "pnpm run start -w",
+    "start": "cross-env NODE_ENV=development rollup -c",
+    "build": "cross-env NODE_ENV=production ",
     "clean": "rimraf lib dist"
   },
   "repository": {

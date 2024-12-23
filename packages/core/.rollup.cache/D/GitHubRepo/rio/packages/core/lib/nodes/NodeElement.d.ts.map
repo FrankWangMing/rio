@@ -1,0 +1,1 @@
+{"version":3,"file":"NodeElement.d.ts","sourceRoot":"","sources":["../../src/nodes/NodeElement.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,OAAO,CAAC;AAI1B,OAAO,EAAE,MAAM,EAAE,MAAM,eAAe,CAAC;AAGvC,MAAM,MAAM,gBAAgB,GAAG;IAC7B,EAAE,EAAE,MAAM,CAAC;IACX,MAAM,CAAC,EAAE,KAAK,CAAC,YAAY,CAAC;CAC7B,CAAC;AAEF,eAAO,MAAM,WAAW,mBAAoB,gBAAgB,sBAM3D,CAAC"}

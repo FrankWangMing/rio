@@ -1,6 +1,4 @@
-import config from '../../rollup.config';
-
-export default {
-  ...config,
-  input: './src/index.tsx',
-};
+import config from '../../rollup.config.js';
+export default config.map(config => {
+    return {...config,input: './src/index.tsx',};
+})

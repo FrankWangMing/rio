@@ -1,13 +1,16 @@
 {
   "extends": "@rio/typescript-config/base.json",
   "compilerOptions": {
-    "baseUrl": "./src",
-    "outDir": "./lib",
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "jsx": "react",
     "declaration": true,
-    "declarationDir": "./lib"
+    "declarationMap": true,
+    "outDir": "./dist",
+    "declarationDir": "./dist/types",
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true
   },
   "include": ["./src/index.ts"]
 }
