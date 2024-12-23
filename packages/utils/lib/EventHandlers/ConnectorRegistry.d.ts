@@ -18,3 +18,4 @@ export declare class ConnectorRegistry {
     removeByElement(element: HTMLElement, connectorName: string): void;
     clear(): void;
 }
+//# sourceMappingURL=ConnectorRegistry.d.ts.map

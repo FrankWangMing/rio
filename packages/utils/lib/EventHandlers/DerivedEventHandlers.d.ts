@@ -7,3 +7,4 @@ export declare abstract class DerivedEventHandlers<P extends EventHandlers, O ex
     inherit(cb: (connectors: EventHandlerConnectors<P>) => void): () => void;
     cleanup(): void;
 }
+//# sourceMappingURL=DerivedEventHandlers.d.ts.map

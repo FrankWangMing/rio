@@ -4,3 +4,4 @@ type DeprecationPayload = Partial<{
 }>;
 export declare const deprecationWarning: (name: any, payload?: DeprecationPayload) => void;
 export {};
+//# sourceMappingURL=deprecate.d.ts.map

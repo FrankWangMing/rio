@@ -20,7 +20,6 @@
     "url": "https://github.com/prevwong/craft.js/issues"
   },
   "dependencies": {
-    "@rio/rollup-config": "workspace:*",
     "@rio/utils": "workspace:*",
     "@types/jest": "^29.5.14",
     "debounce": "^2.2.0",

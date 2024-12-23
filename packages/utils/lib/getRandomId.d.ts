@@ -5,3 +5,4 @@
  * @returns A random id
  */
 export declare const getRandomId: (size?: number) => string;
+//# sourceMappingURL=getRandomId.d.ts.map

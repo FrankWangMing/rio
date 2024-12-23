@@ -22,3 +22,4 @@ export declare abstract class EventHandlers<O extends Record<string, any> = {}> 
     protected createProxyHandlers<H extends EventHandlers>(instance: H, cb: (connectors: EventHandlerConnectors<H>) => void): () => void;
     reflect(cb: (connectors: EventHandlerConnectors<this>) => void): () => void;
 }
+//# sourceMappingURL=EventHandlers.d.ts.map

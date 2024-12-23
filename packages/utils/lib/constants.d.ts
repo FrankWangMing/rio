@@ -22,3 +22,4 @@ export declare const ERROR_RESOLVER_NOT_AN_OBJECT = "Resolver in <Editor /> has 
 export declare const ERROR_DESERIALIZE_COMPONENT_NOT_IN_RESOLVER = "An Error occurred while deserializing components: Cannot find component <%displayName% /> in resolver map. Please check your resolver in <Editor />\n\nAvailable components in resolver: %availableComponents%\n\nMore info: https://craft.js.org/r/docs/api/editor#props";
 export declare const ERROR_USE_EDITOR_OUTSIDE_OF_EDITOR_CONTEXT = "You can only use useEditor in the context of <Editor />. \n\nPlease only use useEditor in components that are children of the <Editor /> component.";
 export declare const ERROR_USE_NODE_OUTSIDE_OF_EDITOR_CONTEXT = "You can only use useNode in the context of <Editor />. \n\nPlease only use useNode in components that are children of the <Editor /> component.";
+//# sourceMappingURL=constants.d.ts.map

@@ -43,7 +43,6 @@
     "@babel/core": "7.26.0",
     "@svgr/rollup": "8.1.0",
     "styled-components": "6.1.13",
-    "@rio/rollup-config": "workspace:*",
     "@rio/typescript-config": "workspace:*"
   },
   "peerDependencies": {

@@ -23,3 +23,4 @@ export declare const getDOMInfo: (el: HTMLElement) => {
     };
     inFlow: boolean;
 };
+//# sourceMappingURL=getDOMInfo.d.ts.map

@@ -106,3 +106,4 @@ declare class Subscriber {
     collect(): void;
 }
 export {};
+//# sourceMappingURL=useMethods.d.ts.map

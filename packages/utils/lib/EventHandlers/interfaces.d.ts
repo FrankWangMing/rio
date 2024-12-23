@@ -35,3 +35,4 @@ export type RegisteredConnector = {
     disable: () => void;
     remove: () => void;
 };
+//# sourceMappingURL=interfaces.d.ts.map

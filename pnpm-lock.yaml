@@ -8,9 +8,33 @@ importers:
 
   .:
     devDependencies:
+      '@babel/core':
+        specifier: 7.26.0
+        version: 7.26.0
+      '@babel/preset-env':
+        specifier: 7.26.0
+        version: 7.26.0(@babel/core@7.26.0)
+      '@babel/preset-typescript':
+        specifier: 7.26.0
+        version: 7.26.0(@babel/core@7.26.0)
+      '@rollup/plugin-babel':
+        specifier: ^6.0.4
+        version: 6.0.4(@babel/core@7.26.0)(@types/babel__core@7.20.5)(rollup@4.29.1)
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.0(rollup@4.29.1)
+      '@rollup/plugin-terser':
+        specifier: ^0.4.4
+        version: 0.4.4(rollup@4.29.1)
+      '@rollup/plugin-typescript':
+        specifier: ^12.1.2
+        version: 12.1.2(rollup@4.29.1)(tslib@2.8.1)(typescript@5.5.4)
       prettier:
         specifier: ^3.2.5
         version: 3.3.3
+      rollup:
+        specifier: ^4.29.1
+        version: 4.29.1
       turbo:
         specifier: ^2.3.3
         version: 2.3.3
@@ -40,7 +64,7 @@ importers:
         version: 3.2.0(@material-ui/core@4.5.2(@types/react@19.0.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
       next:
         specifier: 13.1.6
-        version: 13.1.6(@babel/core@7.7.5)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 13.1.6(@babel/core@7.26.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       prop-types:
         specifier: latest
         version: 15.8.1
@@ -65,7 +89,7 @@ importers:
         version: link:../../packages/ui
       next:
         specifier: ^15.1.0
-        version: 15.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        version: 15.1.0(@babel/core@7.26.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -205,7 +229,7 @@ importers:
         version: link:../../packages/ui
       next:
         specifier: ^15.1.0
-        version: 15.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        version: 15.1.0(@babel/core@7.26.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -234,9 +258,6 @@ importers:
 
   packages/core:
     dependencies:
-      '@rio/rollup-config':
-        specifier: workspace:*
-        version: link:../rollup-config
       '@rio/utils':
         specifier: workspace:*
         version: link:../utils
@@ -344,9 +365,6 @@ importers:
       '@babel/core':
         specifier: 7.26.0
         version: 7.26.0
-      '@rio/rollup-config':
-        specifier: workspace:*
-        version: link:../rollup-config
       '@rio/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
@@ -356,39 +374,6 @@ importers:
       styled-components:
         specifier: 6.1.13
         version: 6.1.13(react-dom@19.0.0(react@18.2.0))(react@18.2.0)
-
-  packages/rollup-config:
-    dependencies:
-      '@babel/core':
-        specifier: 7.26.0
-        version: 7.26.0
-      '@babel/plugin-proposal-class-properties':
-        specifier: 7.18.6
-        version: 7.18.6(@babel/core@7.26.0)
-      '@babel/plugin-proposal-object-rest-spread':
-        specifier: 7.20.7
-        version: 7.20.7(@babel/core@7.26.0)
-      '@babel/preset-env':
-        specifier: 7.26.0
-        version: 7.26.0(@babel/core@7.26.0)
-      '@babel/preset-typescript':
-        specifier: 7.26.0
-        version: 7.26.0(@babel/core@7.26.0)
-      '@rollup/plugin-babel':
-        specifier: ^6.0.4
-        version: 6.0.4(@babel/core@7.26.0)(@types/babel__core@7.20.5)(rollup@4.29.1)
-      '@rollup/plugin-node-resolve':
-        specifier: ^16.0.0
-        version: 16.0.0(rollup@4.29.1)
-      '@rollup/plugin-terser':
-        specifier: ^0.4.4
-        version: 0.4.4(rollup@4.29.1)
-      '@rollup/plugin-typescript':
-        specifier: ^12.1.2
-        version: 12.1.2(rollup@4.29.1)(tslib@2.8.1)(typescript@5.5.4)
-      rollup:
-        specifier: ^4.29.1
-        version: 4.29.1
 
   packages/typescript-config: {}
 
@@ -426,36 +411,33 @@ importers:
   packages/utils:
     dependencies:
       immer:
-        specifier: ^9.0.6
-        version: 9.0.21
+        specifier: ^10.1.1
+        version: 10.1.1
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
       nanoid:
-        specifier: ^3.1.23
-        version: 3.3.7
+        specifier: ^5.0.9
+        version: 5.0.9
       react:
         specifier: ^16.8.0 || ^17 || ^18
-        version: 19.0.0
+        version: 18.2.0
       react-dom:
         specifier: ^19.0.0
-        version: 19.0.0(react@19.0.0)
+        version: 19.0.0(react@18.2.0)
       shallowequal:
         specifier: ^1.1.0
         version: 1.1.0
       tiny-invariant:
-        specifier: ^1.0.6
+        specifier: ^1.3.3
         version: 1.3.3
     devDependencies:
-      '@rio/rollup-config':
-        specifier: workspace:*
-        version: link:../rollup-config
       '@rio/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       '@types/react':
-        specifier: 18.0.27
-        version: 18.0.27
+        specifier: 19.0.2
+        version: 19.0.2
 
 packages:
 
@@ -642,13 +624,6 @@ packages:
     resolution: {integrity: sha512-ozlZFogPqoLm8WBr5Z8UckIoE4YQ5KESVcNudyXOR8uqIkliTEgJ3RoketfG6pmzLdeZF0H/wjE9/cCEitBl7Q==}
     engines: {node: '>=6.9.0'}
     deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-numeric-separator instead.
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-
-  '@babel/plugin-proposal-object-rest-spread@7.20.7':
-    resolution: {integrity: sha512-d2S98yCiLxDVmBmE8UjGcfPvNEUbA1U5q5WxaWFUGRzJSVAZqm5W6MbPct0jxnegUZ0niLeNX+IOzEs7wYg9Dg==}
-    engines: {node: '>=6.9.0'}
-    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-object-rest-spread instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
@@ -3843,8 +3818,8 @@ packages:
     engines: {node: '>=16.x'}
     hasBin: true
 
-  immer@9.0.21:
-    resolution: {integrity: sha512-bc4NBHqOqSfRW7POMkHd51LvClaeMXpm8dx0e8oE2GORbq5aRK7Bxl4FyzVLdGtLmvLKL7BTDBG5ACQm4HWjTA==}
+  immer@10.1.1:
+    resolution: {integrity: sha512-s2MPrmjovJcoMaHtx6K11Ra7oD05NT97w1IC5zpMkT6Atjr7H8LjaDd81iIxUYpMKSRRNMJE703M1Fhr/TctHw==}
 
   import-fresh@2.0.0:
     resolution: {integrity: sha512-eZ5H8rcgYazHbKC3PG4ClHNykCSxtAhxSSEM+2mb+7evD2CKF5V7c0dNum7AdpDh0ZdICwZY9sRSn8f+KH96sg==}
@@ -4634,6 +4609,11 @@ packages:
   nanoid@3.3.7:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
+
+  nanoid@5.0.9:
+    resolution: {integrity: sha512-Aooyr6MXU6HpvvWXKoVoXwKMs/KyVakWwg7xQfv5/S/RIgJMy0Ifa45H9qqYy7pTCszrHzP21Uk4PZq2HpEM8Q==}
+    engines: {node: ^18 || >=20}
     hasBin: true
 
   natural-compare-lite@1.4.0:
@@ -6745,15 +6725,6 @@ snapshots:
       '@babel/core': 7.26.0
       '@babel/helper-plugin-utils': 7.25.9
       '@babel/plugin-syntax-numeric-separator': 7.10.4(@babel/core@7.26.0)
-
-  '@babel/plugin-proposal-object-rest-spread@7.20.7(@babel/core@7.26.0)':
-    dependencies:
-      '@babel/compat-data': 7.26.3
-      '@babel/core': 7.26.0
-      '@babel/helper-compilation-targets': 7.25.9
-      '@babel/helper-plugin-utils': 7.25.9
-      '@babel/plugin-syntax-object-rest-spread': 7.8.3(@babel/core@7.26.0)
-      '@babel/plugin-transform-parameters': 7.25.9(@babel/core@7.26.0)
 
   '@babel/plugin-proposal-optional-chaining@7.21.0(@babel/core@7.26.0)':
     dependencies:
@@ -9618,7 +9589,7 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.26.0
       cosmiconfig: 7.1.0
-      resolve: 1.22.8
+      resolve: 1.22.10
 
   babel-plugin-polyfill-corejs2@0.4.12(@babel/core@7.26.0):
     dependencies:
@@ -11260,7 +11231,7 @@ snapshots:
     dependencies:
       queue: 6.0.2
 
-  immer@9.0.21: {}
+  immer@10.1.1: {}
 
   import-fresh@2.0.0:
     dependencies:
@@ -12365,6 +12336,8 @@ snapshots:
 
   nanoid@3.3.7: {}
 
+  nanoid@5.0.9: {}
+
   natural-compare-lite@1.4.0: {}
 
   natural-compare@1.4.0: {}
@@ -12380,6 +12353,33 @@ snapshots:
       next: 13.1.6(@babel/core@7.7.5)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+
+  next@13.1.6(@babel/core@7.26.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+    dependencies:
+      '@next/env': 13.1.6
+      '@swc/helpers': 0.4.14
+      caniuse-lite: 1.0.30001683
+      postcss: 8.4.14
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      styled-jsx: 5.1.1(@babel/core@7.26.0)(react@18.2.0)
+    optionalDependencies:
+      '@next/swc-android-arm-eabi': 13.1.6
+      '@next/swc-android-arm64': 13.1.6
+      '@next/swc-darwin-arm64': 13.1.6
+      '@next/swc-darwin-x64': 13.1.6
+      '@next/swc-freebsd-x64': 13.1.6
+      '@next/swc-linux-arm-gnueabihf': 13.1.6
+      '@next/swc-linux-arm64-gnu': 13.1.6
+      '@next/swc-linux-arm64-musl': 13.1.6
+      '@next/swc-linux-x64-gnu': 13.1.6
+      '@next/swc-linux-x64-musl': 13.1.6
+      '@next/swc-win32-arm64-msvc': 13.1.6
+      '@next/swc-win32-ia32-msvc': 13.1.6
+      '@next/swc-win32-x64-msvc': 13.1.6
+    transitivePeerDependencies:
+      - '@babel/core'
+      - babel-plugin-macros
 
   next@13.1.6(@babel/core@7.7.5)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
@@ -12408,7 +12408,7 @@ snapshots:
       - '@babel/core'
       - babel-plugin-macros
 
-  next@15.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  next@15.1.0(@babel/core@7.26.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
       '@next/env': 15.1.0
       '@swc/counter': 0.1.3
@@ -12418,7 +12418,7 @@ snapshots:
       postcss: 8.4.31
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
-      styled-jsx: 5.1.6(react@19.0.0)
+      styled-jsx: 5.1.6(@babel/core@7.26.0)(react@19.0.0)
     optionalDependencies:
       '@next/swc-darwin-arm64': 15.1.0
       '@next/swc-darwin-x64': 15.1.0
@@ -13942,6 +13942,13 @@ snapshots:
       stylis: 4.3.2
       tslib: 2.6.2
 
+  styled-jsx@5.1.1(@babel/core@7.26.0)(react@18.2.0):
+    dependencies:
+      client-only: 0.0.1
+      react: 18.2.0
+    optionalDependencies:
+      '@babel/core': 7.26.0
+
   styled-jsx@5.1.1(@babel/core@7.7.5)(react@18.2.0):
     dependencies:
       client-only: 0.0.1
@@ -13949,10 +13956,12 @@ snapshots:
     optionalDependencies:
       '@babel/core': 7.7.5
 
-  styled-jsx@5.1.6(react@19.0.0):
+  styled-jsx@5.1.6(@babel/core@7.26.0)(react@19.0.0):
     dependencies:
       client-only: 0.0.1
       react: 19.0.0
+    optionalDependencies:
+      '@babel/core': 7.26.0
 
   stylehacks@4.0.3:
     dependencies:

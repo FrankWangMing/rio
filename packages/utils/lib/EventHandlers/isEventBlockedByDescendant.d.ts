@@ -4,3 +4,4 @@ import { CraftDOMEvent } from './interfaces';
  * that's a descendant of the specified element
  */
 export declare function isEventBlockedByDescendant<K extends keyof HTMLElementEventMap>(e: CraftDOMEvent<HTMLElementEventMap[K]>, eventName: K, el: HTMLElement): boolean;
+//# sourceMappingURL=isEventBlockedByDescendant.d.ts.map

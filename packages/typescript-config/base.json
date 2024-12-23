@@ -18,8 +18,7 @@
     "jsx": "react",
     "forceConsistentCasingInFileNames": false,
     "declaration": true,
-    "allowSyntheticDefaultImports": true,
-    "noEmit": true
+    "allowSyntheticDefaultImports": true
   },
   "exclude": ["**/node_modules/**"]
 }

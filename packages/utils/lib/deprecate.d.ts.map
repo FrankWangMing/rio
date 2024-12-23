@@ -1,0 +1,1 @@
+{"version":3,"file":"deprecate.d.ts","sourceRoot":"","sources":["../src/deprecate.ts"],"names":[],"mappings":"AAAA,KAAK,kBAAkB,GAAG,OAAO,CAAC;IAChC,OAAO,EAAE,MAAM,CAAC;IAChB,GAAG,EAAE,MAAM,CAAC;CACb,CAAC,CAAC;AAEH,eAAO,MAAM,kBAAkB,wBAAoB,kBAAkB,SAgBpE,CAAC"}

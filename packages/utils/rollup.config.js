@@ -1,4 +1,4 @@
-import config from '@rio/rollup-config/rollup';
+import config from '../../rollup.config.js';
 export default {
   ...config,
   input: './src/index.ts',

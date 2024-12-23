@@ -25,3 +25,4 @@ export declare class History {
     redo(state: any): any;
 }
 export {};
+//# sourceMappingURL=History.d.ts.map
