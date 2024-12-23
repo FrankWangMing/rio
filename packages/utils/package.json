@@ -12,6 +12,7 @@
     "lib"
   ],
   "scripts": {
+    "dev": "rollup -c",
     "start": "cross-env NODE_ENV=development ../../scripts/build.sh",
     "build": "cross-env NODE_ENV=production ../../scripts/build.sh",
     "dev:yalc": "../../scripts/yalc.sh",
@@ -21,10 +22,13 @@
     "immer": "^9.0.6",
     "lodash": "^4.17.21",
     "nanoid": "^3.1.23",
+    "react-dom": "^19.0.0",
     "shallowequal": "^1.1.0",
     "tiny-invariant": "^1.0.6"
   },
   "devDependencies": {
+    "@rio/rollup-config": "workspace:*",
+    "@rio/typescript-config": "workspace:*",
     "@types/react": "18.0.27"
   },
   "nohoist": [

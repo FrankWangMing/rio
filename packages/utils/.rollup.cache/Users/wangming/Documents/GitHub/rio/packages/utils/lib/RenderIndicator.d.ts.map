@@ -1,0 +1,1 @@
+{"version":3,"file":"RenderIndicator.d.ts","sourceRoot":"","sources":["../src/RenderIndicator.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,OAAO,CAAC;AAG1B,KAAK,oBAAoB,GAAG;IAC1B,KAAK,EAAE,KAAK,CAAC,aAAa,CAAC;IAC3B,SAAS,CAAC,EAAE,MAAM,CAAC;IACnB,SAAS,CAAC,EAAE,WAAW,CAAC;CACzB,CAAC;AAEF,eAAO,MAAM,eAAe,qCAIzB,oBAAoB,QAsBtB,CAAC"}

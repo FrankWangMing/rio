@@ -8,19 +8,19 @@ import typescript from '@rollup/plugin-typescript';
 const shouldMinify = process.env.NODE_ENV === 'production';
 const bundle = ['tslib'];
 
-const injectPackageVersion = () => {
-  const pkg = require('./package.json');
+// const injectPackageVersion = () => {
+//   const pkg = require('./package.json');
 
-  return `
-if ( typeof window !== 'undefined' ) {
-  if ( !window['__CRAFTJS__'] ) {
-    window['__CRAFTJS__'] = {};
-  }
+//   return `
+// if ( typeof window !== 'undefined' ) {
+//   if ( !window['__CRAFTJS__'] ) {
+//     window['__CRAFTJS__'] = {};
+//   }
 
-  window['__CRAFTJS__']["${pkg.name}"] = "${pkg.version}";
-}
-  `;
-};
+//   window['__CRAFTJS__']["${pkg.name}"] = "${pkg.version}";
+// }
+//   `;
+// };
 
 export default {
   input: './src/index.ts',
@@ -28,7 +28,7 @@ export default {
     {
       file: 'dist/esm/index.js',
       format: 'esm',
-      intro: injectPackageVersion(),
+      // intro: injectPackageVersion(),
       globals: {
         react: 'React',
         'react-dom': 'ReactDOM',
@@ -37,7 +37,7 @@ export default {
     },
     {
       file: 'dist/cjs/index.js',
-      intro: injectPackageVersion(),
+      // intro: injectPackageVersion(),
       format: 'cjs',
       sourcemap: true,
     },
@@ -48,9 +48,9 @@ export default {
   plugins: [
     resolve(),
     typescript({
-      declaration: false,
-      declarationDir: undefined,
-      outputToFilesystem: true,
+      // declaration: false,
+      // declarationDir: "dist/types",
+      // outputToFilesystem: true,
     }),
     babel({
       babelHelpers: 'bundled',

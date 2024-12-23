@@ -1,4 +1,5 @@
-import config from '@rio/rollup-config';
+import config from '@rio/rollup-config/rollup';
+
 
 export default {
   ...config,

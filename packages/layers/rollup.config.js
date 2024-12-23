@@ -1,6 +1,6 @@
 import image from '@svgr/rollup';
 
-import config from '../../rollup.config';
+import config from '@rio/rollup-config/rollup';
 
 export default {
   ...config,

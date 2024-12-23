@@ -22,6 +22,7 @@
     "lib"
   ],
   "scripts": {
+    "dev":"rollup -c",
     "start": "cross-env NODE_ENV=development ../../scripts/build.sh",
     "build": "cross-env NODE_ENV=production ../../scripts/build.sh",
     "clean": "rimraf lib dist"
@@ -36,12 +37,14 @@
   "homepage": "https://github.com/prevwong/craft.js/",
   "dependencies": {
     "@rio/utils": "workspace:*",
-    "react-contenteditable": "^3.3.3"
+    "react-contenteditable": "^3.3.7"
   },
   "devDependencies": {
-    "@babel/core": "7.7.4",
-    "@svgr/rollup": "6.5.1",
-    "styled-components": "6.1.13"
+    "@babel/core": "7.26.0",
+    "@svgr/rollup": "8.1.0",
+    "styled-components": "6.1.13",
+    "@rio/rollup-config": "workspace:*",
+    "@rio/typescript-config": "workspace:*"
   },
   "peerDependencies": {
     "@rio/core": "workspace:*",

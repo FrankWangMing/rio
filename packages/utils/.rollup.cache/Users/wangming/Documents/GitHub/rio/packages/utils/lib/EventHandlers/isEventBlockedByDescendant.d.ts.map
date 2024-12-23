@@ -1,0 +1,1 @@
+{"version":3,"file":"isEventBlockedByDescendant.d.ts","sourceRoot":"","sources":["../../src/EventHandlers/isEventBlockedByDescendant.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,aAAa,EAAE,MAAM,cAAc,CAAC;AAE7C;;;GAGG;AACH,wBAAgB,0BAA0B,CAAC,CAAC,SAAS,MAAM,mBAAmB,EAC5E,CAAC,EAAE,aAAa,CAAC,mBAAmB,CAAC,CAAC,CAAC,CAAC,EACxC,SAAS,EAAE,CAAC,EACZ,EAAE,EAAE,WAAW,WAqBhB"}
