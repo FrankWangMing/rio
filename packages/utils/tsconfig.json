@@ -1,11 +1,12 @@
 {
-  "extends": "@rio/typescript-config/base.json",
+  "extends": "@rio/common/base",
   "compilerOptions": {
     "jsx": "react-jsx",
+    "declaration": true,
     "declarationDir": "./dist/types",
     "outDir": "./dist",
     "lib": ["esnext", "dom"],
-    "strict": false
+    "strict": false,
   },
   "include": ["src/**/*"],
   "exclude": ["dist", "node_modules"]

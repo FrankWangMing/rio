@@ -37,8 +37,8 @@
     "react-contenteditable": "^3.3.7"
   },
   "devDependencies": {
-    "@babel/core": "7.26.0",
-    "@rio/typescript-config": "workspace:*",
+    "@rio/eslint-config": "workspace:*",
+    "@rio/common": "workspace:*",
     "@svgr/rollup": "8.1.0",
     "styled-components": "6.1.13"
   },

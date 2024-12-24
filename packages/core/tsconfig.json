@@ -1,5 +1,5 @@
 {
-  "extends": "@rio/typescript-config/base.json",
+  "extends": "@rio/common/base",
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
@@ -14,3 +14,4 @@
   },
   "include": ["./src/index.tsx"]
 }
+

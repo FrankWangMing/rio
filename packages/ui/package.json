@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@rio/eslint-config": "workspace:*",
-    "@rio/typescript-config": "workspace:*",
+    "@rio/common": "workspace:*",
     "@turbo/gen": "^1.12.4",
     "@types/node": "^20.11.24",
     "typescript": "5.5.4"

@@ -1,5 +1,5 @@
 {
-  "extends": "@rio/typescript-config/react-library.json",
+  "extends": "@rio/common/react-library.json",
   "compilerOptions": {
     "outDir": "dist"
   },

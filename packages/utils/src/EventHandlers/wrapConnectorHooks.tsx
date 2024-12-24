@@ -1,5 +1,4 @@
-// https://github.com/react-dnd/react-dnd
-import { isValidElement, ReactElement } from 'react';
+import React,{ isValidElement, ReactElement } from 'react';
 import { cloneElement } from 'react';
 import invariant from 'tiny-invariant';
 

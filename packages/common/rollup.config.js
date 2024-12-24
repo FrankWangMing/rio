@@ -7,7 +7,8 @@ import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import commonjs from "@rollup/plugin-commonjs"
 
-const shouldMinify = process.env.NODE_ENV === 'production';
+const shouldMinify = false;
+// const shouldMinify = process.env.NODE_ENV === 'production';
 const bundle = ['tslib'];
 
 // const injectPackageVersion = () => {
@@ -47,17 +48,15 @@ export default [{
 }].map((entry) => ({
   ...entry,
   plugins: [
-    resolve({ extensions: ['.js', '.jsx', '.ts', '.tsx'] }), // 支持解析 TS 和 TSX 文件
+    resolve(), // 支持解析 TS 和 TSX 文件
     commonjs(),
     typescript({
-      tsconfig: './tsconfig.json',
-      jsx: 'preserve',
-      outputToFilesystem: true,
     }),
     babel({
-      babelHelpers: 'bundled',
-      include: ['src/**/*'],
-      extensions: ['.ts']
+      babelHelpers:"runtime",
+      include:"src/**",
+      exclude:["node_modules/**"],
+      extensions:['.js','.jsx','.ts','.tsx']
     }),
     shouldMinify &&
       terser({
@@ -74,5 +73,5 @@ export default [{
         },
       }),
   ],
-  external: ['react', 'react-dom'], // 声明外部依赖
+  external: ['react', 'react-dom'],
 }));;

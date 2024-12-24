@@ -1,5 +1,5 @@
-import config from '../../rollup.config.js';
-export default config.map(config => {
-    console.log(config)
+import rollupConfig from '@rio/common/rollup';
+
+export default rollupConfig.map(config => {
     return {...config,input: './src/index.ts',};
 })

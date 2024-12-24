@@ -3,17 +3,21 @@
   "version": "0.2.0",
   "private": true,
   "dependencies": {
-    "@rio/core": "workspace:*",
     "@material-ui/core": "4.5.2",
+    "@rio/core": "workspace:*",
+    "@rio/layers": "workspace:*",
+    "@rio/utils": "workspace:*",
     "clsx": "latest",
     "copy-to-clipboard": "3.2.0",
+    "crypto-browserify": "^3.12.1",
     "lzutf8": "0.5.5",
     "material-ui-color-picker": "3.2.0",
     "next": "13.1.6",
     "prop-types": "latest",
     "react": "18.2.0",
     "react-contenteditable": "3.3.3",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "stream-browserify": "^3.0.0"
   },
   "scripts": {
     "start": "next dev -p 3002",
