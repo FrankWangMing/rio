@@ -8,8 +8,7 @@
     "photoshop",
     "craftjs",
     "page-editor",
-    "web-builder",
-    "react"
+    "web-builder"
   ],
   "version": "0.2.6",
   "author": "Prev Wong <prevwong@gmail.com>",
@@ -17,7 +16,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/types/index.d.ts",
   "type": "module",
-  "exports":{
+  "exports": {
     ".": {
       "require": "./dist/index.cjs",
       "import": "./dist/index.mjs"
@@ -30,30 +29,23 @@
   "scripts": {
     "dev": "pnpm run start -w",
     "start": "cross-env NODE_ENV=development rollup -c",
-    "build": "cross-env NODE_ENV=production ",
+    "build": "cross-env NODE_ENV=production rollup -c",
     "clean": "rimraf lib dist"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/prevwong/craft.js/"
-  },
-  "bugs": {
-    "url": "https://github.com/prevwong/craft.js/issues"
-  },
-  "homepage": "https://github.com/prevwong/craft.js/",
   "dependencies": {
     "@rio/utils": "workspace:*",
     "react-contenteditable": "^3.3.7"
   },
   "devDependencies": {
     "@babel/core": "7.26.0",
+    "@rio/typescript-config": "workspace:*",
     "@svgr/rollup": "8.1.0",
-    "styled-components": "6.1.13",
-    "@rio/typescript-config": "workspace:*"
+    "styled-components": "6.1.13"
   },
   "peerDependencies": {
     "@rio/core": "workspace:*",
     "react": "^16.8.0 || ^17 || ^18",
+    "react-dom": "^16.8.0 || ^17 || ^18",
     "styled-components": ">= 6.1"
   }
 }

@@ -2,10 +2,11 @@
 import path from 'path';
 
 import babel from '@rollup/plugin-babel';
-import {nodeResolve} from '@rollup/plugin-node-resolve';
+import resolve from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import commonjs from "@rollup/plugin-commonjs"
+
 const shouldMinify = process.env.NODE_ENV === 'production';
 const bundle = ['tslib'];
 
@@ -45,16 +46,12 @@ export default [{
   ],
 }].map((entry) => ({
   ...entry,
-  external: (id) => {
-    return !id.startsWith('.') && !path.isAbsolute(id) && !bundle.includes(id);
-  },
   plugins: [
-    nodeResolve({
-      extensions: ['.js', '.ts'],
-    }),
+    resolve({ extensions: ['.js', '.jsx', '.ts', '.tsx'] }), // 支持解析 TS 和 TSX 文件
     commonjs(),
     typescript({
       tsconfig: './tsconfig.json',
+      jsx: 'preserve',
       outputToFilesystem: true,
     }),
     babel({
@@ -77,4 +74,5 @@ export default [{
         },
       }),
   ],
+  external: ['react', 'react-dom'], // 声明外部依赖
 }));;

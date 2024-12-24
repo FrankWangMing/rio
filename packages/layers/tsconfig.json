@@ -3,14 +3,14 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "declaration": true,
     "declarationMap": true,
     "outDir": "./dist",
     "declarationDir": "./dist/types",
     "target": "esnext",
     "module": "esnext",
-    "strict": true
+    "strict": false,
   },
   "include": ["src/index.tsx", "svg.d.ts"]
 }

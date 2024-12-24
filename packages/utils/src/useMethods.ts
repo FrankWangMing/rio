@@ -277,7 +277,7 @@ export function useMethods<
       ) {
         finalState = produce(finalState, normalizeHistory);
       }
-
+1
       if (
         ![
           ...ignoreHistoryForActions,
@@ -489,7 +489,7 @@ class Subscriber {
    * @param onChange A callback method that is triggered when the collected values has changed
    * @param collectOnCreate If set to true, the collector/onChange will be called on instantiation
    */
-  constructor(collector, onChange, collectOnCreate = false) {
+  constructor(collector:() => any, onChange: (collected: any) => void, collectOnCreate = false) {
     this.collector = collector;
     this.onChange = onChange;
 
