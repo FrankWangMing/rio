@@ -13,8 +13,8 @@ import { isEventBlockedByDescendant } from './isEventBlockedByDescendant';
 export abstract class EventHandlers<O extends Record<string, any> = {}> {
   options: O;
 
-  private registry: ConnectorRegistry = new ConnectorRegistry();
-  private subscribers: Set<(msg: EventHandlerUpdates) => void> = new Set();
+  registry: ConnectorRegistry = new ConnectorRegistry();
+  subscribers: Set<(msg: EventHandlerUpdates) => void> = new Set();
 
   onEnable?(): void;
   onDisable?(): void;
@@ -171,7 +171,7 @@ export abstract class EventHandlers<O extends Record<string, any> = {}> {
   }
 
   // This method allows us to execute multiple connectors and returns a single cleanup method for all of them
-  protected createProxyHandlers<H extends EventHandlers>(
+  createProxyHandlers<H extends EventHandlers>(
     instance: H,
     cb: (connectors: EventHandlerConnectors<H>) => void
   ) {

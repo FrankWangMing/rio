@@ -23,27 +23,30 @@
     }
   },
   "files": [
-    "dist",
-    "lib"
+    "dist"
   ],
   "scripts": {
     "dev": "pnpm run start -w",
     "start": "cross-env NODE_ENV=development rollup -c",
     "build": "cross-env NODE_ENV=production rollup -c",
-    "clean": "rimraf lib dist"
+    "clean": "rimraf dist"
   },
   "dependencies": {
+    "@rio/core": "workspace:*",
     "@rio/utils": "workspace:*",
     "react-contenteditable": "^3.3.7"
   },
   "devDependencies": {
-    "@rio/eslint-config": "workspace:*",
     "@rio/common": "workspace:*",
+    "@rio/eslint-config": "workspace:*",
     "@svgr/rollup": "8.1.0",
-    "styled-components": "6.1.13"
+    "styled-components": "6.1.13",
+    "react-dom": "^18.0.0",
+    "react": "^18.0.0"
   },
   "peerDependencies": {
-    "@rio/core": "workspace:*",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
     "react": "^16.8.0 || ^17 || ^18",
     "react-dom": "^16.8.0 || ^17 || ^18",
     "styled-components": ">= 6.1"

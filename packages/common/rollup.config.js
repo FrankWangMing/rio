@@ -73,5 +73,7 @@ export default [{
         },
       }),
   ],
-  external: ['react', 'react-dom'],
+  external: (id) => {
+    return /@babel\/runtime-corejs3|core-js/.test(id);
+  }
 }));;
