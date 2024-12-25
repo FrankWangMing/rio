@@ -76,6 +76,7 @@ export default [{
       }),
   ],
   external: (id) => {
-    return /@babel\/runtime-corejs3|core-js/.test(id)&& !id.startsWith('.') && !path.isAbsolute(id) && !bundle.includes(id);
+    // /@babel\/runtime-corejs3|core-js/.test(id)&&
+    return !id.startsWith('.') && !path.isAbsolute(id) && !bundle.includes(id);
   }
 }));;

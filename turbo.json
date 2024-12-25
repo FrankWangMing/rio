@@ -14,12 +14,12 @@
       "dependsOn": ["^check-types"]
     },
     "clean": {
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".turbo", "dist", "node_modules"]
     },
     "dev": {
       "cache": false,
       "persistent": true,
-      "dependsOn": ["^build"]
+      "dependsOn": ["build"]
     }
   }
 }
