@@ -6,24 +6,25 @@ import resolve from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import commonjs from "@rollup/plugin-commonjs"
+import json from '@rollup/plugin-json';
 
 const shouldMinify = false;
 // const shouldMinify = process.env.NODE_ENV === 'production';
 const bundle = ['tslib'];
 
-// const injectPackageVersion = () => {
-//   const pkg = require('./package.json');
+const injectPackageVersion = async () => {
 
-//   return `
-// if ( typeof window !== 'undefined' ) {
-//   if ( !window['__CRAFTJS__'] ) {
-//     window['__CRAFTJS__'] = {};
-//   }
+  const pkg = await import(path.resolve(process.cwd(),'./package.json'), { with: { type: 'json' } });
+  return `
+if ( typeof window !== 'undefined' ) {
+  if ( !window['__CRAFTJS__'] ) {
+    window['__CRAFTJS__'] = {};
+  }
 
-//   window['__CRAFTJS__']["${pkg.name}"] = "${pkg.version}";
-// }
-//   `;
-// };
+  window['__CRAFTJS__']["${pkg.name}"] = "${pkg.version}";
+}
+  `;
+};
 
 export default [{
   input: './src/index.ts',
@@ -31,7 +32,7 @@ export default [{
     {
       file: 'dist/index.mjs', // 输出的单一文件
       format: 'es',           // 模块格式
-      // intro: injectPackageVersion(),
+      intro: injectPackageVersion(),
       globals: {
         react: 'React',
         'react-dom': 'ReactDOM',
@@ -40,7 +41,7 @@ export default [{
     },
     {
       file: 'dist/index.cjs',
-      // intro: injectPackageVersion(),
+      intro: injectPackageVersion(),
       format: 'cjs',
       sourcemap: true,
     },
@@ -58,6 +59,7 @@ export default [{
       exclude:["node_modules/**"],
       extensions:['.js','.jsx','.ts','.tsx']
     }),
+    json(),
     shouldMinify &&
       terser({
         output: { comments: 'some' },
@@ -74,6 +76,6 @@ export default [{
       }),
   ],
   external: (id) => {
-    return /@babel\/runtime-corejs3|core-js/.test(id);
+    return /@babel\/runtime-corejs3|core-js/.test(id)&& !id.startsWith('.') && !path.isAbsolute(id) && !bundle.includes(id);
   }
 }));;
