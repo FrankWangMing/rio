@@ -205,7 +205,7 @@ const Methods = (
      * @param parentId
      * @param index
      */
-    addNodeTree(tree: NodeTree, parentId?: NodeId, index?: number) {
+    addNodeTree(tree: NodeTree, parentId: NodeId, index?: number) {
       addNodeTreeToParent(tree, parentId, { type: 'child', index });
     },
 

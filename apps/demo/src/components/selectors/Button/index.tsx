@@ -1,6 +1,5 @@
 import { UserComponent, useNode } from '@rio/core';
 import cx from 'classnames';
-import React from 'react';
 import { styled } from 'styled-components';
 
 import { ButtonSettings } from './ButtonSettings';

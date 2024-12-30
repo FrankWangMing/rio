@@ -1,4 +1,4 @@
-import {Editor, Element, Frame} from "@rio/core";
+import {Editor, Element, Frame, useGenerate} from "@rio/core";
 import {Text} from "./components/selectors";
 import {Custom1, OnlyButtons} from "./components/selectors/Custom1";
 import {Custom2, Custom2VideoDrop} from "./components/selectors/Custom2";
@@ -8,7 +8,9 @@ import {Video} from "./components/selectors/Video";
 import {RenderNode, Viewport} from "./components/editor";
 import {Container} from './components/selectors/Container'
 export default  () => {
-  return  <Editor
+
+
+  return <Editor
       resolver={{
           Container,
           Text,
@@ -27,7 +29,7 @@ export default  () => {
       <Viewport>
           <Frame>
               <Element
-                  canvas
+                  canvas={true}
                   is={Container}
                   width="800px"
                   height="auto"
@@ -36,7 +38,7 @@ export default  () => {
                   custom={{ displayName: 'App' }}
               >
                   <Element
-                      canvas
+                      canvas={true}
                       is={Container}
                       flexDirection="row"
                       width="100%"

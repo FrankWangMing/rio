@@ -3,6 +3,7 @@ import { Layers } from '@rio/layers';
 import React, { useState } from 'react';
 import { styled } from 'styled-components';
 import { ReactSVG } from 'react-svg'
+import { Toolbar } from '../../Toolbar';
 
 
 import { SidebarItem } from './SidebarItem';
@@ -10,7 +11,6 @@ import { SidebarItem } from './SidebarItem';
 
 const LayerIcon = ()=> <ReactSVG  src='/icons/layers.svg'/>
 const CustomizeIcon = ()=> <ReactSVG  src='/icons/customize.svg'/>
-import { Toolbar } from '../../Toolbar';
 
 export const SidebarDiv = styled.div<{ $enabled: boolean }>`
   width: 280px;

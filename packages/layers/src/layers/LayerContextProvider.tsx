@@ -14,6 +14,7 @@ export const LayerContextProvider = ({
   id,
   depth,
 }: LayerContextProviderProps) => {
+  console.log('LayerContextProvider', { id, depth });
   const handlers = useLayerEventHandler();
 
   const { store } = useContext(LayerManagerContext);

@@ -14,14 +14,14 @@ export const RenderNodeToElement = ({ render }: RenderNodeToElementProps) => {
     hidden: node.data.hidden,
   }));
 
-  const { onRender } = useInternalEditor((state) => ({
+  const { onRender,state } = useInternalEditor((state) => ({
     onRender: state.options.onRender,
+    state:state
   }));
 
   // don't display the node since it's hidden
   if (hidden) {
     return null;
   }
-
   return React.createElement(onRender, { render: render || <DefaultRender /> });
 };

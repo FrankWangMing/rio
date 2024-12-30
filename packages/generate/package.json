@@ -1,16 +1,9 @@
+
 {
-  "name": "@rio/layers",
+  "name": "@rio/generate",
   "description": "A Photoshop-like layers panel for your page editor",
-  "keywords": [
-    "wysiwyg",
-    "html",
-    "layers",
-    "photoshop",
-    "craftjs",
-    "page-editor",
-    "web-builder"
-  ],
-  "version": "0.2.6",
+  "keywords": [],
+  "version": "0.0.1",
   "author": "Frank Wang <jasonming1998@gmail.com>",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -36,8 +29,7 @@
     "@babel/runtime-corejs3": "^7.26.0",
     "@rio/core": "workspace:*",
     "@rio/utils": "workspace:*",
-    "core-js": "^3.39.0",
-    "react-contenteditable": "^3.3.7"
+    "core-js": "^3.39.0"
   },
   "devDependencies": {
     "@rio/common": "workspace:*",

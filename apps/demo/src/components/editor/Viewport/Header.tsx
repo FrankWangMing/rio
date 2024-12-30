@@ -1,5 +1,5 @@
-import { useEditor } from '@rio/core';
-import { Tooltip } from '@material-ui/core';
+import { ROOT_NODE, useEditor, useGenerate } from '@rio/core';
+import { Button, Tooltip } from '@material-ui/core';
 import cx from 'classnames';
 import React from 'react';
 import { styled } from 'styled-components';
@@ -53,12 +53,24 @@ const Item = styled.a<{ disabled?: boolean }>`
 `;
 
 export const Header = () => {
-  const { enabled, canUndo, canRedo, actions } = useEditor((state, query) => ({
+  const { enabled, canUndo, canRedo, actions ,parseReactElement,state} = useEditor((state, query) => ({
     enabled: state.options.enabled,
     canUndo: query.history.canUndo(),
     canRedo: query.history.canRedo(),
+    parseReactElement: query.parseReactElement,
+    state: state,
   }));
+  const editor = useEditor()
 
+  const Omm = ()=>{
+    const a = parseReactElement(<div>SSS</div>)
+    let node= a.toNodeTree()
+
+    if(Object.keys(editor.query.getNodes()).length > 0){
+      console.log(editor.query.getNodes())
+      editor.actions.addNodeTree(node,Object.keys(editor.query.getNodes())[0])
+    }
+  }
   return (
     <HeaderDiv className="header text-white transition w-full">
       <div className="items-center flex w-full px-4 justify-end">
@@ -92,6 +104,7 @@ export const Header = () => {
             {/* {enabled ? <Checkmark /> : <Customize />} */}
             {enabled ? 'Finish Editing' : 'Edit'}
           </Btn>
+          <Button onClick={Omm}>生成</Button>
         </div>
       </div>
     </HeaderDiv>
