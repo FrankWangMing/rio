@@ -1,10 +1,9 @@
-import { ROOT_NODE, useEditor, useGenerate } from '@rio/core';
+import { useEditor } from '@rio/core';
 import { Button, Tooltip } from '@material-ui/core';
 import cx from 'classnames';
-import React from 'react';
 import { styled } from 'styled-components';
 import { ReactSVG } from 'react-svg'
-
+import { useNavigate } from "react-router";
 // import Checkmark from '/icons/check.svg';
 // import Customize from '/icons/customize.svg';
 
@@ -53,15 +52,19 @@ const Item = styled.a<{ disabled?: boolean }>`
 `;
 
 export const Header = () => {
-  const { enabled, canUndo, canRedo, actions ,parseReactElement,state} = useEditor((state, query) => ({
+  const { enabled, canUndo, canRedo, actions ,parseReactElement} = useEditor((state, query) => ({
     enabled: state.options.enabled,
     canUndo: query.history.canUndo(),
     canRedo: query.history.canRedo(),
     parseReactElement: query.parseReactElement,
     state: state,
   }));
-  const editor = useEditor()
-
+  const {query} = useEditor()
+  let navigate = useNavigate();
+  const Preview = ()=>{
+    localStorage.setItem('editor', JSON.stringify(query.serialize()))
+    navigate('/preview')
+  }
   const Omm = ()=>{
     const a = parseReactElement(<div>SSS</div>)
     let node= a.toNodeTree()
@@ -105,6 +108,7 @@ export const Header = () => {
             {enabled ? 'Finish Editing' : 'Edit'}
           </Btn>
           <Button onClick={Omm}>生成</Button>
+          <Button onClick={Preview} className="ml-4 bg-slate-900" style={{background:"green"}} >预览</Button>
         </div>
       </div>
     </HeaderDiv>

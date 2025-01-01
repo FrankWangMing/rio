@@ -53,7 +53,7 @@ export const Frame = ({ children, json, data }: FrameProps) => {
         return node;
       });
 
-      actions.history.ignore().addNodeTree(node);
+      actions.history.ignore().addNodeTree(node,rootNode.key);
     }
 
     isLoaded.current = true;

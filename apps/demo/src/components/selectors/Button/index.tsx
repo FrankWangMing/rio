@@ -1,7 +1,7 @@
 import { UserComponent, useNode } from '@rio/core';
 import cx from 'classnames';
 import { styled } from 'styled-components';
-
+import 'animate.css';
 import { ButtonSettings } from './ButtonSettings';
 
 import { Text } from '../Text';
@@ -46,8 +46,10 @@ export const Button: UserComponent<ButtonProps> = ({
 }: ButtonProps) => {
   const {
     connectors: { connect },
+    events,
   } = useNode((node) => ({
     selected: node.events.selected,
+    events:node.events,
   }));
 
   return (
@@ -58,10 +60,15 @@ export const Button: UserComponent<ButtonProps> = ({
         {
           'shadow-lg': buttonStyle === 'full',
         },
-      ])}
+        "animate__animated","animate__bounce"])
+      }
       $buttonStyle={buttonStyle}
       $background={background}
       $margin={margin}
+      onClick={(e,)=>{
+        console.log('clicked')
+        console.log(events)
+      }}
     >
       <Text {...textComponent} text={text} color={color} />
     </StyledButton>

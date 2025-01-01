@@ -65,7 +65,8 @@ export const RenderNode = ({ render }) => {
     }
   }, [dom, isActive, isHover]);
 
-  const getPos = useCallback((dom: HTMLElement) => {
+  const getPos = useCallback((dom: HTMLElement|null) => {
+    if(dom === null) return
     const { top, left, bottom } = dom
       ? dom.getBoundingClientRect()
       : { top: 0, left: 0, bottom: 0 };
@@ -86,12 +87,12 @@ export const RenderNode = ({ render }) => {
 
   useEffect(() => {
     document
-      .querySelector('.craftjs-renderer')
+      .querySelector('.craftjs-renderer')!
       .addEventListener('scroll', scroll);
 
     return () => {
       document
-        .querySelector('.craftjs-renderer')
+        .querySelector('.craftjs-renderer')!
         .removeEventListener('scroll', scroll);
     };
   }, [scroll]);
@@ -113,8 +114,6 @@ export const RenderNode = ({ render }) => {
               {moveable ? (
                 <Btn className="mr-2 cursor-move" ref={drag}>
                   <ReactSVG src="/icons/move.svg" />
-
-
                 </Btn>
               ) : null}
               {id !== ROOT_NODE && (
@@ -139,7 +138,7 @@ export const RenderNode = ({ render }) => {
                 </Btn>
               ) : null}
             </IndicatorDiv>,
-            document.querySelector('.page-container')
+            document.querySelector('.page-container')!
           )
         : null}
       {render}

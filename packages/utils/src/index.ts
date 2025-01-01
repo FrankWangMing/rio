@@ -4,7 +4,6 @@ export * from './getDOMInfo';
 export * from './useCollector';
 export * from './EventHandlers';
 export * from './RenderIndicator';
-export * from './useEffectOnce';
 export * from './deprecate';
 export * from './utilityTypes';
 export * from './History';

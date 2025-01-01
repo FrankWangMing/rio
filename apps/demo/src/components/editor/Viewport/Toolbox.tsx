@@ -85,8 +85,6 @@ export const Toolbox = () => {
           <Tooltip title="Video" placement="right">
             <Item className="m-2 pb-2 cursor-pointer block" $move>
             <ReactSVG  src='/icons/toolbox/video-line.svg'/>
-
-
             </Item>
           </Tooltip>
         </div>

@@ -1,15 +1,6 @@
 {
   "name": "@rio/layers",
   "description": "A Photoshop-like layers panel for your page editor",
-  "keywords": [
-    "wysiwyg",
-    "html",
-    "layers",
-    "photoshop",
-    "craftjs",
-    "page-editor",
-    "web-builder"
-  ],
   "version": "0.2.6",
   "author": "Frank Wang <jasonming1998@gmail.com>",
   "main": "./dist/index.cjs",
