@@ -18,7 +18,6 @@ export const RenderNodeToElement = ({ render }: RenderNodeToElementProps) => {
     onRender: state.options.onRender,
     state:state
   }));
-
   // don't display the node since it's hidden
   if (hidden) {
     return null;

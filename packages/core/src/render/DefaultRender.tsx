@@ -7,12 +7,13 @@ import { NodeElement } from '../nodes/NodeElement';
 import { useInternalNode } from '../nodes/useInternalNode';
 
 export const DefaultRender = () => {
-  const { type, props, nodes, hydrationTimestamp } = useInternalNode(
+  const { type, props, nodes, hydrationTimestamp,node } = useInternalNode(
     (node) => ({
       type: node.data.type,
       props: node.data.props,
       nodes: node.data.nodes,
       hydrationTimestamp: node._hydrationTimestamp,
+      node:node
     })
   );
 
@@ -34,7 +35,8 @@ export const DefaultRender = () => {
     if (typeof type == 'string') {
       return <SimpleElement render={render} />;
     }
-
+    // console.log(render)
+    // console.log(node)
     return render;
     // eslint-disable-next-line  react-hooks/exhaustive-deps
   }, [type, props, hydrationTimestamp, nodes]);

@@ -13,5 +13,4 @@ export const useGenerate = ()=>{
     const state = useEditor((state)=>{
         return state
     })
-    console.log(state)
 }

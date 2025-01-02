@@ -1,7 +1,7 @@
 import { useNode, useEditor } from '@rio/core';
 import { ROOT_NODE } from '@rio/utils';
 import React, { useEffect, useRef, useCallback } from 'react';
-import ReactDOM from 'react-dom';
+import { createPortal } from 'react-dom';
 import { styled } from 'styled-components';
 import { ReactSVG } from 'react-svg'
 
@@ -65,8 +65,7 @@ export const RenderNode = ({ render }) => {
     }
   }, [dom, isActive, isHover]);
 
-  const getPos = useCallback((dom: HTMLElement|null) => {
-    if(dom === null) return
+  const getPos = useCallback((dom: HTMLElement) => {
     const { top, left, bottom } = dom
       ? dom.getBoundingClientRect()
       : { top: 0, left: 0, bottom: 0 };
@@ -87,26 +86,26 @@ export const RenderNode = ({ render }) => {
 
   useEffect(() => {
     document
-      .querySelector('.craftjs-renderer')!
-      .addEventListener('scroll', scroll);
+      .querySelector('.craftjs-renderer')
+      ?.addEventListener('scroll', scroll);
 
     return () => {
       document
-        .querySelector('.craftjs-renderer')!
-        .removeEventListener('scroll', scroll);
+        .querySelector('.craftjs-renderer')
+        ?.removeEventListener('scroll', scroll);
     };
   }, [scroll]);
 
   return (
     <>
       {isHover || isActive
-        ? ReactDOM.createPortal(
+        ? createPortal(
             <IndicatorDiv
               ref={currentRef}
               className="px-2 py-2 text-white bg-primary fixed flex items-center"
               style={{
-                left: getPos(dom).left,
-                top: getPos(dom).top,
+                left: dom?getPos(dom).left:0,
+                top: dom?getPos(dom).top:0,
                 zIndex: 9999,
               }}
             >

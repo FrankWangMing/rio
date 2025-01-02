@@ -63,14 +63,13 @@ export const Header = () => {
   let navigate = useNavigate();
   const Preview = ()=>{
     localStorage.setItem('editor', JSON.stringify(query.serialize()))
-    navigate('/preview')
+    window.open("/preview","_blank")
   }
   const Omm = ()=>{
     const a = parseReactElement(<div>SSS</div>)
     let node= a.toNodeTree()
 
     if(Object.keys(editor.query.getNodes()).length > 0){
-      console.log(editor.query.getNodes())
       editor.actions.addNodeTree(node,Object.keys(editor.query.getNodes())[0])
     }
   }
