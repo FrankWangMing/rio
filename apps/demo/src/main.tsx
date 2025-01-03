@@ -1,5 +1,4 @@
 import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
 import './index.css'
 import { Editor } from '@rio/core';
 import { Custom1, OnlyButtons } from './components/selectors/Custom1/index.tsx';
@@ -13,6 +12,7 @@ import { Button } from './components/selectors/Button/index.tsx';
 import AppPreview from './AppPreview.tsx';
 import EditorContainer from './EditorContainer.tsx';
 import { RenderNode } from './components/editor/RenderNode.tsx';
+import { DTE } from './components/selectors/dte/index.tsx';
 
 createRoot(document.getElementById('root')!).render(
 
@@ -21,6 +21,7 @@ createRoot(document.getElementById('root')!).render(
       <Route path="/" element={
           <Editor
           resolver={{
+            DTE,
             Container,
             Text,
             Custom1,
@@ -40,6 +41,7 @@ createRoot(document.getElementById('root')!).render(
       <Route path="/preview" element={
                   <Editor
                   resolver={{
+                    DTE,
                     Container,
                     Text,
                     Custom1,

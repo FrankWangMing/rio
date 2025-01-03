@@ -63,15 +63,10 @@ export const Header = () => {
   let navigate = useNavigate();
   const Preview = ()=>{
     localStorage.setItem('editor', JSON.stringify(query.serialize()))
-    window.open("/preview","_blank")
+    window.open("/preview")
   }
   const Omm = ()=>{
-    const a = parseReactElement(<div>SSS</div>)
-    let node= a.toNodeTree()
-
-    if(Object.keys(editor.query.getNodes()).length > 0){
-      editor.actions.addNodeTree(node,Object.keys(editor.query.getNodes())[0])
-    }
+    localStorage.setItem('editor', JSON.stringify(query.serialize()))
   }
   return (
     <HeaderDiv className="header text-white transition w-full">
@@ -106,8 +101,8 @@ export const Header = () => {
             {/* {enabled ? <Checkmark /> : <Customize />} */}
             {enabled ? 'Finish Editing' : 'Edit'}
           </Btn>
-          <Button onClick={Omm}>生成</Button>
-          <Button onClick={Preview} className="ml-4 bg-slate-900" style={{background:"green"}} >预览</Button>
+          <Button onClick={Omm}>Generate</Button>
+          <Button onClick={Preview} className="ml-4 bg-slate-900" style={{background:"green"}} >Preview</Button>
         </div>
       </div>
     </HeaderDiv>

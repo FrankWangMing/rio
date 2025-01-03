@@ -8,6 +8,8 @@ import { Button } from '../../selectors/Button';
 import { Container } from '../../selectors/Container';
 import { Text } from '../../selectors/Text';
 import { Video } from '../../selectors/Video';
+import Start from '../../selectors/dte/Start';
+import { DTE } from '../../selectors/dte';
 
 const ToolboxDiv = styled.div<{ $enabled: boolean }>`
   transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
@@ -82,6 +84,13 @@ export const Toolbox = () => {
           </Tooltip>
         </div>
         <div ref={(ref) => create(ref, <Video />)}>
+          <Tooltip title="Video" placement="right">
+            <Item className="m-2 pb-2 cursor-pointer block" $move>
+            <ReactSVG  src='/icons/toolbox/video-line.svg'/>
+            </Item>
+          </Tooltip>
+        </div>
+        <div ref={(ref) => create(ref, <DTE />)}>
           <Tooltip title="Video" placement="right">
             <Item className="m-2 pb-2 cursor-pointer block" $move>
             <ReactSVG  src='/icons/toolbox/video-line.svg'/>

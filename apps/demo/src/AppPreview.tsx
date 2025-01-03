@@ -1,4 +1,4 @@
-import { Frame, useEditor, useEditorStore } from "@rio/core"
+import { Frame, useEditor } from "@rio/core"
 
 export default ()=>{
     const editor = useEditor()
