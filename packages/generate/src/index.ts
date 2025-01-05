@@ -52,3 +52,11 @@ async function main(): Promise<void> {
 
 main().catch(console.error);
 
+
+const generate = (config) => {
+  console.log(config)
+  main()
+}
+export {
+  generate
+}
