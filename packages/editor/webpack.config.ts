@@ -1,20 +1,20 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const TerserPlugin = require("terser-webpack-plugin");
-const CompressionPlugin = require("compression-webpack-plugin");
-const {CleanWebpackPlugin} = require("clean-webpack-plugin");
-const WebpackBundleAnalyzer = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import TerserPlugin from 'terser-webpack-plugin'
+import { CleanWebpackPlugin } from 'clean-webpack-plugin'
+import CompressionPlugin from 'compression-webpack-plugin'
+import path from 'path'
 
-module.exports = {
+export default {
   mode: 'development',
   entry: './src/main.tsx',
   output: {
     path: __dirname + '/dist',
     filename: 'index.js'
   },
-  devtool:"eval-source-map",
+  devtool: "eval-source-map",
   resolve: {
-     extensions: ['.mjs', '.js', '.ts', '.tsx', '.json'], // 添加常用扩展名
+    extensions: ['.mjs', '.js', '.ts', '.tsx', '.json'], // 添加常用扩展名
   },
   // devtool:"source-map",
   // optimization: {
@@ -37,23 +37,25 @@ module.exports = {
         use: [
           "style-loader",
           "css-loader",
+          'postcss-loader' // 使用 PostCSS 处理 CSS
         ],
-      exclude: /node_modules/
+        exclude: /node_modules/
       },
       {
-          test: /\.s[ac]ss$/i,
-          use: [
-            "style-loader",
-            "css-loader",
-            "sass-loader",
-          ],
+        test: /\.s[ac]ss$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          "sass-loader",
+          'postcss-loader' // 使用 PostCSS 处理 CSS
+        ],
         exclude: /node_modules/
       }
     ]
   },
-  plugins:[
+  plugins: [
     new HtmlWebpackPlugin({
-      template:__dirname + "/public/index.html"
+      template: __dirname + "/public/index.html"
     }),
     new TerserPlugin(),
     new CompressionPlugin(),
@@ -65,12 +67,12 @@ module.exports = {
     // },
     compress: true,
     port: 9000,
-    hot:true
+    hot: true
   },
-  stats:{
-    colors:true,
-    chunks:false,
-    modules:false,
+  stats: {
+    colors: true,
+    chunks: false,
+    modules: false,
   }
 }
 
