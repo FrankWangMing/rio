@@ -22,4 +22,9 @@ export async function createStructure(basePath: string, structure: ProjectStruct
   for (const file of structure.public) {
     createFile(path.join(publicPath, file), "<!-- Static File -->");
   }
+
+  const nginxPath = path.join(basePath, "nginx");
+  for (const file of structure.nginx) {
+    createFile(path.join(nginxPath, file), "<!-- Static File -->");
+  }
 }

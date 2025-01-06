@@ -10,21 +10,17 @@ export const generateCode = ()=>{
 export const dev=()=>{
     console.log("dev that")
     console.log(path.resolve(process.cwd(),'my-web-project'))
-    const command = 'sh';
-    const args = ['-c', 'echo "Running command 1" && echo "Running command 2" && echo "Running command 3"'];
+    // const command = 'sh';
+    // const args = ['-c', 'npm install && npm run dev'];
+    // const cwd = path.resolve(process.cwd(),'my-web-project')
 
-    spawn('pnpm', ['install'], { cwd: path.resolve(process.cwd(),'my-web-project') });
-    const ls = spawn('pnpm', ['run','dev'], { cwd: path.resolve(process.cwd(),'my-web-project') });
-    ls.stdout.on('data', (data) => {
-        console.log(`stdout: ${data}`);
-      });
-
-      ls.stderr.on('data', (data) => {
-        console.error(`stderr: ${data}`);
-      });
-
-      ls.on('close', (code) => {
-        console.log(`child process exited with code ${code}`);
-      });
+    // const child = spawn(command, args, { cwd,stdio: 'inherit' });
+    // child.on('close', (code) => {
+    //   if (code === 0) {
+    //     console.log('Commands executed successfully.');
+    //   } else {
+    //     console.error(`Process exited with code ${code}`);
+    //   }
+    // });
     // run()
 }

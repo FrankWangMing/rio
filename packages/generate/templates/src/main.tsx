@@ -1,5 +1,5 @@
 // import { StrictMode } from 'react'
-import "./infra/instrument";
+import "./infra/instrument.ts";
 import { createRoot } from 'react-dom/client'
 import './index.scss'
 import { RouterProvider } from 'react-router';

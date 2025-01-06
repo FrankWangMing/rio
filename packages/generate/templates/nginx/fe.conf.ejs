@@ -1,0 +1,22 @@
+server {
+    listen       80;
+    listen  [::]:80;
+    server_name  localhost;
+
+    #access_log  /var/log/nginx/host.access.log  main;
+
+    location / {
+        root /usr/share/nginx/html;
+        try_files $uri $uri/ $uri.gz $uri/index.html;
+
+        # 确保在返回压缩文件时添加 Content-Encoding 头部
+        # add_header Content-Encoding gzip;
+        # add_header Vary Accept-Encoding;
+    }
+
+    #error_page  404              /404.html;
+
+    # redirect server error pages to the static page /50x.html
+    #
+
+}
