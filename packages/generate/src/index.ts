@@ -7,7 +7,7 @@ import { connectEditor, useEditorStore } from "@rio/core";
 const projectConfig: ProjectConfig = {
   basePath: "./my-web-project",
   structure: {
-    nginx: ["nginx.conf","fe.conf"],
+    nginx: ["nginx.conf", "fe.conf"],
     public: ["index.html", "favicon.ico"],
     src: {
       components: ["Header.tsx", "Footer.tsx"],
@@ -38,8 +38,6 @@ const projectConfig: ProjectConfig = {
       "@babel/preset-typescript": "^7.26.0",
       "@eslint/js": "^9.17.0",
       "@types/node": "^22.10.2",
-      "@types/react": "^19.0.2",
-      "@types/react-dom": "^19.0.2",
       "babel": "^6.23.0",
       "babel-loader": "^9.2.1",
       "clean-webpack-plugin": "^4.0.0",

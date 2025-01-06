@@ -134,7 +134,7 @@ export const DefaultLayerHeader = () => {
           ) : null}
 
           <div className="layer-name s">
-            <EditableLayerName />
+            {/* <EditableLayerName /> */}
           </div>
           <div>
             {children && children.length ? (

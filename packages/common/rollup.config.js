@@ -7,14 +7,20 @@ import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import commonjs from "@rollup/plugin-commonjs"
 import json from '@rollup/plugin-json';
+import os from 'os';
 
 const shouldMinify = false;
 // const shouldMinify = process.env.NODE_ENV === 'production';
 const bundle = ['tslib'];
 
 const injectPackageVersion = async () => {
-
-  const pkg = await import(path.resolve(process.cwd(),'./package.json'), { with: { type: 'json' } });
+  let pkgPath = '';
+  pkgPath = path.resolve(process.cwd(), 'package.json');
+  const currentOS = os.platform();
+  if (currentOS === 'win32') {
+    pkgPath = `file://${pkgPath.replace(/\\/g, '/')}`;
+  }
+  const pkg = await import(pkgPath, { with: { type: 'json' } });
   return `
 if ( typeof window !== 'undefined' ) {
   if ( !window['__CRAFTJS__'] ) {

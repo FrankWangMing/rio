@@ -12,8 +12,9 @@ module.exports = {
     path: __dirname + '/dist',
     filename: 'index.js'
   },
+  devtool:"eval-source-map",
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx'], // 支持的文件扩展名
+     extensions: ['.mjs', '.js', '.ts', '.tsx', '.json'], // 添加常用扩展名
   },
   // devtool:"source-map",
   // optimization: {
@@ -24,11 +25,20 @@ module.exports = {
   // ],
   // },
   module: {
+    noParse: /@rio/g,
     rules: [
       {
         test: /\.(ts|tsx)$/,
         use: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: [
+          "style-loader",
+          "css-loader",
+        ],
+      exclude: /node_modules/
       },
       {
           test: /\.s[ac]ss$/i,
@@ -54,7 +64,7 @@ module.exports = {
     //   directory: path.join(__dirname, 'public'),
     // },
     compress: true,
-    port: 9001,
+    port: 9000,
     hot:true
   },
   stats:{

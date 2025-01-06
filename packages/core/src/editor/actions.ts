@@ -41,13 +41,13 @@ const Methods = (
     parentId?: NodeId,
     addNodeType?:
       | {
-          type: 'child';
-          index: number;
-        }
+        type: 'child';
+        index: number;
+      }
       | {
-          type: 'linked';
-          id: string;
-        }
+        type: 'linked';
+        id: string;
+      }
   ) => {
     const iterateChildren = (id: NodeId, parentId?: NodeId) => {
       const node = tree.nodes[id];
@@ -229,9 +229,13 @@ const Methods = (
     },
 
     deserialize(input: SerializedNodes | string) {
+      if (input == null) {
+        return;
+      }
       const dehydratedNodes =
         typeof input == 'string' ? JSON.parse(input) : input;
-
+      console.log(input)
+      console.log(Object?.keys(dehydratedNodes))
       const nodePairs = Object.keys(dehydratedNodes).map((id) => {
         let nodeId = id;
 

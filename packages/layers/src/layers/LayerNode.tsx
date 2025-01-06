@@ -1,10 +1,11 @@
-import { useEditor, ROOT_NODE } from '@rio/core';
+import {  useEditor } from '@rio/core';
 import React, { useRef, useEffect, useLayoutEffect, useState } from 'react';
 
 import { LayerContextProvider } from './LayerContextProvider';
 import { useLayer } from './useLayer';
 
 import { useLayerManager } from '../manager/useLayerManager';
+import { ROOT_NODE } from '@rio/utils';
 
 export const LayerNode = () => {
   const { id, depth, children, expanded } = useLayer((layer) => ({

@@ -1,5 +1,4 @@
 import { isChromium, isLinux } from '@rio/utils';
-import isFunction from 'lodash/isFunction';
 import React from 'react';
 
 import { CoreEventHandlers, CreateHandlerOptions } from './CoreEventHandlers';
@@ -7,6 +6,7 @@ import { Positioner } from './Positioner';
 import { createShadow } from './createShadow';
 
 import { Indicator, NodeId, DragTarget, NodeTree } from '../interfaces';
+import { isFunction } from 'lodash';
 
 export type DefaultEventHandlersOptions = {
   isMultiSelectEnabled: (e: MouseEvent) => boolean;
@@ -200,7 +200,7 @@ export class DefaultEventHandlers<O = {}> extends CoreEventHandlers<
       },
       drag: (el: HTMLElement, id: NodeId) => {
         if (!store.query.node(id).isDraggable()) {
-          return () => {};
+          return () => { };
         }
 
         el.setAttribute('draggable', 'true');

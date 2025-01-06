@@ -1,5 +1,4 @@
-import mapValues from 'lodash/mapValues';
-
+import { mapValues } from 'lodash';
 import { QueryMethods } from '../../editor/query';
 import { EditorState } from '../../interfaces';
 import { createNode } from '../../utils/createNode';

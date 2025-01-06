@@ -27,6 +27,11 @@
     "include": [
         "src",
         "tests",
-      ]
+    ],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "src/components/selectors/dte/*.tsx"
+    ]
 
 }

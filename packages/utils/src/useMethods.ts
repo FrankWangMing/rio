@@ -4,12 +4,10 @@ import produce, {
   enableMapSet,
   enablePatches,
 } from 'immer';
-import isEqualWith from 'lodash/isEqualWith';
 import { useMemo, useEffect, useRef, useCallback } from 'react';
-
 import { History, HISTORY_ACTIONS } from './History';
 import { Delete } from './utilityTypes';
-
+import { isEqualWith } from 'lodash-es';
 enableMapSet();
 enablePatches();
 
@@ -277,7 +275,7 @@ export function useMethods<
       ) {
         finalState = produce(finalState, normalizeHistory);
       }
-1
+      1
       if (
         ![
           ...ignoreHistoryForActions,
@@ -489,7 +487,7 @@ class Subscriber {
    * @param onChange A callback method that is triggered when the collected values has changed
    * @param collectOnCreate If set to true, the collector/onChange will be called on instantiation
    */
-  constructor(collector:() => any, onChange: (collected: any) => void, collectOnCreate = false) {
+  constructor(collector: () => any, onChange: (collected: any) => void, collectOnCreate = false) {
     this.collector = collector;
     this.onChange = onChange;
 
