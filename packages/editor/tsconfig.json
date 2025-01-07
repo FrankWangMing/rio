@@ -28,7 +28,7 @@
         "src",
         "tests",
         "webpack.config.ts"
-    ],
+, "../components/src/editor", "../components/src/Toolbar"    ],
     "exclude": [
         "node_modules",
         "dist",

@@ -1,0 +1,17 @@
+{
+  "extends": "@rio/common/base",
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "./dist",
+    "declarationDir": "./dist/types",
+    "target": "esnext",
+    "module": "esnext",
+    "strict": false,
+  },
+  "include": ["src"]
+}

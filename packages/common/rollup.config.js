@@ -23,11 +23,11 @@ const injectPackageVersion = async () => {
   const pkg = await import(pkgPath, { with: { type: 'json' } });
   return `
 if ( typeof window !== 'undefined' ) {
-  if ( !window['__CRAFTJS__'] ) {
-    window['__CRAFTJS__'] = {};
+  if ( !window['RIO'] ) {
+    window['RIO'] = {};
   }
 
-  window['__CRAFTJS__']["${pkg.name}"] = "${pkg.version}";
+  window['RIO']["${pkg.name}"] = "${pkg.version}";
 }
   `;
 };
@@ -55,7 +55,11 @@ export default [{
 }].map((entry) => ({
   ...entry,
   plugins: [
-    resolve(), // 支持解析 TS 和 TSX 文件
+    resolve(
+      {
+        extensions:['.js', '.mjs'], // 确保包含常见的文件扩展名
+      }
+    ), // 支持解析 TS 和 TSX 文件
     commonjs(),
     typescript({
     }),

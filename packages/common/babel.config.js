@@ -1,5 +1,5 @@
 export default {
-    "presets": [
+    presets : [
         [
             "@babel/preset-env",
             {
@@ -10,10 +10,16 @@ export default {
         ],
         [ "@babel/preset-react"]
     ],
-    "plugins": [
-        ["@babel/plugin-transform-runtime",
+    plugins : [
+        [
+            "@babel/plugin-transform-runtime",
         {
-            "corejs":3
-        }]
+            "corejs":3,
+            "absoluteRuntime": false,
+            "helpers": true,
+            "regenerator": true,
+            "version": "7.0.0-beta.0"
+        }
+    ]
     ]
 }

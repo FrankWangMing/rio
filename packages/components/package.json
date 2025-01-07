@@ -1,0 +1,67 @@
+{
+  "name": "@rio/components",
+  "description": "A Photoshop-like layers panel for your page editor",
+  "version": "0.2.6",
+  "author": "Frank Wang <jasonming1998@gmail.com>",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/types/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "pnpm run start -w",
+    "start": "cross-env NODE_ENV=development rollup -c",
+    "build": "cross-env NODE_ENV=production rollup -c",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/plugin-syntax-flow": "^7.26.0",
+    "@babel/plugin-transform-runtime": "^7.25.9",
+    "@babel/preset-flow": "^7.25.9",
+    "@babel/runtime-corejs3": "^7.26.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.3.1",
+    "@mui/styled-engine-sc": "^6.3.1",
+    "@mui/styles": "^6.3.1",
+    "@rio/core": "workspace:*",
+    "@rio/generate": "workspace:*",
+    "@rio/layers": "workspace:*",
+    "@rio/utils": "workspace:*",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@sentry/react": "^8.47.0",
+    "animate.css": "^4.1.1",
+    "classnames": "^2.5.1",
+    "core-js": "^3.39.0",
+    "lil-gui": "^0.20.0",
+    "re-resizable": "6.1.0",
+    "react-color": "^2.19.3",
+    "react-contenteditable": "^3.3.7",
+    "react-youtube": "^10.1.0",
+    "ys-dte": "4.4.0-alpha.2",
+    "styled-components": "6.1.13"
+  },
+  "devDependencies": {
+    "@rio/common": "workspace:*",
+    "@rio/eslint-config": "workspace:*",
+    "@svgr/rollup": "8.1.0",
+    "@types/ys-dte": "4.4.0-alpha.2"
+  },
+  "peerDependencies": {
+    "@types/react": "^17.0.0 || ^18.0.0 ",
+    "@types/react-dom": "^17.0.0 || ^18.0.0 ",
+    "react": "^17.0.0 || ^18.0.0 ",
+    "react-dom": "^17.0.0 || ^18.0.0 ",
+    "styled-components": ">= 6.1"
+  }
+}

@@ -3,7 +3,8 @@ import cx from 'classnames';
 import { styled } from 'styled-components';
 import { ReactSVG } from 'react-svg'
 import { useNavigate } from "react-router";
-import { Button, Tooltip } from '@mui/material';
+import { Button, Tooltip } from 'antd';
+import generateCode from '../../../data/api/generateCode';
 // import Checkmark from '/icons/check.svg';
 // import Customize from '/icons/customize.svg';
 
@@ -60,13 +61,15 @@ export const Header = () => {
     state: state,
   }));
   const {query} = useEditor()
-  let navigate = useNavigate();
   const Preview = ()=>{
     localStorage.setItem('editor', JSON.stringify(query.serialize()))
     window.open("/preview")
   }
   const Omm = ()=>{
     localStorage.setItem('editor', JSON.stringify(query.serialize()))
+    const data=query.serialize()
+    console.log(data)
+    generateCode(data)
   }
   return (
     <HeaderDiv className="header text-white transition w-full">

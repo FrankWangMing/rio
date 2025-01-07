@@ -3,11 +3,10 @@ import { Layers } from '@rio/layers';
 import React, { useRef, useState } from 'react';
 import { styled } from 'styled-components';
 import { ReactSVG } from 'react-svg'
-import { Toolbar } from '../../Toolbar';
 
 
 import { SidebarItem } from './SidebarItem';
-
+import { Toolbar }from '@rio/components'
 
 const LayerIcon = ()=> <ReactSVG  src='/icons/layers.svg'/>
 const CustomizeIcon = ()=> <ReactSVG  src='/icons/customize.svg'/>

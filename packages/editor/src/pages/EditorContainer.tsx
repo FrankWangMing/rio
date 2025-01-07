@@ -1,5 +1,5 @@
 import {Frame, useEditor,Element} from "@rio/core";
-import { Container } from "../components/selectors";
+import { Container } from "@rio/components";
 import { Viewport } from "../components/editor";
 
 export default  () => {

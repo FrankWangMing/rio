@@ -12,5 +12,5 @@
     "module": "esnext",
     "strict": false,
   },
-  "include": ["src/index.tsx", "svg.d.ts"]
+  "include": ["src", "svg.d.ts"]
 }

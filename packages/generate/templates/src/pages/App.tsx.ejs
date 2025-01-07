@@ -1,0 +1,21 @@
+import { observer, useLocalObservable } from 'mobx-react-lite';
+import React from'react';
+export default observer(() => {
+
+return  <Editor
+            resolver={{
+            Container,
+            Text,
+            // Button,
+            Custom1,
+            Custom2,
+            Custom2VideoDrop,
+            Custom3,
+            Custom3BtnDrop,
+            OnlyButtons,
+            Video,
+            }}
+enabled={false} >
+<EditorContainer/>
+</Editor>
+});

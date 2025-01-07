@@ -1,0 +1,10 @@
+import {Frame, useEditor,Element} from "@rio/core";
+import React from "react";
+
+export default  () => {
+    const editor = useEditor()
+    const json = localStorage.getItem("editor")
+    editor.actions.deserialize(data)
+
+  return <Frame></Frame>
+}

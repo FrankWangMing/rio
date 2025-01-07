@@ -75,10 +75,6 @@ const projectConfig: ProjectConfig = {
     { templateFile: "nginx/nginx.conf.ejs", outputFile: "nginx/nginx.conf" },
     { templateFile: "nginx/fe.conf.ejs", outputFile: "nginx/fe.conf" },
     { templateFile: "public/index.html.ejs", outputFile: "public/index.html" },
-
-    { templateFile: "Header.tsx.ejs", outputFile: "src/components/Header.tsx" },
-
-    { templateFile: "HomePage.tsx.ejs", outputFile: "src/pages/HomePage.tsx" },
   ],
   context: {
     appName: "My Web Project",
