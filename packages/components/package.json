@@ -48,14 +48,12 @@
     "react-color": "^2.19.3",
     "react-contenteditable": "^3.3.7",
     "react-youtube": "^10.1.0",
-    "ys-dte": "4.4.0-alpha.2",
     "styled-components": "6.1.13"
   },
   "devDependencies": {
     "@rio/common": "workspace:*",
     "@rio/eslint-config": "workspace:*",
-    "@svgr/rollup": "8.1.0",
-    "@types/ys-dte": "4.4.0-alpha.2"
+    "@svgr/rollup": "8.1.0"
   },
   "peerDependencies": {
     "@types/react": "^17.0.0 || ^18.0.0 ",

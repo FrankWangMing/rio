@@ -2,14 +2,15 @@ import { generate } from '@rio/generate'
 import { run } from './dev'
 import { spawn } from 'child_process'
 import path from 'path'
-export const generateCode = ()=>{
+export const generateCode = (data: any) => {
+    console.log(data)
     generate({})
 }
 
 
-export const dev=()=>{
+export const dev = () => {
     console.log("dev that")
-    console.log(path.resolve(process.cwd(),'my-web-project'))
+    console.log(path.resolve(process.cwd(), 'my-web-project'))
     // const command = 'sh';
     // const args = ['-c', 'npm install && npm run dev'];
     // const cwd = path.resolve(process.cwd(),'my-web-project')

@@ -1,5 +1,5 @@
 import express, { Request, Response, NextFunction } from 'express';
-import { generateCode,dev } from './logic/generate';
+import { generateCode, dev } from './logic/generate';
 // 创建 Express 应用
 const app = express();
 
@@ -31,7 +31,7 @@ app.get('/users/:id', (req: Request, res: Response) => {
 app.post('/generate', (req: Request, res: Response) => {
   const { data } = req.body;
   // console.log(JSON.parse(data))
-  generateCode()
+  generateCode(data)
   dev()
   res.status(201).json({
     id: Math.floor(Math.random() * 1000),
