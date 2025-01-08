@@ -7,8 +7,10 @@ import { connectEditor, useEditorStore } from "@rio/core";
 const projectConfig: ProjectConfig = {
   basePath: "./my-web-project",
   structure: {
-    nginx: {
-      name:"nginx",
+    name: "structure",
+    type: "folder",
+    children: [{
+      name: "nginx",
       type: "folder",
       children: [
         {
@@ -20,9 +22,8 @@ const projectConfig: ProjectConfig = {
           type: "file",
         },
       ],
-    },
-    public: {
-      name:"public",
+    }, {
+      name: "public",
       type: "folder",
       children: [
         {
@@ -34,9 +35,8 @@ const projectConfig: ProjectConfig = {
           type: "file",
         }
       ],
-    },
-    src:{
-      name:"src",
+    }, {
+      name: "src",
       type: "folder",
       children: [
         {
@@ -116,35 +116,35 @@ const projectConfig: ProjectConfig = {
             {
               name: "editor",
               type: "folder",
-              children:[
+              children: [
                 {
                   name: "Viewport",
-                  type:"folder",
-                  children:[
+                  type: "folder",
+                  children: [
                     {
-                      name:"Sidebar",
-                      type:"folder",
-                      children:[
+                      name: "Sidebar",
+                      type: "folder",
+                      children: [
                         {
-                          name:"index.tsx",
-                          type:"file",
+                          name: "index.tsx",
+                          type: "file",
                         },
                         {
-                          name:"SidebarItem.tsx",
-                          type:"file",
+                          name: "SidebarItem.tsx",
+                          type: "file",
                         }
                       ]
                     },
                     {
-                    name: "index.tsx",
-                    type: "file",
+                      name: "index.tsx",
+                      type: "file",
                     },
                     {
                       name: "Header.tsx",
                       type: "file",
-                    },{
-                    name: "ToolBox.tsx",
-                    type: "file",
+                    }, {
+                      name: "ToolBox.tsx",
+                      type: "file",
                     }]
                 },
                 {
@@ -160,7 +160,7 @@ const projectConfig: ProjectConfig = {
           ],
         }
       ]
-    },
+    },]
 
   },
   config: {

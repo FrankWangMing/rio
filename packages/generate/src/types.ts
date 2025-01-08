@@ -26,7 +26,7 @@ export interface TemplateConfig {
 
 export interface ProjectConfig {
   basePath: string;
-  structure: ProjectStructure;
+  structure: FileNode;
   config: PackageConfig & Record<string, any>;
   templates: TemplateConfig[];
   context: Record<string, any>;
