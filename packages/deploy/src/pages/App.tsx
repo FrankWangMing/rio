@@ -8,6 +8,9 @@ import { Video } from '../components/selectors/Video';
 import { Text } from '../components/selectors/Text';
 import { RenderNode } from '../components/editor/index.ts';
 import EditorContainer from './EditorContainer.tsx';
+const Test = ()=>{
+  return <div className="border-s-zinc-200 border border-opacity-100 border-solid">test123123</div>
+}
 
 export default observer(() => {
 
@@ -26,5 +29,6 @@ return  <Editor
         }}
         enabled={false} >
   <EditorContainer/>
+  <Test/>
 </Editor>
 });

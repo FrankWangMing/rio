@@ -84,17 +84,17 @@ export const RenderNode = ({ render }) => {
     currentDOM.style.left = left;
   }, [dom, getPos]);
 
-  // useEffect(() => {
-  //   document
-  //     .querySelector('.craftjs-renderer')
-  //     ?.addEventListener('scroll', scroll);
+  useEffect(() => {
+    document
+      .querySelector('.craftjs-renderer')
+      ?.addEventListener('scroll', scroll);
 
-  //   return () => {
-  //     document
-  //       .querySelector('.craftjs-renderer')
-  //       ?.removeEventListener('scroll', scroll);
-  //   };
-  // }, [scroll]);
+    return () => {
+      document
+        .querySelector('.craftjs-renderer')
+        ?.removeEventListener('scroll', scroll);
+    };
+  }, [scroll]);
 
   return (
     <>

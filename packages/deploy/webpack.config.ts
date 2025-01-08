@@ -4,7 +4,7 @@ import TerserPlugin from 'terser-webpack-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import CompressionPlugin from 'compression-webpack-plugin'
 import path from 'path'
-
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 export default {
   mode: 'development',
   entry: './src/main.tsx',
@@ -33,18 +33,9 @@ export default {
         exclude: /node_modules/
       },
       {
-        test: /\.css$/,
-        use: [
-          "style-loader",
-          "css-loader",
-          'postcss-loader' // 使用 PostCSS 处理 CSS
-        ],
-        exclude: /node_modules/
-      },
-      {
         test: /\.s[ac]ss$/i,
         use: [
-          "style-loader",
+          MiniCssExtractPlugin.loader, // 提取 CSS 到独立文件,
           "css-loader",
           "sass-loader",
           'postcss-loader' // 使用 PostCSS 处理 CSS
@@ -56,6 +47,12 @@ export default {
   plugins: [
     new HtmlWebpackPlugin({
       template: __dirname + "/public/index.html"
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'styles.css', // 输出的 CSS 文件名
+      chunkFilename: '[id].css', // 输出的 CSS 文件名
+      ignoreOrder: false, // 忽略 CSS 顺序
+      insert: 'head', // 插入位置
     }),
     new TerserPlugin(),
     new CompressionPlugin(),

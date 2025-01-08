@@ -2,14 +2,9 @@ import { Element, useEditor } from '@rio/core';
 import { styled } from 'styled-components';
 import { ReactSVG } from 'react-svg'
 
+import { Container,Text,Video ,Button} from '@rio/components';
 
-import { Button } from '../../selectors/Button';
-import { Container } from '../../selectors/Container';
-import { Text } from '../../selectors/Text';
-import { Video } from '../../selectors/Video';
-import Start from '../../selectors/dte/Start';
-import { DTE } from '../../selectors/dte';
-import { Tooltip } from '@mui/material';
+import { Tooltip } from 'antd';
 
 const ToolboxDiv = styled.div<{ $enabled: boolean }>`
   transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);

@@ -1,0 +1,5 @@
+{
+  "exec": "node -r ts-node/register src/index.ts",
+  "inspect": true,
+  "watch": ["src"]
+}

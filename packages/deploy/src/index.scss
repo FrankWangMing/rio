@@ -1,5 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-$body-color: black;
+
+$body-color: rgb(251, 0, 0);
 
 body {
   color: $body-color;

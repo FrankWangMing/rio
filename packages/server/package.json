@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rollup -c",
     "start": "node dist/index.js",
-    "dev": "ts-node-dev src/index.ts",
+    "dev": "pnpx nodemon",
     "clean": "rimraf dist"
   },
   "keywords": [],
@@ -19,8 +19,10 @@
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-typescript": "^12.1.2",
     "@types/express": "^5.0.0",
+    "nodemon": "^3.1.9",
     "rollup": "^4.29.1",
     "rollup-plugin-terser": "^7.0.2",
+    "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.7.2"
   },

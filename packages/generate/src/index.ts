@@ -7,12 +7,159 @@ import { connectEditor, useEditorStore } from "@rio/core";
 const projectConfig: ProjectConfig = {
   basePath: "./my-web-project",
   structure: {
-    nginx: ["nginx.conf", "fe.conf"],
-    public: ["index.html", "favicon.ico"],
-    src: {
-      components: ["Header.tsx", "Footer.tsx"],
-      pages: ["App.tsx"],
-      assets: ["styles.css"],
+    nginx: {
+      name:"nginx",
+      type: "folder",
+      children: [
+        {
+          name: "nginx.conf",
+          type: "file",
+        },
+        {
+          name: "fe.conf",
+          type: "file",
+        },
+      ],
+    },
+    public: {
+      name:"public",
+      type: "folder",
+      children: [
+        {
+          name: "index.html",
+          type: "file",
+        },
+        {
+          name: "favicon.ico",
+          type: "file",
+        }
+      ],
+    },
+    src:{
+      name:"src",
+      type: "folder",
+      children: [
+        {
+          name: "main.tsx",
+          type: "file",
+        },
+        {
+          name: "index.scss",
+          type: "file",
+        },
+        {
+          name: "routes",
+          type: "folder",
+          children: [
+            {
+              name: "index.ts",
+              type: "file",
+            },
+          ],
+        },
+        {
+          name: "pages",
+          type: "folder",
+          children: [
+            {
+              name: "App.tsx",
+              type: "file",
+            },
+            {
+              name: "data.ts",
+              type: "file",
+            },
+            {
+              name: "EditorContainer.tsx",
+              type: "file",
+            },
+          ],
+        },
+        {
+          name: "data",
+          type: "folder",
+          children: [
+            {
+              name: "api",
+              type: "folder",
+              children: [
+                {
+                  name: "getUserInfo.ts",
+                  type: "file",
+                },
+              ],
+            },
+            {
+              name: "common",
+              type: "folder",
+              children: [
+                {
+                  name: "dto.ts",
+                  type: "file",
+                },
+              ],
+            },
+            {
+              name: "http.ts",
+              type: "file",
+            },
+            {
+              name: "index.ts",
+              type: "file",
+            },
+          ],
+        },
+        {
+          name: "components",
+          type: "folder",
+          children: [
+            {
+              name: "editor",
+              type: "folder",
+              children:[
+                {
+                  name: "Viewport",
+                  type:"folder",
+                  children:[
+                    {
+                      name:"Sidebar",
+                      type:"folder",
+                      children:[
+                        {
+                          name:"index.tsx",
+                          type:"file",
+                        },
+                        {
+                          name:"SidebarItem.tsx",
+                          type:"file",
+                        }
+                      ]
+                    },
+                    {
+                    name: "index.tsx",
+                    type: "file",
+                    },
+                    {
+                      name: "Header.tsx",
+                      type: "file",
+                    },{
+                    name: "ToolBox.tsx",
+                    type: "file",
+                    }]
+                },
+                {
+                  name: "index.ts",
+                  type: "file",
+                },
+                {
+                  name: "RenderNode.tsx",
+                  type: "file",
+                }
+              ]
+            },
+          ],
+        }
+      ]
     },
 
   },
@@ -87,8 +234,8 @@ async function main(): Promise<void> {
   const { basePath, structure, config, templates, context } = projectConfig;
 
   await createStructure(basePath, structure);
-  await createPackageJson(basePath, config);
-  await createTemplates(basePath, templates, context);
+  // await createPackageJson(basePath, config);
+  // await createTemplates(basePath, templates, context);
 
 
 }
@@ -96,7 +243,6 @@ async function main(): Promise<void> {
 
 
 const generate = (config) => {
-  console.log(config)
   main()
 }
 export {
