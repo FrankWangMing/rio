@@ -38,6 +38,7 @@ app.post('/generate', (req: Request, res: Response) => {
   });
 });
 
+
 // 全局错误处理
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   console.error(err.stack);

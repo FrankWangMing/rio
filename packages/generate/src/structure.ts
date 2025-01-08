@@ -9,23 +9,20 @@ const createFile = (filePath: string, content = ""): void => {
   fs.writeFileSync(filePath, content, "utf8");
 };
 function createFileByFileNode(fileNode: FileNode, _path) {
-  console.log(_path)
-  return
   if (!fileNode.children) {
     return
   }
   for (const file of fileNode.children) {
     if (file.type === "folder") {
-      createFileByFileNode(file, _path + fileNode.name)
+      createFileByFileNode(file, path.join(_path, fileNode.name))
     } else {
-      createFile(file.name, path.join(_path, file.name))
+      createFile(path.join(_path, file.name))
     }
   }
 }
 export async function createStructure(basePath: string, structure: ProjectStructure): Promise<void> {
 
-
-  const srcPath = path.join(basePath, "src");
+  const srcPath = path.join(basePath);
   createFileByFileNode(structure.src, srcPath);
 
 
