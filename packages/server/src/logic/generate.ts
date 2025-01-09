@@ -3,13 +3,13 @@ import { run } from './dev'
 import { spawn } from 'child_process'
 import path from 'path'
 export const generateCode = (data: any) => {
-    generate({})
+    console.log("data", data)
+    generate(data)
 }
 
 
 export const dev = () => {
     console.log("dev that")
-    console.log(path.resolve(process.cwd(), 'my-web-project'))
     // const command = 'sh';
     // const args = ['-c', 'npm install && npm run dev'];
     // const cwd = path.resolve(process.cwd(),'my-web-project')

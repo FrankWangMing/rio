@@ -1,5 +1,5 @@
-import {Frame, useEditor,Element} from "@rio/core";
-import React from "react";
+import {Frame, useEditor} from "@rio/core";
+import { data } from "./data";
 
 export default  () => {
     const editor = useEditor()

@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { FileNode, ProjectStructure } from "./types";
+import { FileNode } from "./types";
 const createFile = (filePath: string, content = ""): void => {
   const dir = path.dirname(filePath);
   if (!fs.existsSync(dir)) {

@@ -67,7 +67,7 @@ export const Header = () => {
   }
   const Omm = ()=>{
     localStorage.setItem('editor', JSON.stringify(query.serialize()))
-    const data=query.serialize()
+    const data= query.serialize()
     console.log(data)
     generateCode(data)
   }
