@@ -64,10 +64,6 @@ export const Button: UserComponent<ButtonProps> = ({
       $buttonStyle={buttonStyle}
       $background={background}
       $margin={margin}
-      onClick={(e,)=>{
-        console.log('clicked')
-        console.log(events)
-      }}
     >
       <Text {...textComponent} text={text} color={color} />
     </StyledButton>

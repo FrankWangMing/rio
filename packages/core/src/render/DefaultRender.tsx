@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { createElement, useMemo } from 'react';
 
 import { SimpleElement } from './SimpleElement';
 
@@ -29,8 +29,12 @@ export const DefaultRender = () => {
         </React.Fragment>
       );
     }
+    console.log(typeof type)
+    console.log("type",type)
+    console.log("props", props)
+    console.log("children", children)
 
-    const render = React.createElement(type, props, children);
+    const render = createElement(type, props, children);
 
     if (typeof type == 'string') {
       return <SimpleElement render={render} />;

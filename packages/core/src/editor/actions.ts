@@ -234,9 +234,8 @@ const Methods = (
       }
       const dehydratedNodes =
         typeof input == 'string' ? JSON.parse(input) : input;
-      console.log(input)
-      console.log(Object?.keys(dehydratedNodes))
-      const nodePairs = Object.keys(dehydratedNodes).map((id) => {
+
+        const nodePairs = Object.keys(dehydratedNodes).map((id) => {
         let nodeId = id;
 
         if (id === DEPRECATED_ROOT_NODE) {

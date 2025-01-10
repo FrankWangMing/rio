@@ -37,6 +37,15 @@ const defaultProps = {
   radius: 0,
   width: '100%',
   height: 'auto',
+  onClick: () => {
+    console.log('clicked');
+    console.log('clicked');
+  },
+  events: {
+    click: () => {
+      console.log('clicked');
+    }
+  },
 };
 
 export const Container = (props: Partial<ContainerProps>) => {
