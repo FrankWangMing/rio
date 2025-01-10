@@ -3,7 +3,7 @@ import React from 'react';
 
 export const Toolbar = () => {
   const { active, related } = useEditor((state, query) => {
-    // TODO: handle multiple selected elements
+
     const currentlySelectedNodeId = query.getEvent('selected').first();
     return {
       active: currentlySelectedNodeId,

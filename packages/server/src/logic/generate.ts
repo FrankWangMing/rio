@@ -9,11 +9,10 @@ export const generateCode = (data: any) => {
 
 
 export const dev = () => {
-    console.log("dev that")
+    // console.log("dev that")
     // const command = 'sh';
-    // const args = ['-c', 'npm install && npm run dev'];
-    // const cwd = path.resolve(process.cwd(),'my-web-project')
-
+    // const args = ['-c', 'pnpm install && pnpm run dev'];
+    // const cwd = path.resolve(process.cwd(),'../../../my-web-project')
     // const child = spawn(command, args, { cwd,stdio: 'inherit' });
     // child.on('close', (code) => {
     //   if (code === 0) {

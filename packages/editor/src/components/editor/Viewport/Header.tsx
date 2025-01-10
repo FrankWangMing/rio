@@ -61,10 +61,7 @@ export const Header = () => {
     state: state,
   }));
   const {query} = useEditor()
-  const Preview = ()=>{
-    localStorage.setItem('editor', JSON.stringify(query.serialize()))
-    window.open("/preview")
-  }
+
   const Omm = ()=>{
     localStorage.setItem('editor', JSON.stringify(query.serialize()))
     const data= query.serialize()
@@ -105,7 +102,6 @@ export const Header = () => {
             {enabled ? 'Finish Editing' : 'Edit'}
           </Btn>
           <Button onClick={Omm}>Generate</Button>
-          <Button onClick={Preview} className="ml-4 bg-slate-900" style={{background:"green"}} >Preview</Button>
         </div>
       </div>
     </HeaderDiv>
