@@ -44,7 +44,6 @@ export abstract class EventHandlers<O extends Record<string, any> = {}> {
     if (this.onEnable) {
       this.onEnable();
     }
-
     this.registry.enable();
 
     this.subscribers.forEach((listener) => {
@@ -163,7 +162,7 @@ export abstract class EventHandlers<O extends Record<string, any> = {}> {
 
   derive<C extends EventHandlers>(
     type: {
-      new (...args: any[]): C;
+      new(...args: any[]): C;
     },
     opts: C['options']
   ) {

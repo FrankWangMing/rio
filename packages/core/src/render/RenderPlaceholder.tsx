@@ -15,7 +15,6 @@ export const RenderPlaceholder = ({
   const { indicator } = useEditor((state) => ({
     indicator: state.options.indicator,
   }));
-
   return (
     <div
       style={{

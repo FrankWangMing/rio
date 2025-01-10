@@ -159,36 +159,36 @@ const projectConfig: ProjectConfig = {
           ],
         }
       ]
-    },{
-      type:"file",
-      name:".babelrc"
-    },{
-      type:"file",
-      name:".gitignore"
-    },{
-      type:"file",
-      name:"Dockerfile"
-    },{
-      type:"file",
-      name:"eslint.config.mjs"
-    },{
-      type:"file",
-      name:"pnpm-lock.yaml"
-    },{
-      type:"file",
-      name:"tsconfig.json"
-    },{
-      type:"file",
-      name:"webpack.config.ts"
-    },{
-      type:"file",
-      name:"postcss.config.js"
-    },{
-      type:"file",
-      name:"tailwind.config.js"
-    },{
-      type:"file",
-      name:"tsconfig.json"
+    }, {
+      type: "file",
+      name: ".babelrc"
+    }, {
+      type: "file",
+      name: ".gitignore"
+    }, {
+      type: "file",
+      name: "Dockerfile"
+    }, {
+      type: "file",
+      name: "eslint.config.mjs"
+    }, {
+      type: "file",
+      name: "pnpm-lock.yaml"
+    }, {
+      type: "file",
+      name: "tsconfig.json"
+    }, {
+      type: "file",
+      name: "webpack.config.ts"
+    }, {
+      type: "file",
+      name: "postcss.config.js"
+    }, {
+      type: "file",
+      name: "tailwind.config.js"
+    }, {
+      type: "file",
+      name: "tsconfig.json"
     }]
 
   },
@@ -312,7 +312,7 @@ const projectConfig: ProjectConfig = {
 
   ],
   context: {
-    view:{},
+    view: {},
     appName: "My Web Project",
   },
 };
@@ -322,8 +322,8 @@ async function main(viewConfig): Promise<void> {
 
   const { basePath, structure, config, templates, context } = projectConfig;
 
-  Object.assign(context,{
-    view:viewConfig
+  Object.assign(context, {
+    view: viewConfig
   })
   await createStructure(basePath, structure);
   await createPackageJson(basePath, config);

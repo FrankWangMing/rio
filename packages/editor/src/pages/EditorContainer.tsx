@@ -5,12 +5,10 @@ import { Viewport } from "../components/editor";
 export default  () => {
     const editor = useEditor()
     const json = localStorage.getItem("editor")
-    editor.actions.deserialize(JSON.parse(json))
+    // editor.actions.deserialize(JSON.parse(json))
 
+    console.log(editor)
   return <Viewport>
-            {/* <iframe src={"http://localhost:5173/"} width={"1920"} height={"1080"}>
-
-            </iframe> */}
             <Frame>
                     <Element
                         canvas

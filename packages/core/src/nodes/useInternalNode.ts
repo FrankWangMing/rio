@@ -34,6 +34,7 @@ export function useInternalNode<S = null>(collect?: (node: Node) => S) {
     [editorConnectors, id]
   );
 
+
   const actions = useMemo(() => {
     return {
       setProp: (cb: any, throttleRate?: number) => {
@@ -54,6 +55,15 @@ export function useInternalNode<S = null>(collect?: (node: Node) => S) {
     };
   }, [EditorActions, id]);
 
+  const events = useMemo(() => {
+    return {
+      onclick: () => {
+        console.log("d")
+      }
+    }
+  }, [id])
+  // console.log(editorConnectors)
+
   return {
     ...collected,
     id,
@@ -61,5 +71,6 @@ export function useInternalNode<S = null>(collect?: (node: Node) => S) {
     inNodeContext: !!context,
     actions,
     connectors,
+    events
   };
 }

@@ -1134,6 +1134,9 @@ importers:
       '@babel/runtime-corejs3':
         specifier: ^7.26.0
         version: 7.26.0
+      '@rio/common':
+        specifier: workspace:*
+        version: link:../common
       core-js:
         specifier: ^3.39.0
         version: 3.39.0
@@ -1162,9 +1165,6 @@ importers:
         specifier: ^1.3.3
         version: 1.3.3
     devDependencies:
-      '@rio/common':
-        specifier: workspace:*
-        version: link:../common
       '@rio/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config

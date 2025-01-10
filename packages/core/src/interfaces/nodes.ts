@@ -1,5 +1,5 @@
 import { QueryCallbacksFor } from '@rio/utils';
-import React from 'react';
+import React, { DOMAttributes, MouseEventHandler } from 'react';
 
 import { QueryMethods } from '../editor/query';
 
@@ -46,6 +46,8 @@ export type NodeRelated = Record<string, React.ElementType>;
 
 export type NodeData = {
   props: Record<string, any>;
+  // events?: Record<string, MouseEventHandler<any>>
+  events?: Record<string, any>
   type: string | React.ElementType;
   name: string;
   displayName: string;
@@ -66,8 +68,8 @@ export type FreshNode = {
 export type ReduceCompType =
   | string
   | {
-      resolvedName: string;
-    };
+    resolvedName: string;
+  };
 
 export type ReducedComp = {
   type: ReduceCompType;

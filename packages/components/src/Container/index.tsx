@@ -3,6 +3,7 @@ import React from 'react';
 import { ContainerSettings } from './ContainerSettings';
 
 import { Resizer } from '../Resizer';
+import { useEventHandler, useNode } from '@rio/core';
 
 export type ContainerProps = {
   background: Record<'r' | 'g' | 'b' | 'a', number>;
@@ -37,15 +38,6 @@ const defaultProps = {
   radius: 0,
   width: '100%',
   height: 'auto',
-  onClick: () => {
-    console.log('clicked');
-    console.log('clicked');
-  },
-  events: {
-    click: () => {
-      console.log('clicked');
-    }
-  },
 };
 
 export const Container = (props: Partial<ContainerProps>) => {
@@ -66,6 +58,16 @@ export const Container = (props: Partial<ContainerProps>) => {
     radius,
     children,
   } = props;
+  const data = useNode()
+  const {events} = data
+  data.actions.setCustom(()=>{
+    return {
+      onClick:()=>{
+        console.log("JKJk")
+      }
+    }
+  })
+  console.log(data)
   return (
     <Resizer
       propKey={{ width: 'width', height: 'height' }}
@@ -93,6 +95,7 @@ export const Container = (props: Partial<ContainerProps>) => {
 Container.craft = {
   displayName: 'Container',
   props: defaultProps,
+
   rules: {
     canDrag: () => true,
   },

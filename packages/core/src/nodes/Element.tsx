@@ -38,14 +38,12 @@ export function Element<T extends React.ElementType>({
     ...defaultElementProps,
     ...elementProps,
   };
-
   const { query, actions } = useInternalEditor();
   const { id: nodeId, inNodeContext } = useInternalNode();
 
   const [linkedNodeId] = useState<NodeId | null>(() => {
     invariant(!!id, ERROR_TOP_LEVEL_ELEMENT_NO_ID);
     const node = query.node(nodeId).get();
-
     if (inNodeContext) {
       const existingNode = node.data.linkedNodes[id]
         ? query.node(node.data.linkedNodes[id]).get()
@@ -66,10 +64,11 @@ export function Element<T extends React.ElementType>({
       const tree = query.parseReactElement(linkedElement).toNodeTree();
 
       actions.history.ignore().addLinkedNodeFromTree(tree, nodeId, id);
+
       return tree.rootNodeId;
     }
     return null;
   });
 
-  return linkedNodeId ? <NodeElement id={linkedNodeId} /> : null;
+  return linkedNodeId ? <NodeElement id={linkedNodeId}  render={null}/> : null;
 }

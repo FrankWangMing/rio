@@ -303,7 +303,7 @@ export function useMethods<
   }, [history, methodsFactory, queryMethods]);
 
   const getState = useCallback(() => stateRef.current, []);
-  const watcher = useMemo(() => new Watcher<S>(getState), [getState]);
+  const watcher = useMemo(() => new Watcher<S>(getState), [getState]) as Watcher<S>;
 
   const dispatch = useCallback(
     (action: any) => {

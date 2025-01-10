@@ -1,16 +1,14 @@
-import { isChromium, isLinux, StateFor } from '@rio/utils';
+import { isChromium, isLinux } from '@rio/utils';
 import React from 'react';
 
 import { CoreEventHandlers, CreateHandlerOptions } from './CoreEventHandlers';
 import { Positioner } from './Positioner';
 import { createShadow } from './createShadow';
 
-import { Indicator, NodeId, DragTarget, NodeTree, EditorState } from '../interfaces';
+import { Indicator, NodeId, DragTarget, NodeTree } from '../interfaces';
 import { isFunction } from 'lodash';
-import { useInternalNode } from '../nodes/useInternalNode';
-import { NodeHelpers } from '../editor';
 
-export type DefaultEventHandlersOptions = {
+export type LogicEventHandlersOptions = {
   isMultiSelectEnabled: (e: MouseEvent) => boolean;
   removeHoverOnMouseleave: boolean;
 };
@@ -18,8 +16,8 @@ export type DefaultEventHandlersOptions = {
 /**
  * Specifies Editor-wide event handlers and connectors
  */
-export class DefaultEventHandlers<O = {}> extends CoreEventHandlers<
-  DefaultEventHandlersOptions & O
+export class LogicEventHandlers<O = {}> extends CoreEventHandlers<
+  LogicEventHandlersOptions & O
 > {
   /**
    * Note: Multiple drag shadows (ie: via multiselect in v0.2 and higher) do not look good on Linux Chromium due to way it renders drag shadows in general,
@@ -32,12 +30,9 @@ export class DefaultEventHandlers<O = {}> extends CoreEventHandlers<
   dragTarget: DragTarget;
   positioner: Positioner | null = null;
   currentSelectedElementIds = [];
-  onEnable(): void {
 
-  }
   onDisable() {
     this.options.store.actions.clearEvents();
-
   }
 
   handlers() {
@@ -45,6 +40,7 @@ export class DefaultEventHandlers<O = {}> extends CoreEventHandlers<
 
     return {
       connect: (el: HTMLElement, id: NodeId) => {
+        console.log(el, "el")
         store.actions.setDOM(id, el);
 
         return this.reflect((connectors) => {
@@ -52,15 +48,12 @@ export class DefaultEventHandlers<O = {}> extends CoreEventHandlers<
           connectors.hover(el, id);
           connectors.drop(el, id);
           connectors.click(el, id);
-
         });
       },
       click: (el: HTMLElement, id: NodeId) => {
-        let state = this.options.store.getState() as unknown as EditorState
         this.addCraftEventListener(el, "click", (e) => {
-          e.craft.stopPropagation();
-          console.log(state.nodes[id])
-          state.nodes[id].data.events?.onclick && state.nodes[id].data.events.onclick()
+          console.log(e)
+          console.log("test")
         })
       },
       select: (el: HTMLElement, id: NodeId) => {
@@ -253,7 +246,7 @@ export class DefaultEventHandlers<O = {}> extends CoreEventHandlers<
             this.draggedElementShadow = createShadow(
               e,
               selectedDOMs,
-              DefaultEventHandlers.forceSingleDragShadow
+              LogicEventHandlers.forceSingleDragShadow
             );
 
             this.dragTarget = {
@@ -322,7 +315,7 @@ export class DefaultEventHandlers<O = {}> extends CoreEventHandlers<
             this.draggedElementShadow = createShadow(
               e,
               [dom],
-              DefaultEventHandlers.forceSingleDragShadow
+              LogicEventHandlers.forceSingleDragShadow
             );
             this.dragTarget = {
               type: 'new',

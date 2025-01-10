@@ -28,7 +28,7 @@ return  <Editor
           OnlyButtons,
           Video,
         }}
-        enabled={true}
+        enabled={false}
         onRender={RenderNode}>
 <EditorContainer/>
 </Editor>

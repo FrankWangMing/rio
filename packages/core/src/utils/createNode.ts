@@ -25,6 +25,11 @@ export function createNode(
     id,
     _hydrationTimestamp: Date.now(),
     data: {
+      events: {
+        // onclick: () => {
+        //   console.log("JK")
+        // }
+      },
       type: actualType,
       name: getNodeTypeName(actualType),
       displayName: getNodeTypeName(actualType),
@@ -53,7 +58,6 @@ export function createNode(
     dom: null,
   };
 
-  // @ts-ignore
   if (node.data.type === Element || node.data.type === Canvas) {
     const mergedProps = {
       ...defaultElementProps,
@@ -143,5 +147,6 @@ export function createNode(
     }
   }
 
+  console.log(node)
   return node;
 }

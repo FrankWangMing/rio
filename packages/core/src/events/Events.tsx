@@ -20,6 +20,7 @@ export const Events = ({ children }: EventsProps) => {
     return null;
   }
 
+
   return (
     <EventHandlerContext.Provider value={handler}>
       <RenderEditorIndicator />

@@ -5,8 +5,7 @@ import { ReactSVG } from 'react-svg'
 import { useNavigate } from "react-router";
 import { Button, Tooltip } from 'antd';
 import generateCode from '../../../data/api/generateCode';
-// import Checkmark from '/icons/check.svg';
-// import Customize from '/icons/customize.svg';
+
 
 
 

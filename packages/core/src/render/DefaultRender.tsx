@@ -29,10 +29,6 @@ export const DefaultRender = () => {
         </React.Fragment>
       );
     }
-    console.log(typeof type)
-    console.log("type",type)
-    console.log("props", props)
-    console.log("children", children)
 
     const render = createElement(type, props, children);
 
