@@ -17,7 +17,7 @@
     "dist"
   ],
   "scripts": {
-    "dev": "pnpm run start -w",
+    "dev": "pnpm run build",
     "start": "cross-env NODE_ENV=development rollup -c",
     "build": "cross-env NODE_ENV=production rollup -c",
     "clean": "rimraf dist"

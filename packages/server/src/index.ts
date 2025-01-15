@@ -1,5 +1,8 @@
 import express, { Request, Response, NextFunction } from 'express';
 import { generateCode, dev } from './logic/generate';
+export const runServer = () => {
+  console.log("runServer")
+
 // 创建 Express 应用
 const app = express();
 
@@ -51,3 +54,5 @@ const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });
+
+}

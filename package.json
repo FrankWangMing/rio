@@ -4,7 +4,7 @@
   "scripts": {
     "build": "turbo build --filter=@rio/*",
     "clean": "turbo clean",
-    "dev": "turbo dev --filter=demo",
+    "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },

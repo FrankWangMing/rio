@@ -1,3 +1,5 @@
 import babelConfig from "@rio/common/babel";
 
-export default babelConfig
+export default {
+  ...babelConfig,
+}

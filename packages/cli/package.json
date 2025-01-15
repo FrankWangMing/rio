@@ -1,4 +1,3 @@
-
 {
   "name": "@rio/cli",
   "description": " ",
@@ -10,7 +9,7 @@
   "types": "./dist/types/index.d.ts",
   "type": "module",
   "bin": {
-     "rio": "./dist/index.cjs"
+    "rio": "./dist/index.cjs"
   },
   "exports": {
     ".": {
@@ -30,27 +29,30 @@
   "dependencies": {
     "@babel/runtime-corejs3": "^7.26.0",
     "@rio/core": "workspace:*",
+    "@rio/server": "workspace:*",
     "@rio/utils": "workspace:*",
     "axios": "^1.1.3",
-    "chalk": "^4.0.0",
-    "commander": "^9.4.1",
+    "chalk": "^4.1.2",
+    "commander": "^9.5.0",
+    "core-js": "^3.39.0",
     "download-git-repo": "^3.0.2",
     "fs-extra": "^10.1.0",
-    "inquirer": "^8.0.0",
+    "inquirer": "^8.2.6",
     "ora": "^4.0.0"
   },
   "devDependencies": {
     "@rio/common": "workspace:*",
     "@rio/eslint-config": "workspace:*",
+    "@types/node": "^22.10.5",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "styled-components": "6.1.13"
   },
   "peerDependencies": {
-    "@types/react":  "^17.0.0 || ^18.0.0 ",
-    "@types/react-dom":  "^17.0.0 || ^18.0.0 ",
-    "react":  "^17.0.0 || ^18.0.0 ",
-    "react-dom":  "^17.0.0 || ^18.0.0 ",
+    "@types/react": "^17.0.0 || ^18.0.0 ",
+    "@types/react-dom": "^17.0.0 || ^18.0.0 ",
+    "react": "^17.0.0 || ^18.0.0 ",
+    "react-dom": "^17.0.0 || ^18.0.0 ",
     "styled-components": ">= 6.1"
   }
 }

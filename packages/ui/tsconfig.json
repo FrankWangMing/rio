@@ -1,8 +1,0 @@
-{
-  "extends": "@rio/common/react-library.json",
-  "compilerOptions": {
-    "outDir": "dist"
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
-}
