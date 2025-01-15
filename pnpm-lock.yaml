@@ -863,202 +863,6 @@ importers:
         specifier: 6.1.13
         version: 6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
-  packages/my-project:
-    dependencies:
-      '@emotion/react':
-        specifier: ^11.14.0
-        version: 11.14.0(@types/react@18.3.18)(react@18.3.1)
-      '@emotion/styled':
-        specifier: ^11.14.0
-        version: 11.14.0(@emotion/react@11.14.0(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react@18.3.1)
-      '@mui/material':
-        specifier: ^6.3.1
-        version: 6.3.1(@emotion/react@11.14.0(@types/react@18.3.18)(react@18.3.1))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react@18.3.1))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@mui/styled-engine-sc':
-        specifier: ^6.3.1
-        version: 6.3.1(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
-      '@mui/styles':
-        specifier: ^6.3.1
-        version: 6.3.1(@types/react@18.3.18)(react@18.3.1)
-      '@rio/common':
-        specifier: workspace:*
-        version: link:../common
-      '@rio/components':
-        specifier: workspace:*
-        version: link:../components
-      '@rio/core':
-        specifier: workspace:*
-        version: link:../core
-      '@rio/generate':
-        specifier: workspace:*
-        version: link:../generate
-      '@rio/layers':
-        specifier: workspace:*
-        version: link:../layers
-      '@rio/utils':
-        specifier: workspace:*
-        version: link:../utils
-      '@sentry/react':
-        specifier: ^8.47.0
-        version: 8.47.0(react@18.3.1)
-      '@swc/register':
-        specifier: ^0.1.10
-        version: 0.1.10(@swc/core@1.10.4(@swc/helpers@0.5.15))
-      '@types/react':
-        specifier: '^17.0.0 || ^18.0.0 '
-        version: 18.3.18
-      '@types/react-dom':
-        specifier: '^17.0.0 || ^18.0.0 '
-        version: 18.3.5(@types/react@18.3.18)
-      antd:
-        specifier: ^5.22.6
-        version: 5.22.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      axios:
-        specifier: ^1.7.9
-        version: 1.7.9
-      classnames:
-        specifier: ^2.5.1
-        version: 2.5.1
-      debounce:
-        specifier: ^2.2.0
-        version: 2.2.0
-      mobx:
-        specifier: ^6.13.5
-        version: 6.13.5
-      mobx-react-lite:
-        specifier: ^4.1.0
-        version: 4.1.0(mobx@6.13.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      re-resizable:
-        specifier: 6.1.0
-        version: 6.1.0
-      react:
-        specifier: '^17.0.0 || ^18.0.0 '
-        version: 18.3.1
-      react-color:
-        specifier: ^2.19.3
-        version: 2.19.3(react@18.3.1)
-      react-contenteditable:
-        specifier: ^3.3.7
-        version: 3.3.7(react@18.3.1)
-      react-dom:
-        specifier: '^17.0.0 || ^18.0.0 '
-        version: 18.3.1(react@18.3.1)
-      react-router:
-        specifier: ^7.0.2
-        version: 7.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react-router-dom:
-        specifier: ^7.0.2
-        version: 7.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react-svg:
-        specifier: ^16.2.0
-        version: 16.2.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react-youtube:
-        specifier: ^10.1.0
-        version: 10.1.0(react@18.3.1)
-      styled-components:
-        specifier: 6.1.13
-        version: 6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-    devDependencies:
-      '@babel/core':
-        specifier: ^7.26.0
-        version: 7.26.0
-      '@babel/plugin-transform-arrow-functions':
-        specifier: ^7.25.9
-        version: 7.25.9(@babel/core@7.26.0)
-      '@babel/preset-env':
-        specifier: ^7.26.0
-        version: 7.26.0(@babel/core@7.26.0)
-      '@babel/preset-react':
-        specifier: ^7.26.3
-        version: 7.26.3(@babel/core@7.26.0)
-      '@babel/preset-typescript':
-        specifier: ^7.26.0
-        version: 7.26.0(@babel/core@7.26.0)
-      '@eslint/js':
-        specifier: ^9.17.0
-        version: 9.17.0
-      '@types/node':
-        specifier: ^22.10.2
-        version: 22.10.5
-      autoprefixer:
-        specifier: ^10.4.20
-        version: 10.4.20(postcss@8.4.49)
-      babel:
-        specifier: ^6.23.0
-        version: 6.23.0
-      babel-loader:
-        specifier: ^9.2.1
-        version: 9.2.1(@babel/core@7.26.0)(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.15))(webpack-cli@5.1.4))
-      clean-webpack-plugin:
-        specifier: ^4.0.0
-        version: 4.0.0(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.15))(webpack-cli@5.1.4))
-      compression-webpack-plugin:
-        specifier: ^11.1.0
-        version: 11.1.0(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.15))(webpack-cli@5.1.4))
-      css-loader:
-        specifier: ^7.1.2
-        version: 7.1.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.15))(webpack-cli@5.1.4))
-      eslint:
-        specifier: ^9.17.0
-        version: 9.17.0(jiti@1.21.7)
-      eslint-plugin-react:
-        specifier: ^7.37.2
-        version: 7.37.3(eslint@9.17.0(jiti@1.21.7))
-      globals:
-        specifier: ^15.14.0
-        version: 15.14.0
-      html-webpack-plugin:
-        specifier: ^5.6.3
-        version: 5.6.3(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.15))(webpack-cli@5.1.4))
-      mini-css-extract-plugin:
-        specifier: ^2.9.2
-        version: 2.9.2(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.15))(webpack-cli@5.1.4))
-      postcss:
-        specifier: ^8.4.49
-        version: 8.4.49
-      postcss-loader:
-        specifier: ^8.1.1
-        version: 8.1.1(postcss@8.4.49)(typescript@5.7.2)(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.15))(webpack-cli@5.1.4))
-      prettier:
-        specifier: ^3.4.2
-        version: 3.4.2
-      sass:
-        specifier: ^1.83.0
-        version: 1.83.1
-      sass-loader:
-        specifier: ^16.0.4
-        version: 16.0.4(sass@1.83.1)(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.15))(webpack-cli@5.1.4))
-      style-loader:
-        specifier: ^4.0.0
-        version: 4.0.0(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.15))(webpack-cli@5.1.4))
-      tailwindcss:
-        specifier: ^3.4.17
-        version: 3.4.17(ts-node@10.9.2(@swc/core@1.10.4(@swc/helpers@0.5.15))(@types/node@22.10.5)(typescript@5.7.2))
-      terser-webpack-plugin:
-        specifier: ^5.3.11
-        version: 5.3.11(@swc/core@1.10.4(@swc/helpers@0.5.15))(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.15))(webpack-cli@5.1.4))
-      ts-loader:
-        specifier: ^9.5.1
-        version: 9.5.1(typescript@5.7.2)(webpack@5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.15))(webpack-cli@5.1.4))
-      typescript:
-        specifier: ^5.7.2
-        version: 5.7.2
-      typescript-eslint:
-        specifier: ^8.18.1
-        version: 8.19.0(eslint@9.17.0(jiti@1.21.7))(typescript@5.7.2)
-      webpack:
-        specifier: ^5.97.1
-        version: 5.97.1(@swc/core@1.10.4(@swc/helpers@0.5.15))(webpack-cli@5.1.4)
-      webpack-bundle-analyzer:
-        specifier: ^4.10.2
-        version: 4.10.2
-      webpack-cli:
-        specifier: ^5.1.4
-        version: 5.1.4(webpack-bundle-analyzer@4.10.2)(webpack-dev-server@5.2.0)(webpack@5.97.1)
-      webpack-dev-server:
-        specifier: ^5.2.0
-        version: 5.2.0(webpack-cli@5.1.4)(webpack@5.97.1)
-
   packages/server:
     dependencies:
       '@rollup/plugin-json':
@@ -2815,28 +2619,24 @@ packages:
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@swc/core-linux-arm64-musl@1.10.4':
     resolution: {integrity: sha512-cDDj2/uYsOH0pgAnDkovLZvKJpFmBMyXkxEG6Q4yw99HbzO6QzZ5HDGWGWVq/6dLgYKlnnmpjZCPPQIu01mXEg==}
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@swc/core-linux-x64-gnu@1.10.4':
     resolution: {integrity: sha512-qJXh9D6Kf5xSdGWPINpLGixAbB5JX8JcbEJpRamhlDBoOcQC79dYfOMEIxWPhTS1DGLyFakAx2FX/b2VmQmj0g==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@swc/core-linux-x64-musl@1.10.4':
     resolution: {integrity: sha512-A76lIAeyQnHCVt0RL/pG+0er8Qk9+acGJqSZOZm67Ve3B0oqMd871kPtaHBM0BW3OZAhoILgfHW3Op9Q3mx3Cw==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@swc/core-win32-arm64-msvc@1.10.4':
     resolution: {integrity: sha512-e6j5kBu4fIY7fFxFxnZI0MlEovRvp50Lg59Fw+DVbtqHk3C85dckcy5xKP+UoXeuEmFceauQDczUcGs19SRGSQ==}
