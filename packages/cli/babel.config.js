@@ -1,4 +1,4 @@
-import babelConfig from "@rio/common/babel";
+import babelConfig from "@rioe/common/babel";
 
 export default {
   ...babelConfig,

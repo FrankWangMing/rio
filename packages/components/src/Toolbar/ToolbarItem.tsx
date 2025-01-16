@@ -1,4 +1,4 @@
-import { useNode } from '@rio/core';
+import { useNode } from '@rioe/core';
 
 import { Slider, RadioGroup, Grid  } from '@mui/material';
 import { withStyles } from '@mui/styles';

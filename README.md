@@ -18,8 +18,8 @@ This Turborepo includes the following packages/apps:
 
 - `docs`: a [Next.js](https://nextjs.org/) app
 - `web`: another [Next.js](https://nextjs.org/) app
-- `@rio/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@rio/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `@rioe/ui`: a stub React component library shared by both `web` and `docs` applications
+- `@rioe/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 

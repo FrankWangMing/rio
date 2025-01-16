@@ -1,5 +1,5 @@
-import { NodeId } from '@rio/core';
-import { EventHandlerConnectors } from '@rio/utils';
+import { NodeId } from '@rioe/core';
+import { EventHandlerConnectors } from '@rioe/utils';
 import React from 'react';
 
 import { LayerHandlers } from '../events/LayerHandlers';

@@ -1,4 +1,4 @@
-import { QueryCallbacksFor, Delete, PatchListenerAction } from '@rio/utils';
+import { QueryCallbacksFor, Delete, PatchListenerAction } from '@rioe/utils';
 import { Placement } from './events';
 import { Nodes, NodeEventTypes, NodeId, Node } from './nodes';
 import { QueryMethods } from '../editor/query';

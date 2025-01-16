@@ -1,4 +1,4 @@
-import { ERROR_DESERIALIZE_COMPONENT_NOT_IN_RESOLVER } from '@rio/utils';
+import { ERROR_DESERIALIZE_COMPONENT_NOT_IN_RESOLVER } from '@rioe/utils';
 import React from 'react';
 import invariant from 'tiny-invariant';
 

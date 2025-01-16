@@ -1,5 +1,5 @@
 {
-  "name": "@rio/components",
+  "name": "@rioe/components",
   "description": "A Photoshop-like layers panel for your page editor",
   "version": "0.2.6",
   "author": "Frank Wang <jasonming1998@gmail.com>",
@@ -21,7 +21,12 @@
     "dev": "pnpm run start -w",
     "start": "cross-env NODE_ENV=development rollup -c",
     "build": "cross-env NODE_ENV=production rollup -c",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
     "@babel/core": "^7.26.0",
@@ -34,10 +39,10 @@
     "@mui/material": "^6.3.1",
     "@mui/styled-engine-sc": "^6.3.1",
     "@mui/styles": "^6.3.1",
-    "@rio/core": "workspace:*",
-    "@rio/generate": "workspace:*",
-    "@rio/layers": "workspace:*",
-    "@rio/utils": "workspace:*",
+    "@rioe/core": "workspace:*",
+    "@rioe/generate": "workspace:*",
+    "@rioe/layers": "workspace:*",
+    "@rioe/utils": "workspace:*",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@sentry/react": "^8.47.0",
     "animate.css": "^4.1.1",
@@ -56,8 +61,8 @@
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
-    "@rio/common": "workspace:*",
-    "@rio/eslint-config": "workspace:*",
+    "@rioe/common": "workspace:*",
+    "@rioe/eslint-config": "workspace:*",
     "@svgr/rollup": "8.1.0"
   },
   "peerDependencies": {

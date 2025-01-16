@@ -3,7 +3,7 @@ import React from 'react';
 import { ContainerSettings } from './ContainerSettings';
 
 import { Resizer } from '../Resizer';
-import { useEventHandler, useNode } from '@rio/core';
+import { useEventHandler, useNode } from '@rioe/core';
 
 export type ContainerProps = {
   background: Record<'r' | 'g' | 'b' | 'a', number>;

@@ -1,4 +1,4 @@
-import { QueryCallbacksFor } from '@rio/utils';
+import { QueryCallbacksFor } from '@rioe/utils';
 import React from 'react';
 import { QueryMethods } from '../editor/query';
 export type UserComponentConfig<T> = {

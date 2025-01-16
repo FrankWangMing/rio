@@ -1,4 +1,4 @@
-import { useCollector, wrapConnectorHooks, ERROR_USE_EDITOR_OUTSIDE_OF_EDITOR_CONTEXT, } from '@rio/utils';
+import { useCollector, wrapConnectorHooks, ERROR_USE_EDITOR_OUTSIDE_OF_EDITOR_CONTEXT, } from '@rioe/utils';
 import { useContext, useEffect, useMemo } from 'react';
 import invariant from 'tiny-invariant';
 import { EditorContext } from './EditorContext';

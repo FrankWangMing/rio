@@ -1,4 +1,4 @@
-import { useCollectorReturnType, QueryCallbacksFor, EventHandlerConnectors } from '@rio/utils';
+import { useCollectorReturnType, QueryCallbacksFor, EventHandlerConnectors } from '@rioe/utils';
 import { QueryMethods } from './query';
 import { EditorStore } from './store';
 import { CoreEventHandlers } from '../events/CoreEventHandlers';

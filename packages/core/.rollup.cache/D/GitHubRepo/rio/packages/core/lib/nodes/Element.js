@@ -1,4 +1,4 @@
-import { ERROR_TOP_LEVEL_ELEMENT_NO_ID } from '@rio/utils';
+import { ERROR_TOP_LEVEL_ELEMENT_NO_ID } from '@rioe/utils';
 import React, { useState } from 'react';
 import invariant from 'tiny-invariant';
 import { NodeElement } from './NodeElement';

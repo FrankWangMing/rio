@@ -1,4 +1,4 @@
-import { DerivedEventHandlers, EventHandlers } from '@rio/utils';
+import { DerivedEventHandlers, EventHandlers } from '@rioe/utils';
 export class CoreEventHandlers extends EventHandlers {
     handlers() {
         return {

@@ -1,4 +1,4 @@
-import rollupConfig from '@rio/common/rollup';
+import rollupConfig from '@rioe/common/rollup';
 import postcss from 'rollup-plugin-postcss';
 import tailwindcss from 'tailwindcss';
 export default rollupConfig.map(config => {
@@ -24,7 +24,7 @@ export default rollupConfig.map(config => {
             {
                 name: 'external',
                 resolveId(id) {
-                    if (id.startsWith('@rio')) {
+                    if (id.startsWith('@rioe')) {
                         return {
                             id,
                             external: true

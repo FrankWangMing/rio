@@ -1,4 +1,4 @@
-import { ROOT_NODE } from '@rio/utils';
+import { ROOT_NODE } from '@rioe/utils';
 import React from 'react';
 
 import { LayerOptions } from './interfaces';

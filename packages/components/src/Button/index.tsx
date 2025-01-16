@@ -1,4 +1,4 @@
-import { UserComponent, useNode } from '@rio/core';
+import { UserComponent, useNode } from '@rioe/core';
 import cx from 'classnames';
 import { styled } from 'styled-components';
 import { ButtonSettings } from './ButtonSettings';

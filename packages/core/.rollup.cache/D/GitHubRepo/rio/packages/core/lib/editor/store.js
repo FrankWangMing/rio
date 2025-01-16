@@ -1,4 +1,4 @@
-import { useMethods, } from '@rio/utils';
+import { useMethods, } from '@rioe/utils';
 import { ActionMethods } from './actions';
 import { QueryMethods } from './query';
 import { DefaultEventHandlers } from '../events';

@@ -1,4 +1,4 @@
-import { RenderIndicator, getDOMInfo } from '@rio/utils';
+import { RenderIndicator, getDOMInfo } from '@rioe/utils';
 import React, { useEffect } from 'react';
 
 import { useEventHandler } from './EventContext';

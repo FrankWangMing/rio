@@ -1,5 +1,5 @@
-import { useNode, useEditor } from '@rio/core';
-import { ROOT_NODE } from '@rio/utils';
+import { useNode, useEditor } from '@rioe/core';
+import { ROOT_NODE } from '@rioe/utils';
 import React, { useEffect, useRef, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import { styled } from 'styled-components';

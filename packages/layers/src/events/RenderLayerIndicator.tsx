@@ -1,5 +1,5 @@
-import { useEditor } from '@rio/core';
-import { RenderIndicator } from '@rio/utils';
+import { useEditor } from '@rioe/core';
+import { RenderIndicator } from '@rioe/utils';
 import React, { useMemo } from 'react';
 
 import { useLayerManager } from '../manager/useLayerManager';

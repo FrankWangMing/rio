@@ -1,4 +1,4 @@
-import { useEventHandler } from '@rio/core';
+import { useEventHandler } from '@rioe/core';
 import React, { useMemo } from 'react';
 
 import { LayerEventHandlerContext } from './LayerEventContext';

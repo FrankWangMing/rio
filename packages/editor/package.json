@@ -1,13 +1,23 @@
 {
-  "name": "@rio/editor",
+  "name": "@rioe/editor",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.html",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
     "dev": "webpack serve"
+  },
+  "exports":{
+    ".": {
+      "import": "./dist/index.html",
+      "require": "./dist/index.html"
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "keywords": [],
   "author": "",
@@ -56,12 +66,12 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
-    "@rio/common": "workspace:*",
-    "@rio/components": "workspace:*",
-    "@rio/core": "workspace:*",
-    "@rio/generate": "workspace:*",
-    "@rio/layers": "workspace:*",
-    "@rio/utils": "workspace:*",
+    "@rioe/common": "workspace:*",
+    "@rioe/components": "workspace:*",
+    "@rioe/core": "workspace:*",
+    "@rioe/generate": "workspace:*",
+    "@rioe/layers": "workspace:*",
+    "@rioe/utils": "workspace:*",
     "@sentry/react": "^8.47.0",
     "@swc/register": "^0.1.10",
     "antd": "^5.22.7",

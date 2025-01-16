@@ -1,5 +1,5 @@
-import { useEditor } from '@rio/core';
-import { wrapConnectorHooks } from '@rio/utils';
+import { useEditor } from '@rioe/core';
+import { wrapConnectorHooks } from '@rioe/utils';
 import { useContext, useMemo } from 'react';
 
 import { LayerContext } from './LayerContext';

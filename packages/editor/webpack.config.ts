@@ -9,8 +9,8 @@ export default {
   mode: 'development',
   entry: './src/main.tsx',
   output: {
-    path: __dirname + '/dist',
-    filename: 'index.js'
+    path: path.resolve( '../server',"web" ),
+    filename: 'editor.js'
   },
   devtool: "eval-source-map",
   resolve: {
@@ -25,7 +25,7 @@ export default {
   // ],
   // },
   module: {
-    noParse: /@rio/g,
+    noParse: /@rioe/g,
     rules: [
       {
         test: /\.(ts|tsx)$/,
@@ -58,14 +58,12 @@ export default {
       template: __dirname + "/public/index.html"
     }),
     new TerserPlugin(),
-    new CompressionPlugin(),
     new CleanWebpackPlugin(),
   ],
   devServer: {
     // static: {
     //   directory: path.join(__dirname, 'public'),
     // },
-    compress: true,
     port: 9000,
     hot: true
   },

@@ -1,4 +1,4 @@
-import { SubscriberAndCallbacksFor } from '@rio/utils';
+import { SubscriberAndCallbacksFor } from '@rioe/utils';
 import { createContext } from 'react';
 
 import { LayerMethods } from './actions';

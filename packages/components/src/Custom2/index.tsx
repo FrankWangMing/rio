@@ -1,4 +1,4 @@
-import { Element, useNode } from '@rio/core';
+import { Element, useNode } from '@rioe/core';
 
 import { Container } from '../Container';
 import { Video } from '../Video';

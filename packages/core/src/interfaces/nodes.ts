@@ -1,4 +1,4 @@
-import { QueryCallbacksFor } from '@rio/utils';
+import { QueryCallbacksFor } from '@rioe/utils';
 import React, { DOMAttributes, MouseEventHandler } from 'react';
 
 import { QueryMethods } from '../editor/query';

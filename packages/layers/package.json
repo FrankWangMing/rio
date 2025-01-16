@@ -1,5 +1,5 @@
 {
-  "name": "@rio/layers",
+  "name": "@rioe/layers",
   "description": "A Photoshop-like layers panel for your page editor",
   "version": "0.2.6",
   "author": "Frank Wang <jasonming1998@gmail.com>",
@@ -21,19 +21,25 @@
     "dev": "pnpm run start -w",
     "start": "cross-env NODE_ENV=development rollup -c",
     "build": "cross-env NODE_ENV=production rollup -c",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "@babel/runtime-corejs3": "^7.26.0",
-    "@rio/core": "workspace:*",
-    "@rio/utils": "workspace:*",
+    "@rioe/core": "workspace:*",
+    "@rioe/utils": "workspace:*",
     "animate.css": "^4.1.1",
     "core-js": "^3.39.0",
     "react-contenteditable": "^3.3.7"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+
   "devDependencies": {
-    "@rio/common": "workspace:*",
-    "@rio/eslint-config": "workspace:*",
+    "@rioe/common": "workspace:*",
+    "@rioe/eslint-config": "workspace:*",
     "@svgr/rollup": "8.1.0",
     "styled-components": "6.1.13"
   },

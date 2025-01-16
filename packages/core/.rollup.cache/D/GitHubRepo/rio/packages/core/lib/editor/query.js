@@ -1,4 +1,4 @@
-import { ERROR_NOT_IN_RESOLVER, getDOMInfo, deprecationWarning, DEPRECATED_ROOT_NODE, ROOT_NODE, } from '@rio/utils';
+import { ERROR_NOT_IN_RESOLVER, getDOMInfo, deprecationWarning, DEPRECATED_ROOT_NODE, ROOT_NODE, } from '@rioe/utils';
 import React from 'react';
 import invariant from 'tiny-invariant';
 import { EventHelpers } from './EventHelpers';

@@ -11,7 +11,7 @@ import {
   ERROR_MOVE_TOP_LEVEL_NODE,
   ERROR_MOVE_CANNOT_DROP,
   ROOT_NODE,
-} from '@rio/utils';
+} from '@rioe/utils';
 import invariant from 'tiny-invariant';
 
 import { EditorState, NodeId, NodeSelector } from '../interfaces';

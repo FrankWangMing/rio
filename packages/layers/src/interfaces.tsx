@@ -1,4 +1,4 @@
-import { NodeId, Indicator } from '@rio/core';
+import { NodeId, Indicator } from '@rioe/core';
 
 export type Layer = {
   id: NodeId;

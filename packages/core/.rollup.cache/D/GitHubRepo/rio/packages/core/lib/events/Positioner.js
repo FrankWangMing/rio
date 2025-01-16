@@ -1,4 +1,4 @@
-import { getDOMInfo, ROOT_NODE } from '@rio/utils';
+import { getDOMInfo, ROOT_NODE } from '@rioe/utils';
 import findPosition from './findPosition';
 import { getNodesFromSelector } from '../utils/getNodesFromSelector';
 // Hack: to trigger dragend event immediate

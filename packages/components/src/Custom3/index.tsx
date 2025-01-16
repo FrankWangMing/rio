@@ -1,4 +1,4 @@
-import { Element, useNode } from '@rio/core';
+import { Element, useNode } from '@rioe/core';
 import React from 'react';
 
 import { Button } from '../Button';

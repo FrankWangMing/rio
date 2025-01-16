@@ -1,4 +1,4 @@
-import { isChromium, isLinux, StateFor } from '@rio/utils';
+import { isChromium, isLinux, StateFor } from '@rioe/utils';
 import React from 'react';
 
 import { CoreEventHandlers, CreateHandlerOptions } from './CoreEventHandlers';

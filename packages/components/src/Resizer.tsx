@@ -1,4 +1,4 @@
-import { useNode, useEditor } from '@rio/core';
+import { useNode, useEditor } from '@rioe/core';
 import cx from 'classnames';
 import { Resizable } from 're-resizable';
 import React, { useRef, useEffect, useState, useCallback } from 'react';

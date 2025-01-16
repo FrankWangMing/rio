@@ -1,4 +1,4 @@
-import { useNode, useEditor } from '@rio/core';
+import { useNode, useEditor } from '@rioe/core';
 import ContentEditable from 'react-contenteditable';
 
 import { TextSettings } from './TextSettings';

@@ -1,4 +1,4 @@
-import { Overwrite, Delete, OverwriteFnReturnType } from '@rio/utils';
+import { Overwrite, Delete, OverwriteFnReturnType } from '@rioe/utils';
 import { EditorCollector, useInternalEditorReturnType } from '../editor/useInternalEditor';
 type PrivateActions = 'addLinkedNodeFromTree' | 'setNodeEvent' | 'setDOM' | 'replaceNodes' | 'reset';
 export type WithoutPrivateActions<S = null> = Delete<useInternalEditorReturnType<S>['actions'], PrivateActions | 'history'> & {

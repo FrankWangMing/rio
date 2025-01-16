@@ -1,20 +1,24 @@
 {
   "name": "rio",
-  "private": true,
+  "private": false,
   "scripts": {
-    "build": "turbo build --filter=@rio/*",
+    "build": "turbo build --filter=@rioe/*",
     "clean": "turbo clean",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "publish-packages": "turbo run build lint test && changeset version && changeset publish"
   },
   "type": "module",
   "devDependencies": {
     "turbo": "^2.3.3",
     "typescript": "5.5.4"
   },
+
   "packageManager": "pnpm@9.0.0",
   "dependencies": {
+    "@changesets/cli": "^2.27.11",
+    "changeset": "^0.2.6",
     "cross-env": "6.0.3",
     "rimraf": "^6.0.1",
     "rollup": "^4.29.1"

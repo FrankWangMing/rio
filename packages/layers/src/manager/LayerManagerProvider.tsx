@@ -1,4 +1,4 @@
-import { useMethods } from '@rio/utils';
+import { useMethods } from '@rioe/utils';
 import React from 'react';
 
 import { LayerMethods } from './actions';

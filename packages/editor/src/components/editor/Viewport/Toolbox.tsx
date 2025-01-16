@@ -1,8 +1,8 @@
-import { Element, useEditor } from '@rio/core';
+import { Element, useEditor } from '@rioe/core';
 import { styled } from 'styled-components';
 import { ReactSVG } from 'react-svg'
 
-import { Container,Text,Video ,Button} from '@rio/components';
+import { Container,Text,Video ,Button} from '@rioe/components';
 
 import { Tooltip } from 'antd';
 

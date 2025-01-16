@@ -1,4 +1,4 @@
-import { Indicator, useEditor } from '@rio/core';
+import { Indicator, useEditor } from '@rioe/core';
 import React from 'react';
 
 export type LayerIndicatorProps = {

@@ -3,6 +3,7 @@ import { Command } from "commander";
 import inquirer from 'inquirer'
 import chalk from 'chalk'
 import { run } from "./commands/run";
+import { init } from "./commands/init";
 const program = new Command();
 program
   .name('rio')
@@ -11,11 +12,12 @@ program
 
 
 program
-  .command('greet')
-  .description('Greet the user')
-  .option('-n, --name <name>', 'User name')
+  .command('init')
+  .description('Init the project')
+  .option('-n, --name <name>', 'Project name')
   .action(async (options) => {
     const name = options.name || (await askName());
+    init({name})
     console.log(chalk.green(`Hello, ${name}!`));
   });
 
@@ -34,7 +36,7 @@ async function askName() {
     {
       type: 'input',
       name: 'name',
-      message: 'What is your name?',
+      message: 'What is your Project name?',
     },
   ]);
   return answers.name;

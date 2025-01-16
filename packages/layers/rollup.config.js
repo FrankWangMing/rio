@@ -1,7 +1,7 @@
 import image from '@svgr/rollup';
 
 
-import rollupConfig from '@rio/common/rollup';
+import rollupConfig from '@rioe/common/rollup';
 
 export default rollupConfig.map(config => {
     return  {

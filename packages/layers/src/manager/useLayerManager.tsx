@@ -1,4 +1,4 @@
-import { useCollector } from '@rio/utils';
+import { useCollector } from '@rioe/utils';
 import { useContext, useMemo } from 'react';
 
 import { LayerManagerContext } from './context';

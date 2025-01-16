@@ -1,10 +1,10 @@
-import { SubscriberAndCallbacksFor, PatchListener } from '@rio/utils';
+import { SubscriberAndCallbacksFor, PatchListener } from '@rioe/utils';
 import { QueryMethods } from './query';
 import { EditorState, Options, NodeEventTypes, NodeId } from '../interfaces';
 export declare const editorInitialState: EditorState;
 export declare const ActionMethodsWithConfig: {
-    methods: (state: EditorState, query: import("@rio/utils").QueryCallbacksFor<typeof QueryMethods>) => {
-        setState(cb: (state: EditorState, actions: import("@rio/utils").Delete<import("@rio/utils").CallbacksFor<(state: EditorState, query: import("@rio/utils").QueryCallbacksFor<typeof QueryMethods>) => {
+    methods: (state: EditorState, query: import("@rioe/utils").QueryCallbacksFor<typeof QueryMethods>) => {
+        setState(cb: (state: EditorState, actions: import("@rioe/utils").Delete<import("@rioe/utils").CallbacksFor<(state: EditorState, query: import("@rioe/utils").QueryCallbacksFor<typeof QueryMethods>) => {
             addLinkedNodeFromTree(tree: import("../interfaces").NodeTree, parentId: NodeId, id: string): void;
             add(nodeToAdd: import("../interfaces").Node | import("../interfaces").Node[], parentId?: NodeId, index?: number): void;
             addNodeTree(tree: import("../interfaces").NodeTree, parentId?: NodeId, index?: number): void;

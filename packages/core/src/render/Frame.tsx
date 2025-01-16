@@ -1,4 +1,4 @@
-import { deprecationWarning, ROOT_NODE } from '@rio/utils';
+import { deprecationWarning, ROOT_NODE } from '@rioe/utils';
 import React, { useRef } from 'react';
 
 import { useInternalEditor } from '../editor/useInternalEditor';

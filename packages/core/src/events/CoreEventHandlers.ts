@@ -1,4 +1,4 @@
-import { DerivedEventHandlers, EventHandlers } from '@rio/utils';
+import { DerivedEventHandlers, EventHandlers } from '@rioe/utils';
 
 import { EditorStore } from '../editor/store';
 import { NodeId, NodeTree } from '../interfaces/nodes';

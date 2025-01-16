@@ -1,4 +1,4 @@
-import { generate } from '@rio/generate'
+import { generate } from '@rioe/generate'
 import { run } from './dev'
 import { spawn } from 'child_process'
 import path from 'path'

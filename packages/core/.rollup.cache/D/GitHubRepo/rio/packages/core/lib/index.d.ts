@@ -6,5 +6,5 @@ export * from './editor';
 export * from './events';
 export * from './utils/testHelpers';
 export { serializeNode } from './utils/serializeNode';
-export { ROOT_NODE } from '@rio/utils';
+export { ROOT_NODE } from '@rioe/utils';
 //# sourceMappingURL=index.d.ts.map

@@ -1,4 +1,4 @@
-import { deprecationWarning } from '@rio/utils';
+import { deprecationWarning } from '@rioe/utils';
 import React, { useEffect } from 'react';
 import { Element } from './Element';
 export const deprecateCanvasComponent = () => deprecationWarning('<Canvas />', {

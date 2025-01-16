@@ -1,5 +1,5 @@
 import { makeStyles } from '@mui/styles';
-import { useNode } from '@rio/core';
+import { useNode } from '@rioe/core';
 import {Accordion,AccordionSummary ,AccordionDetails,AccordionActions} from '@mui/material';
 import React from 'react';
 import {Grid} from '@mui/material';

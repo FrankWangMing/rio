@@ -5,7 +5,7 @@ import {
   wrapConnectorHooks,
   EventHandlerConnectors,
   ERROR_USE_EDITOR_OUTSIDE_OF_EDITOR_CONTEXT,
-} from '@rio/utils';
+} from '@rioe/utils';
 import { useContext, useEffect, useMemo } from 'react';
 import invariant from 'tiny-invariant';
 

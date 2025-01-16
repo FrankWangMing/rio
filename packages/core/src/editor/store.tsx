@@ -2,7 +2,7 @@ import {
   useMethods,
   SubscriberAndCallbacksFor,
   PatchListener,
-} from '@rio/utils';
+} from '@rioe/utils';
 
 import { ActionMethods } from './actions';
 import { QueryMethods } from './query';

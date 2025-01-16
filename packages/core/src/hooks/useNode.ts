@@ -1,4 +1,4 @@
-import { deprecationWarning } from '@rio/utils';
+import { deprecationWarning } from '@rioe/utils';
 
 import { Node } from '../interfaces';
 import { useInternalNode } from '../nodes/useInternalNode';

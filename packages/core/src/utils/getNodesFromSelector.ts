@@ -1,4 +1,4 @@
-import { ERROR_INVALID_NODEID } from '@rio/utils';
+import { ERROR_INVALID_NODEID } from '@rioe/utils';
 import invariant from 'tiny-invariant';
 
 import { Nodes, Node, NodeSelectorWrapper, NodeSelector } from '../interfaces';

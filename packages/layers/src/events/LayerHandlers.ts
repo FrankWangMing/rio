@@ -1,4 +1,4 @@
-import { NodeId, Node, DerivedCoreEventHandlers } from '@rio/core';
+import { NodeId, Node, DerivedCoreEventHandlers } from '@rioe/core';
 
 import { LayerIndicator } from '../interfaces';
 

@@ -1,4 +1,4 @@
-import { ERROR_RESOLVER_NOT_AN_OBJECT, HISTORY_ACTIONS } from '@rio/utils';
+import { ERROR_RESOLVER_NOT_AN_OBJECT, HISTORY_ACTIONS } from '@rioe/utils';
 import React, { useEffect, useRef } from 'react';
 import invariant from 'tiny-invariant';
 import { EditorContext } from './EditorContext';

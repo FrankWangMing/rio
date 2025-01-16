@@ -1,4 +1,4 @@
-import { useEditor } from '@rio/core';
+import { useEditor } from '@rioe/core';
 import cx from 'classnames';
 import React, { useEffect } from 'react';
 

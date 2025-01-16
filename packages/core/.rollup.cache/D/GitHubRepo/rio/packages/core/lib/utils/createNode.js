@@ -1,4 +1,4 @@
-import { getRandomId as getRandomNodeId } from '@rio/utils';
+import { getRandomId as getRandomNodeId } from '@rioe/utils';
 import React from 'react';
 import { defaultElementProps, Element, Canvas, elementPropToNodeData, deprecateCanvasComponent, } from '../nodes';
 import { NodeProvider } from '../nodes/NodeContext';

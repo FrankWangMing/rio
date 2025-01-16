@@ -1,8 +1,8 @@
-import { Editor } from '@rio/core';
+import { Editor } from '@rioe/core';
 import { observer, useLocalObservable } from 'mobx-react-lite';
 
 import EditorContainer from './EditorContainer.tsx';
-import { Container,Text,Custom1,Custom2,Custom3,Video,OnlyButtons,Custom3BtnDrop,Custom2VideoDrop } from '@rio/components';
+import { Container,Text,Custom1,Custom2,Custom3,Video,OnlyButtons,Custom3BtnDrop,Custom2VideoDrop } from '@rioe/components';
 import { RenderNode } from '../components/editor/index.ts';
 
 export default observer(() => {

@@ -1,4 +1,4 @@
-import { ERROR_NOT_IN_RESOLVER } from '@rio/utils';
+import { ERROR_NOT_IN_RESOLVER } from '@rioe/utils';
 import invariant from 'tiny-invariant';
 let CACHED_RESOLVER_DATA = null;
 const getReversedResolver = (resolver) => {

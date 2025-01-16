@@ -4,7 +4,7 @@ import { createTemplates } from "./template";
 import { ProjectConfig } from "./types";
 
 const projectConfig: ProjectConfig = {
-  basePath: "../my-project",
+  basePath: "",
   structure: {
     name: "",
     type: "folder",
@@ -193,7 +193,7 @@ const projectConfig: ProjectConfig = {
 
   },
   config: {
-    "name": "@rio/deploy",
+    "name": "@rioe/deploy",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -249,17 +249,17 @@ const projectConfig: ProjectConfig = {
       "react-dom": "^17.0.0 || ^18.0.0 "
     },
     "dependencies": {
-      "@rio/components": "workspace:*",
+      "@rioe/components": "workspace:*",
       "@emotion/react": "^11.14.0",
       "@emotion/styled": "^11.14.0",
       "@mui/material": "^6.3.1",
       "@mui/styled-engine-sc": "^6.3.1",
       "@mui/styles": "^6.3.1",
-      "@rio/common": "workspace:*",
-      "@rio/core": "workspace:*",
-      "@rio/generate": "workspace:*",
-      "@rio/layers": "workspace:*",
-      "@rio/utils": "workspace:*",
+      "@rioe/common": "workspace:*",
+      "@rioe/core": "workspace:*",
+      "@rioe/generate": "workspace:*",
+      "@rioe/layers": "workspace:*",
+      "@rioe/utils": "workspace:*",
       "@sentry/react": "^8.47.0",
       "@swc/register": "^0.1.10",
       "antd": "^5.22.6",
@@ -337,6 +337,17 @@ async function main(viewConfig): Promise<void> {
 const generate = (config) => {
   main(config)
 }
+const generateRioFile = async (config) => {
+  await createStructure('', {
+    type:"file",
+    name:"rio.json",
+  });
+  await createTemplates('', [{
+    templateFile: "rio/rio.json.ejs",
+    outputFile: "rio.json"
+  }], config)
+}
 export {
-  generate
+  generate,
+  generateRioFile
 }
