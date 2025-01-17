@@ -4,7 +4,8 @@
  */
 export const isEventBlockedByDescendant = (e, eventName, el) => {
   // TODO: Update TS to use optional chaining
-  const blockingElements = (e.craft && e.craft.blockedEvents[eventName]) || [];
+  const blockingElements =
+    (e.craft && e.craft.blockedEvents[eventName]) || [];
 
   for (let i = 0; i < blockingElements.length; i++) {
     const blockingElement = blockingElements[i];

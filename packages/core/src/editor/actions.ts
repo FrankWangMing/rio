@@ -41,13 +41,13 @@ const Methods = (
     parentId?: NodeId,
     addNodeType?:
       | {
-        type: 'child';
-        index: number;
-      }
+          type: 'child';
+          index: number;
+        }
       | {
-        type: 'linked';
-        id: string;
-      }
+          type: 'linked';
+          id: string;
+        }
   ) => {
     const iterateChildren = (id: NodeId, parentId?: NodeId) => {
       const node = tree.nodes[id];
@@ -119,7 +119,9 @@ const Methods = (
     if (targetNode.data.nodes) {
       // we deep clone here because otherwise immer will mutate the node
       // object as we remove nodes
-      [...targetNode.data.nodes].forEach((childId) => deleteNode(childId));
+      [...targetNode.data.nodes].forEach((childId) =>
+        deleteNode(childId)
+      );
     }
 
     if (targetNode.data.linkedNodes) {
@@ -156,7 +158,11 @@ const Methods = (
      * @param parentId
      * @param id
      */
-    addLinkedNodeFromTree(tree: NodeTree, parentId: NodeId, id: string) {
+    addLinkedNodeFromTree(
+      tree: NodeTree,
+      parentId: NodeId,
+      id: string
+    ) {
       const parent = getParentAndValidate(parentId);
 
       const existingLinkedNode = parent.data.linkedNodes[id];
@@ -235,7 +241,7 @@ const Methods = (
       const dehydratedNodes =
         typeof input == 'string' ? JSON.parse(input) : input;
 
-        const nodePairs = Object.keys(dehydratedNodes).map((id) => {
+      const nodePairs = Object.keys(dehydratedNodes).map((id) => {
         let nodeId = id;
 
         if (id === DEPRECATED_ROOT_NODE) {
@@ -354,12 +360,18 @@ const Methods = (
         return;
       }
 
-      const targets = getNodesFromSelector(state.nodes, nodeIdSelector, {
-        idOnly: true,
-        existOnly: true,
-      });
+      const targets = getNodesFromSelector(
+        state.nodes,
+        nodeIdSelector,
+        {
+          idOnly: true,
+          existOnly: true,
+        }
+      );
 
-      const nodeIds: Set<NodeId> = new Set(targets.map(({ node }) => node.id));
+      const nodeIds: Set<NodeId> = new Set(
+        targets.map(({ node }) => node.id)
+      );
       nodeIds.forEach((id) => {
         state.nodes[id].events[eventType] = true;
       });
@@ -380,7 +392,9 @@ const Methods = (
         existOnly: true,
       });
 
-      targets.forEach(({ node }) => cb(state.nodes[node.id].data.custom));
+      targets.forEach(({ node }) =>
+        cb(state.nodes[node.id].data.custom)
+      );
     },
 
     /**
@@ -431,15 +445,21 @@ const Methods = (
         existOnly: true,
       });
 
-      targets.forEach(({ node }) => cb(state.nodes[node.id].data.props));
+      targets.forEach(({ node }) =>
+        cb(state.nodes[node.id].data.props)
+      );
     },
 
     selectNode(nodeIdSelector?: NodeSelector<NodeSelectorType.Id>) {
       if (nodeIdSelector) {
-        const targets = getNodesFromSelector(state.nodes, nodeIdSelector, {
-          idOnly: true,
-          existOnly: true,
-        });
+        const targets = getNodesFromSelector(
+          state.nodes,
+          nodeIdSelector,
+          {
+            idOnly: true,
+            existOnly: true,
+          }
+        );
 
         this.setNodeEvent(
           'selected',

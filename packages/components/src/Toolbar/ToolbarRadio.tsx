@@ -1,6 +1,5 @@
-
 import { FormControlLabel, Radio } from '@mui/material';
-import {makeStyles} from '@mui/styles';
+import { makeStyles } from '@mui/styles';
 import classnames from 'classnames';
 import React from 'react';
 
@@ -38,7 +37,9 @@ function StyledRadio(props) {
       disableRipple
       color="default"
       checkedIcon={
-        <span className={classnames(classes.icon, classes.checkedIcon)} />
+        <span
+          className={classnames(classes.icon, classes.checkedIcon)}
+        />
       }
       icon={<span className={classes.icon} />}
       {...props}

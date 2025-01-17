@@ -41,7 +41,10 @@ export class Positioner {
 
   private onScrollListener: (e: Event) => void;
 
-  constructor(readonly store: EditorStore, readonly dragTarget: DragTarget) {
+  constructor(
+    readonly store: EditorStore,
+    readonly dragTarget: DragTarget
+  ) {
     this.currentDropTargetId = null;
     this.currentDropTargetCanvasAncestorId = null;
 
@@ -57,12 +60,20 @@ export class Positioner {
 
     this.onScrollListener = this.onScroll.bind(this);
     window.addEventListener('scroll', this.onScrollListener, true);
-    window.addEventListener('dragover', documentDragoverEventHandler, false);
+    window.addEventListener(
+      'dragover',
+      documentDragoverEventHandler,
+      false
+    );
   }
 
   cleanup() {
     window.removeEventListener('scroll', this.onScrollListener, true);
-    window.removeEventListener('dragover', documentDragoverEventHandler, false);
+    window.removeEventListener(
+      'dragover',
+      documentDragoverEventHandler,
+      false
+    );
   }
 
   private onScroll(e: Event) {
@@ -138,7 +149,8 @@ export class Positioner {
   private isDiff(newPosition: DropPosition) {
     if (
       this.currentIndicator &&
-      this.currentIndicator.placement.parent.id === newPosition.parent.id &&
+      this.currentIndicator.placement.parent.id ===
+        newPosition.parent.id &&
       this.currentIndicator.placement.index === newPosition.index &&
       this.currentIndicator.placement.where === newPosition.where
     ) {
@@ -153,7 +165,8 @@ export class Positioner {
    */
   private getChildDimensions(newParentNode: Node) {
     // Use previously computed child dimensions if newParentNode is the same as the previous one
-    const existingTargetChildDimensions = this.currentTargetChildDimensions;
+    const existingTargetChildDimensions =
+      this.currentTargetChildDimensions;
     if (
       this.currentTargetId === newParentNode.id &&
       existingTargetChildDimensions
@@ -221,7 +234,11 @@ export class Positioner {
    * Compute a new Indicator object based on the dropTarget and x,y coords
    * Returns null if theres no change from the previous Indicator
    */
-  computeIndicator(dropTargetId: NodeId, x: number, y: number): Indicator {
+  computeIndicator(
+    dropTargetId: NodeId,
+    x: number,
+    y: number
+  ): Indicator {
     let newParentNode = this.getCanvasAncestor(dropTargetId);
 
     if (!newParentNode) {
@@ -238,14 +255,17 @@ export class Positioner {
       // Ignore if linked node because there's won't be an adjacent sibling anyway
       !this.store.query.node(newParentNode.id).isLinkedNode()
     ) {
-      newParentNode = this.store.query.node(newParentNode.data.parent).get();
+      newParentNode = this.store.query
+        .node(newParentNode.data.parent)
+        .get();
     }
 
     if (!newParentNode) {
       return;
     }
 
-    this.currentTargetChildDimensions = this.getChildDimensions(newParentNode);
+    this.currentTargetChildDimensions =
+      this.getChildDimensions(newParentNode);
     this.currentTargetId = newParentNode.id;
 
     const position = findPosition(

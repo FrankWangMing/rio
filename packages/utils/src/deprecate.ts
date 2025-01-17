@@ -3,7 +3,10 @@ type DeprecationPayload = Partial<{
   doc: string;
 }>;
 
-export const deprecationWarning = (name, payload?: DeprecationPayload) => {
+export const deprecationWarning = (
+  name,
+  payload?: DeprecationPayload
+) => {
   let message = `Deprecation warning: ${name} will be deprecated in future relases.`;
 
   const { suggest, doc } = payload;

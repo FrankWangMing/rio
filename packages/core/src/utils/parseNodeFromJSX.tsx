@@ -11,7 +11,11 @@ export function parseNodeFromJSX(
   let element = jsx as React.ReactElement;
 
   if (typeof element === 'string') {
-    element = React.createElement(Fragment, {}, element) as React.ReactElement;
+    element = React.createElement(
+      Fragment,
+      {},
+      element
+    ) as React.ReactElement;
   }
 
   let actualType = element.type as any;

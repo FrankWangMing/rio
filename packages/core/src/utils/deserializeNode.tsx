@@ -21,8 +21,8 @@ const restoreType = (type: ReduceCompType, resolver: Resolver) =>
       ? Canvas
       : resolver[type.resolvedName]
     : typeof type === 'string'
-    ? type
-    : null;
+      ? type
+      : null;
 
 export const deserializeComp = (
   data: ReducedComp,
@@ -37,24 +37,27 @@ export const deserializeComp = (
     return;
   }
 
-  props = Object.keys(props).reduce((result: Record<string, any>, key) => {
-    const prop = props[key];
-    if (prop === null || prop === undefined) {
-      result[key] = null;
-    } else if (typeof prop === 'object' && prop.resolvedName) {
-      result[key] = deserializeComp(prop, resolver);
-    } else if (key === 'children' && Array.isArray(prop)) {
-      result[key] = prop.map((child) => {
-        if (typeof child === 'string') {
-          return child;
-        }
-        return deserializeComp(child, resolver);
-      });
-    } else {
-      result[key] = prop;
-    }
-    return result;
-  }, {});
+  props = Object.keys(props).reduce(
+    (result: Record<string, any>, key) => {
+      const prop = props[key];
+      if (prop === null || prop === undefined) {
+        result[key] = null;
+      } else if (typeof prop === 'object' && prop.resolvedName) {
+        result[key] = deserializeComp(prop, resolver);
+      } else if (key === 'children' && Array.isArray(prop)) {
+        result[key] = prop.map((child) => {
+          if (typeof child === 'string') {
+            return child;
+          }
+          return deserializeComp(child, resolver);
+        });
+      } else {
+        result[key] = prop;
+      }
+      return result;
+    },
+    {}
+  );
 
   if (index) {
     props.key = index;
@@ -78,7 +81,8 @@ export const deserializeNode = (
 ): Omit<NodeData, 'event'> => {
   const { type: Comp, props: Props, ...nodeData } = data;
 
-  const isCompAnHtmlElement = Comp !== undefined && typeof Comp === 'string';
+  const isCompAnHtmlElement =
+    Comp !== undefined && typeof Comp === 'string';
   const isCompAUserComponent =
     Comp !== undefined &&
     (Comp as { resolvedName?: string }).resolvedName !== undefined;
@@ -88,15 +92,19 @@ export const deserializeNode = (
     ERROR_DESERIALIZE_COMPONENT_NOT_IN_RESOLVER.replace(
       '%displayName%',
       data.displayName
-    ).replace('%availableComponents%', Object.keys(resolver).join(', '))
+    ).replace(
+      '%availableComponents%',
+      Object.keys(resolver).join(', ')
+    )
   );
 
-  const { type, name, props } = (deserializeComp(
+  const { type, name, props } = deserializeComp(
     data,
     resolver
-  ) as unknown) as NodeData;
+  ) as unknown as NodeData;
 
-  const { parent, custom, displayName, isCanvas, nodes, hidden } = nodeData;
+  const { parent, custom, displayName, isCanvas, nodes, hidden } =
+    nodeData;
 
   const linkedNodes = nodeData.linkedNodes || nodeData._childCanvas;
 

@@ -163,7 +163,10 @@ export function QueryMethods(state: EditorState) {
         normalize?: (node: Node, jsx: React.ReactElement) => void
       ): NodeTree {
         let node = parseNodeFromJSX(reactElement, (node, jsx) => {
-          const name = resolveComponent(state.options.resolver, node.data.type);
+          const name = resolveComponent(
+            state.options.resolver,
+            node.data.type
+          );
 
           node.data.displayName = node.data.displayName || name;
           node.data.name = name;
@@ -180,7 +183,9 @@ export function QueryMethods(state: EditorState) {
             reactElement.props.children
           ).reduce<NodeTree[]>((accum, child: any) => {
             if (React.isValidElement(child)) {
-              accum.push(_().parseReactElement(child).toNodeTree(normalize));
+              accum.push(
+                _().parseReactElement(child).toNodeTree(normalize)
+              );
             }
             return accum;
           }, []);
@@ -192,15 +197,21 @@ export function QueryMethods(state: EditorState) {
 
     parseSerializedNode: (serializedNode: SerializedNode) => ({
       toNode(normalize?: (node: Node) => void): Node {
-        const data = deserializeNode(serializedNode, state.options.resolver);
+        const data = deserializeNode(
+          serializedNode,
+          state.options.resolver
+        );
         invariant(data.type, ERROR_NOT_IN_RESOLVER);
 
         const id = typeof normalize === 'string' && normalize;
 
         if (id) {
-          deprecationWarning(`query.parseSerializedNode(...).toNode(id)`, {
-            suggest: `query.parseSerializedNode(...).toNode(node => node.id = id)`,
-          });
+          deprecationWarning(
+            `query.parseSerializedNode(...).toNode(id)`,
+            {
+              suggest: `query.parseSerializedNode(...).toNode(node => node.id = id)`,
+            }
+          );
         }
 
         return _()
@@ -219,7 +230,10 @@ export function QueryMethods(state: EditorState) {
             node.data.parent = ROOT_NODE;
           }
 
-          const name = resolveComponent(state.options.resolver, node.data.type);
+          const name = resolveComponent(
+            state.options.resolver,
+            node.data.type
+          );
           invariant(name !== null, ERROR_NOT_IN_RESOLVER);
           node.data.displayName = node.data.displayName || name;
           node.data.name = name;

@@ -1,5 +1,3 @@
-
-
 import { createNode } from './createNode';
 
 import { editorInitialState } from '../editor/store';
@@ -35,17 +33,23 @@ export const expectEditorState = (lhs, rhs) => {
   const { nodes: nodesLhs, ...restLhs } = lhs;
   expect(restLhs).toEqual(restRhs);
 
-  const nodesRhsSimplified = Object.keys(nodesRhs).reduce((accum, id) => {
-    const { _hydrationTimestamp, rules, ...node } = nodesRhs[id];
-    accum[id] = node;
-    return accum;
-  }, {});
+  const nodesRhsSimplified = Object.keys(nodesRhs).reduce(
+    (accum, id) => {
+      const { _hydrationTimestamp, rules, ...node } = nodesRhs[id];
+      accum[id] = node;
+      return accum;
+    },
+    {}
+  );
 
-  const nodesLhsSimplified = Object.keys(nodesLhs).reduce((accum, id) => {
-    const { _hydrationTimestamp, rules, ...node } = nodesLhs[id];
-    accum[id] = node;
-    return accum;
-  }, {});
+  const nodesLhsSimplified = Object.keys(nodesLhs).reduce(
+    (accum, id) => {
+      const { _hydrationTimestamp, rules, ...node } = nodesLhs[id];
+      accum[id] = node;
+      return accum;
+    },
+    {}
+  );
 
   expect(nodesLhsSimplified).toEqual(nodesRhsSimplified);
 };
@@ -53,7 +57,11 @@ export const expectEditorState = (lhs, rhs) => {
 export const createTestNodes = (rootNode): Nodes => {
   const nodes = {};
   const iterateNodes = (testNode) => {
-    const { node: parentNode, childNodes, linkedNodes } = getTestNode(testNode);
+    const {
+      node: parentNode,
+      childNodes,
+      linkedNodes,
+    } = getTestNode(testNode);
     nodes[parentNode.id] = parentNode;
 
     if (childNodes) {

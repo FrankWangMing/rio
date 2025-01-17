@@ -1,13 +1,7 @@
-import http from "../http"
-
-
+import http from '../http';
 
 export default (data: any) => {
-    return http.post('/generate',{
-        data,
-    })
-}
-
-
-
-
+  return http.post('/generate', {
+    data,
+  });
+};

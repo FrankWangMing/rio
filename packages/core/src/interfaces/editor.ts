@@ -1,10 +1,17 @@
-import { QueryCallbacksFor, Delete, PatchListenerAction } from '@rioe/utils';
+import {
+  QueryCallbacksFor,
+  Delete,
+  PatchListenerAction,
+} from '@rioe/utils';
 
 import { Placement } from './events';
 import { Nodes, NodeEventTypes, NodeId, Node } from './nodes';
 
 import { QueryMethods } from '../editor/query';
-import { EditorStore, ActionMethodsWithConfig } from '../editor/store';
+import {
+  EditorStore,
+  ActionMethodsWithConfig,
+} from '../editor/store';
 import { useInternalEditorReturnType } from '../editor/useInternalEditor';
 import { CoreEventHandlers } from '../events';
 
@@ -15,7 +22,9 @@ export type Options = {
     newParentNode: Node,
     existingParentNode: Node
   ) => void;
-  onNodesChange: (query: QueryCallbacksFor<typeof QueryMethods>) => void;
+  onNodesChange: (
+    query: QueryCallbacksFor<typeof QueryMethods>
+  ) => void;
   resolver: Resolver;
   enabled: boolean;
   indicator: Partial<{
@@ -54,4 +63,5 @@ export type EditorState = {
   indicator: Indicator;
 };
 
-export type ConnectedEditor<S = null> = useInternalEditorReturnType<S>;
+export type ConnectedEditor<S = null> =
+  useInternalEditorReturnType<S>;

@@ -199,7 +199,9 @@ describe('actions.delete', () => {
 
   it('should throw if you try to a non existing node', () => {
     expect(() =>
-      Actions(createTestState())((actions) => actions.delete(rootNode.id))
+      Actions(createTestState())((actions) =>
+        actions.delete(rootNode.id)
+      )
     ).toThrow();
   });
   it('should throw if you try to delete the root', () => {
@@ -224,7 +226,9 @@ describe('actions.delete', () => {
       },
     });
 
-    const newState = Actions(state)((actions) => actions.delete(node.id));
+    const newState = Actions(state)((actions) =>
+      actions.delete(node.id)
+    );
 
     expectEditorState(
       newState,
@@ -259,7 +263,9 @@ describe('actions.delete', () => {
       },
     });
 
-    const newState = Actions(state)((actions) => actions.delete(card.id));
+    const newState = Actions(state)((actions) =>
+      actions.delete(card.id)
+    );
 
     expectEditorState(
       newState,
@@ -295,7 +301,9 @@ describe('actions.clearEvents', () => {
       },
     });
 
-    const newState = Actions(state)((actions) => actions.clearEvents());
+    const newState = Actions(state)((actions) =>
+      actions.clearEvents()
+    );
 
     expectEditorState(
       newState,
@@ -390,9 +398,12 @@ describe('actions.deserialize', () => {
       },
     };
 
-    const serialized = mapValues(createTestNodes(nodes), ({ data }) => ({
-      ...data,
-    }));
+    const serialized = mapValues(
+      createTestNodes(nodes),
+      ({ data }) => ({
+        ...data,
+      })
+    );
 
     const newState = Actions(createTestState())((actions) =>
       actions.deserialize(serialized)
@@ -636,7 +647,10 @@ describe('actions.setCustom', () => {
 
   it('should update custom properties', () => {
     const newState = Actions(state)((actions) =>
-      actions.setCustom('node-a', (custom) => (custom.css.color = '#000'))
+      actions.setCustom(
+        'node-a',
+        (custom) => (custom.css.color = '#000')
+      )
     );
 
     nodeA.data.custom.css.color = '#000';
@@ -723,7 +737,9 @@ describe('actions.setDOM', () => {
   it('should set DOM', () => {
     const dom = document.createElement('button');
 
-    const newState = Actions(state)((actions) => actions.setDOM('node-a', dom));
+    const newState = Actions(state)((actions) =>
+      actions.setDOM('node-a', dom)
+    );
 
     nodeA.dom = dom;
 

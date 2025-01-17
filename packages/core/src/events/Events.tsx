@@ -12,14 +12,14 @@ type EventsProps = {
 export const Events = ({ children }: EventsProps) => {
   const store = useContext(EditorContext);
 
-  const handler = useMemo(() => store.query.getOptions().handlers(store), [
-    store,
-  ]);
+  const handler = useMemo(
+    () => store.query.getOptions().handlers(store),
+    [store]
+  );
 
   if (!handler) {
     return null;
   }
-
 
   return (
     <EventHandlerContext.Provider value={handler}>

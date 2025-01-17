@@ -1,7 +1,10 @@
 import React from 'react';
 
-import { ToolbarSection, ToolbarItem,ToolbarRadio } from '../Toolbar';
-
+import {
+  ToolbarSection,
+  ToolbarItem,
+  ToolbarRadio,
+} from '../Toolbar';
 
 export const ContainerSettings = () => {
   return (
@@ -25,7 +28,8 @@ export const ContainerSettings = () => {
               <div
                 style={{
                   background:
-                    background && `rgba(${Object.values(background)})`,
+                    background &&
+                    `rgba(${Object.values(background)})`,
                 }}
                 className="shadow-md flex-end w-6 h-6 text-center flex items-center rounded-full bg-black"
               >
@@ -48,7 +52,12 @@ export const ContainerSettings = () => {
           type="bg"
           label="Background"
         />
-        <ToolbarItem full={true} propKey="color" type="color" label="Text" />
+        <ToolbarItem
+          full={true}
+          propKey="color"
+          type="color"
+          label="Text"
+        />
       </ToolbarSection>
       <ToolbarSection
         title="Margin"
@@ -59,10 +68,30 @@ export const ContainerSettings = () => {
           }px`;
         }}
       >
-        <ToolbarItem propKey="margin" index={0} type="slider" label="Top" />
-        <ToolbarItem propKey="margin" index={1} type="slider" label="Right" />
-        <ToolbarItem propKey="margin" index={2} type="slider" label="Bottom" />
-        <ToolbarItem propKey="margin" index={3} type="slider" label="Left" />
+        <ToolbarItem
+          propKey="margin"
+          index={0}
+          type="slider"
+          label="Top"
+        />
+        <ToolbarItem
+          propKey="margin"
+          index={1}
+          type="slider"
+          label="Right"
+        />
+        <ToolbarItem
+          propKey="margin"
+          index={2}
+          type="slider"
+          label="Bottom"
+        />
+        <ToolbarItem
+          propKey="margin"
+          index={3}
+          type="slider"
+          label="Left"
+        />
       </ToolbarSection>
       <ToolbarSection
         title="Padding"
@@ -73,10 +102,30 @@ export const ContainerSettings = () => {
           }px ${padding[3] || 0}px`;
         }}
       >
-        <ToolbarItem propKey="padding" index={0} type="slider" label="Top" />
-        <ToolbarItem propKey="padding" index={1} type="slider" label="Right" />
-        <ToolbarItem propKey="padding" index={2} type="slider" label="Bottom" />
-        <ToolbarItem propKey="padding" index={3} type="slider" label="Left" />
+        <ToolbarItem
+          propKey="padding"
+          index={0}
+          type="slider"
+          label="Top"
+        />
+        <ToolbarItem
+          propKey="padding"
+          index={1}
+          type="slider"
+          label="Right"
+        />
+        <ToolbarItem
+          propKey="padding"
+          index={2}
+          type="slider"
+          label="Bottom"
+        />
+        <ToolbarItem
+          propKey="padding"
+          index={3}
+          type="slider"
+          label="Left"
+        />
       </ToolbarSection>
       <ToolbarSection title="Decoration" props={['radius', 'shadow']}>
         <ToolbarItem
@@ -101,11 +150,19 @@ export const ContainerSettings = () => {
           <ToolbarRadio value="row" label="Row" />
           <ToolbarRadio value="column" label="Column" />
         </ToolbarItem>
-        <ToolbarItem propKey="fillSpace" type="radio" label="Fill space">
+        <ToolbarItem
+          propKey="fillSpace"
+          type="radio"
+          label="Fill space"
+        >
           <ToolbarRadio value="yes" label="Yes" />
           <ToolbarRadio value="no" label="No" />
         </ToolbarItem>
-        <ToolbarItem propKey="alignItems" type="radio" label="Align Items">
+        <ToolbarItem
+          propKey="alignItems"
+          type="radio"
+          label="Align Items"
+        >
           <ToolbarRadio value="flex-start" label="Flex start" />
           <ToolbarRadio value="center" label="Center" />
           <ToolbarRadio value="flex-end" label="Flex end" />

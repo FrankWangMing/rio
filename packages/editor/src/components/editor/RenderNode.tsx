@@ -3,9 +3,7 @@ import { ROOT_NODE } from '@rioe/utils';
 import React, { useEffect, useRef, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import { styled } from 'styled-components';
-import { ReactSVG } from 'react-svg'
-
-
+import { ReactSVG } from 'react-svg';
 
 const IndicatorDiv = styled.div`
   height: 30px;
@@ -60,7 +58,8 @@ export const RenderNode = ({ render }) => {
 
   useEffect(() => {
     if (dom) {
-      if (isActive || isHover) dom.classList.add('component-selected');
+      if (isActive || isHover)
+        dom.classList.add('component-selected');
       else dom.classList.remove('component-selected');
     }
   }, [dom, isActive, isHover]);
@@ -104,8 +103,8 @@ export const RenderNode = ({ render }) => {
               ref={currentRef}
               className="px-2 py-2 text-white bg-primary fixed flex items-center"
               style={{
-                left: dom?getPos(dom).left:0,
-                top: dom?getPos(dom).top:0,
+                left: dom ? getPos(dom).left : 0,
+                top: dom ? getPos(dom).top : 0,
                 zIndex: 9999,
               }}
             >

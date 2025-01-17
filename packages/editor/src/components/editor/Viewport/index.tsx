@@ -42,7 +42,9 @@ export const Viewport: React.FC<{ children?: React.ReactNode }> = ({
   return (
     <div className="viewport">
       <div
-        className={cx(['flex h-full overflow-hidden flex-row w-full fixed'])}
+        className={cx([
+          'flex h-full overflow-hidden flex-row w-full fixed',
+        ])}
       >
         <Toolbox />
         <div className="page-container flex flex-1 h-full flex-col">
@@ -54,7 +56,9 @@ export const Viewport: React.FC<{ children?: React.ReactNode }> = ({
                 'bg-renderer-gray': enabled,
               },
             ])}
-            ref={(ref) => connectors.select(connectors.hover(ref, null), null)}
+            ref={(ref) =>
+              connectors.select(connectors.hover(ref, null), null)
+            }
           >
             <div className="relative flex-col flex items-center pt-8">
               {children}

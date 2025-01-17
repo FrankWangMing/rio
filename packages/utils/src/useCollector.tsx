@@ -3,16 +3,20 @@ import { useState, useCallback, useRef, useEffect } from 'react';
 import { SubscriberAndCallbacksFor } from './useMethods';
 import { ConditionallyMergeRecordTypes } from './utilityTypes';
 
-type CollectorMethods<S extends SubscriberAndCallbacksFor<any, any>> = {
-  actions: S['actions'];
-  query: S['query'];
-};
+type CollectorMethods<S extends SubscriberAndCallbacksFor<any, any>> =
+  {
+    actions: S['actions'];
+    query: S['query'];
+  };
 
 export type useCollectorReturnType<
   S extends SubscriberAndCallbacksFor<any, any>,
-  C = null
+  C = null,
 > = ConditionallyMergeRecordTypes<C, CollectorMethods<S>>;
-export function useCollector<S extends SubscriberAndCallbacksFor<any, any>, C>(
+export function useCollector<
+  S extends SubscriberAndCallbacksFor<any, any>,
+  C,
+>(
   store: S,
   collector?: (
     state: ReturnType<S['getState']>['current'],

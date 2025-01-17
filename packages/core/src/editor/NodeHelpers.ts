@@ -45,7 +45,8 @@ export function NodeHelpers(state: EditorState, id: NodeId) {
       return !this.isTopLevelNode();
     },
     isParentOfTopLevelNodes: () =>
-      node.data.linkedNodes && Object.keys(node.data.linkedNodes).length > 0,
+      node.data.linkedNodes &&
+      Object.keys(node.data.linkedNodes).length > 0,
     isParentOfTopLevelCanvas() {
       deprecationWarning('query.node(id).isParentOfTopLevelCanvas', {
         suggest: 'query.node(id).isParentOfTopLevelNodes',
@@ -82,7 +83,11 @@ export function NodeHelpers(state: EditorState, id: NodeId) {
         }
 
         if (deep || (!deep && depth === 0)) {
-          ancestors = appendParentNode(node.data.parent, ancestors, depth + 1);
+          ancestors = appendParentNode(
+            node.data.parent,
+            ancestors,
+            depth + 1
+          );
         }
         return ancestors;
       }
@@ -110,7 +115,11 @@ export function NodeHelpers(state: EditorState, id: NodeId) {
 
             linkedNodes.forEach((nodeId) => {
               descendants.push(nodeId);
-              descendants = appendChildNode(nodeId, descendants, depth + 1);
+              descendants = appendChildNode(
+                nodeId,
+                descendants,
+                depth + 1
+              );
             });
           }
 
@@ -119,7 +128,11 @@ export function NodeHelpers(state: EditorState, id: NodeId) {
 
             childNodes.forEach((nodeId) => {
               descendants.push(nodeId);
-              descendants = appendChildNode(nodeId, descendants, depth + 1);
+              descendants = appendChildNode(
+                nodeId,
+                descendants,
+                depth + 1
+              );
             });
           }
 
@@ -155,7 +168,10 @@ export function NodeHelpers(state: EditorState, id: NodeId) {
         return false;
       }
     },
-    isDroppable(selector: NodeSelector, onError?: (err: string) => void) {
+    isDroppable(
+      selector: NodeSelector,
+      onError?: (err: string) => void
+    ) {
       const targets = getNodesFromSelector(state.nodes, selector);
 
       const newParentNode = node;
@@ -175,7 +191,11 @@ export function NodeHelpers(state: EditorState, id: NodeId) {
 
         targets.forEach(({ node: targetNode, exists }) => {
           invariant(
-            targetNode.rules.canDrop(newParentNode, targetNode, nodeHelpers),
+            targetNode.rules.canDrop(
+              newParentNode,
+              targetNode,
+              nodeHelpers
+            ),
             ERROR_MOVE_CANNOT_DROP
           );
 
@@ -189,7 +209,9 @@ export function NodeHelpers(state: EditorState, id: NodeId) {
             ERROR_MOVE_TOP_LEVEL_NODE
           );
 
-          const targetDeepNodes = nodeHelpers(targetNode.id).descendants(true);
+          const targetDeepNodes = nodeHelpers(
+            targetNode.id
+          ).descendants(true);
 
           invariant(
             !targetDeepNodes.includes(newParentNode.id) &&
@@ -198,7 +220,8 @@ export function NodeHelpers(state: EditorState, id: NodeId) {
           );
 
           const currentParentNode =
-            targetNode.data.parent && state.nodes[targetNode.data.parent];
+            targetNode.data.parent &&
+            state.nodes[targetNode.data.parent];
 
           invariant(
             currentParentNode.data.isCanvas,
@@ -225,7 +248,11 @@ export function NodeHelpers(state: EditorState, id: NodeId) {
           const parentNode = state.nodes[parentNodeId];
 
           invariant(
-            parentNode.rules.canMoveOut(childNodes, parentNode, nodeHelpers),
+            parentNode.rules.canMoveOut(
+              childNodes,
+              parentNode,
+              nodeHelpers
+            ),
             ERROR_MOVE_OUTGOING_PARENT
           );
         });
@@ -242,13 +269,13 @@ export function NodeHelpers(state: EditorState, id: NodeId) {
       return serializeNode(node.data, state.options.resolver);
     },
     toNodeTree(includeOnly?: 'linkedNodes' | 'childNodes') {
-      const nodes = [id, ...this.descendants(true, includeOnly)].reduce(
-        (accum, descendantId) => {
-          accum[descendantId] = nodeHelpers(descendantId).get();
-          return accum;
-        },
-        {}
-      );
+      const nodes = [
+        id,
+        ...this.descendants(true, includeOnly),
+      ].reduce((accum, descendantId) => {
+        accum[descendantId] = nodeHelpers(descendantId).get();
+        return accum;
+      }, {});
 
       return {
         rootNodeId: id,

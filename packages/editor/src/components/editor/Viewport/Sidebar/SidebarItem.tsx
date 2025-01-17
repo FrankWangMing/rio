@@ -1,9 +1,11 @@
 import React from 'react';
 import { styled } from 'styled-components';
-import { ReactSVG } from 'react-svg'
+import { ReactSVG } from 'react-svg';
 
-
-const SidebarItemDiv = styled.div<{ $visible?: boolean; $height?: string }>`
+const SidebarItemDiv = styled.div<{
+  $visible?: boolean;
+  $height?: string;
+}>`
   height: ${(props) =>
     props.$visible && props.$height && props.$height !== 'full'
       ? `${props.$height}`
@@ -67,7 +69,7 @@ export const SidebarItem: React.FC<SidebarItemProps> = ({
           <h2 className="text-xs uppercase">{title}</h2>
         </div>
         <Chevron $visible={visible}>
-          <ReactSVG src='/icons/arrow.svg'/>
+          <ReactSVG src="/icons/arrow.svg" />
         </Chevron>
       </HeaderDiv>
       {visible ? (

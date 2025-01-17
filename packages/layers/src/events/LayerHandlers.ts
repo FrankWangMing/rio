@@ -62,7 +62,8 @@ export class LayerHandlers extends DerivedCoreEventHandlers<{
             e.craft.stopPropagation();
             e.preventDefault();
 
-            const { indicator, currentCanvasHovered } = LayerHandlers.events;
+            const { indicator, currentCanvasHovered } =
+              LayerHandlers.events;
 
             if (currentCanvasHovered && indicator) {
               const heading = this.getLayer(
@@ -96,7 +97,9 @@ export class LayerHandlers extends DerivedCoreEventHandlers<{
                 LayerHandlers.events.indicator = {
                   ...indicator,
                   placement: {
-                    currentNode: editorStore.query.node(currNode).get(),
+                    currentNode: editorStore.query
+                      .node(currNode)
+                      .get(),
                     index: currentCanvasHovered.data.nodes.length,
                     where: 'after',
                     parent: currentCanvasHovered,
@@ -104,7 +107,9 @@ export class LayerHandlers extends DerivedCoreEventHandlers<{
                   onCanvas: true,
                 };
 
-                layerStore.actions.setIndicator(LayerHandlers.events.indicator);
+                layerStore.actions.setIndicator(
+                  LayerHandlers.events.indicator
+                );
               }
             }
           }
@@ -123,15 +128,16 @@ export class LayerHandlers extends DerivedCoreEventHandlers<{
 
             let target = layerId;
 
-            const indicatorInfo = editorStore.query.getDropPlaceholder(
-              dragId,
-              target,
-              { x: e.clientX, y: e.clientY },
-              (node) => {
-                const layer = this.getLayer(node.id);
-                return layer && layer.dom;
-              }
-            );
+            const indicatorInfo =
+              editorStore.query.getDropPlaceholder(
+                dragId,
+                target,
+                { x: e.clientX, y: e.clientY },
+                (node) => {
+                  const layer = this.getLayer(node.id);
+                  return layer && layer.dom;
+                }
+              );
 
             if (indicatorInfo) {
               const {
@@ -147,8 +153,11 @@ export class LayerHandlers extends DerivedCoreEventHandlers<{
                   const grandparent = editorStore.query
                     .node(parent.data.parent)
                     .get();
-                  if (editorStore.query.node(grandparent.id).isCanvas()) {
-                    LayerHandlers.events.currentCanvasHovered = parent;
+                  if (
+                    editorStore.query.node(grandparent.id).isCanvas()
+                  ) {
+                    LayerHandlers.events.currentCanvasHovered =
+                      parent;
                     if (
                       (e.clientY > parentHeadingInfo.bottom - 10 &&
                         !this.getLayer(parent.id).expanded) ||
@@ -156,7 +165,8 @@ export class LayerHandlers extends DerivedCoreEventHandlers<{
                     ) {
                       indicatorInfo.placement.parent = grandparent;
                       indicatorInfo.placement.currentNode = parent;
-                      indicatorInfo.placement.index = grandparent.data.nodes
+                      indicatorInfo.placement.index = grandparent.data
+                        .nodes
                         ? grandparent.data.nodes.indexOf(parent.id)
                         : 0;
                       if (
@@ -164,7 +174,10 @@ export class LayerHandlers extends DerivedCoreEventHandlers<{
                         !this.getLayer(parent.id).expanded
                       ) {
                         indicatorInfo.placement.where = 'after';
-                      } else if (e.clientY < parentHeadingInfo.top + 10) {
+                      } else if (
+                        e.clientY <
+                        parentHeadingInfo.top + 10
+                      ) {
                         indicatorInfo.placement.where = 'before';
                       }
                     }
@@ -177,7 +190,9 @@ export class LayerHandlers extends DerivedCoreEventHandlers<{
                 onCanvas: false,
               };
 
-              layerStore.actions.setIndicator(LayerHandlers.events.indicator);
+              layerStore.actions.setIndicator(
+                LayerHandlers.events.indicator
+              );
             }
           }
         );
@@ -212,26 +227,30 @@ export class LayerHandlers extends DerivedCoreEventHandlers<{
           }
         );
 
-        const unbindDragEnd = this.addCraftEventListener(el, 'dragend', (e) => {
-          e.craft.stopPropagation();
-          const events = LayerHandlers.events;
+        const unbindDragEnd = this.addCraftEventListener(
+          el,
+          'dragend',
+          (e) => {
+            e.craft.stopPropagation();
+            const events = LayerHandlers.events;
 
-          if (events.indicator && !events.indicator.error) {
-            const { placement } = events.indicator;
-            const { parent, index, where } = placement;
-            const { id: parentId } = parent;
+            if (events.indicator && !events.indicator.error) {
+              const { placement } = events.indicator;
+              const { parent, index, where } = placement;
+              const { id: parentId } = parent;
 
-            editorStore.actions.move(
-              LayerHandlers.draggedElement as NodeId,
-              parentId,
-              index + (where === 'after' ? 1 : 0)
-            );
+              editorStore.actions.move(
+                LayerHandlers.draggedElement as NodeId,
+                parentId,
+                index + (where === 'after' ? 1 : 0)
+              );
+            }
+
+            LayerHandlers.draggedElement = null;
+            LayerHandlers.events.indicator = null;
+            layerStore.actions.setIndicator(null);
           }
-
-          LayerHandlers.draggedElement = null;
-          LayerHandlers.events.indicator = null;
-          layerStore.actions.setIndicator(null);
-        });
+        );
 
         return () => {
           el.removeAttribute('draggable');

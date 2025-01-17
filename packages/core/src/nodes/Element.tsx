@@ -61,14 +61,20 @@ export function Element<T extends React.ElementType>({
         children
       );
 
-      const tree = query.parseReactElement(linkedElement).toNodeTree();
+      const tree = query
+        .parseReactElement(linkedElement)
+        .toNodeTree();
 
-      actions.history.ignore().addLinkedNodeFromTree(tree, nodeId, id);
+      actions.history
+        .ignore()
+        .addLinkedNodeFromTree(tree, nodeId, id);
 
       return tree.rootNodeId;
     }
     return null;
   });
 
-  return linkedNodeId ? <NodeElement id={linkedNodeId}  render={null}/> : null;
+  return linkedNodeId ? (
+    <NodeElement id={linkedNodeId} render={null} />
+  ) : null;
 }

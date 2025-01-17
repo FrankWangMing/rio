@@ -3,7 +3,8 @@ import React, { useEffect } from 'react';
 
 import { Element, ElementProps } from './Element';
 
-export type CanvasProps<T extends React.ElementType> = ElementProps<T>;
+export type CanvasProps<T extends React.ElementType> =
+  ElementProps<T>;
 
 export const deprecateCanvasComponent = () =>
   deprecationWarning('<Canvas />', {

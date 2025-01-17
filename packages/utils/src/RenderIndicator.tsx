@@ -29,7 +29,10 @@ export const RenderIndicator = ({
   );
 
   if (parentDom && parentDom.ownerDocument !== document) {
-    return ReactDOM.createPortal(indicator, parentDom.ownerDocument.body);
+    return ReactDOM.createPortal(
+      indicator,
+      parentDom.ownerDocument.body
+    );
   }
 
   return indicator;

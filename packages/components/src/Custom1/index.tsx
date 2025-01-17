@@ -8,7 +8,12 @@ export const OnlyButtons = ({ children, ...props }) => {
     connectors: { connect },
   } = useNode();
   return (
-    <div title="only-buttons" ref={connect} className="w-full mt-5" {...props}>
+    <div
+      title="only-buttons"
+      ref={connect}
+      className="w-full mt-5"
+      {...props}
+    >
       {children}
     </div>
   );
@@ -16,7 +21,8 @@ export const OnlyButtons = ({ children, ...props }) => {
 
 OnlyButtons.craft = {
   rules: {
-    canMoveIn: (nodes) => nodes.every((node) => node.data.type === Button),
+    canMoveIn: (nodes) =>
+      nodes.every((node) => node.data.type === Button),
   },
 };
 

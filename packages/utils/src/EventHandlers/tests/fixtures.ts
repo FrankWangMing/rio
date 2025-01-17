@@ -41,16 +41,16 @@ export const createTestHandlers = () => {
       return Object.keys(testHandlers).reduce((accum, key) => {
         accum[key] = (el, ...args) => {
           const cleanup = testHandlers[key].init(el, ...args);
-          const listenersToRemove = Object.keys(testHandlers[key].events).map(
-            (eventName: any) => {
-              const removeCraftListener = this.addCraftEventListener(
-                el,
-                eventName,
-                testHandlers[key].events[eventName]
-              );
-              return () => removeCraftListener();
-            }
-          );
+          const listenersToRemove = Object.keys(
+            testHandlers[key].events
+          ).map((eventName: any) => {
+            const removeCraftListener = this.addCraftEventListener(
+              el,
+              eventName,
+              testHandlers[key].events[eventName]
+            );
+            return () => removeCraftListener();
+          });
 
           return () => {
             cleanup();
@@ -93,17 +93,17 @@ export const createTestDerivedHandlers = (core: any) => {
       return Object.keys(testHandlers).reduce((accum, key) => {
         accum[key] = (el, ...args) => {
           const cleanup = testHandlers[key].init(el, ...args);
-          const listenersToRemove = Object.keys(testHandlers[key].events).map(
-            (eventName: any) => {
-              const removeCraftListener = this.addCraftEventListener(
-                el,
-                eventName,
-                testHandlers[key].events[eventName]
-              );
+          const listenersToRemove = Object.keys(
+            testHandlers[key].events
+          ).map((eventName: any) => {
+            const removeCraftListener = this.addCraftEventListener(
+              el,
+              eventName,
+              testHandlers[key].events[eventName]
+            );
 
-              return () => removeCraftListener();
-            }
-          );
+            return () => removeCraftListener();
+          });
 
           const cleanupParent = this.inherit((connectors) => {
             connectors[key](el, ...args);

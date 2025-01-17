@@ -1,8 +1,8 @@
 import { Element, useEditor } from '@rioe/core';
 import { styled } from 'styled-components';
-import { ReactSVG } from 'react-svg'
+import { ReactSVG } from 'react-svg';
 
-import { Container,Text,Video ,Button} from '@rioe/components';
+import { Container, Text, Video, Button } from '@rioe/components';
 
 import { Tooltip } from 'antd';
 
@@ -56,32 +56,35 @@ export const Toolbox = () => {
         >
           <Tooltip title="Container" placement="right">
             <Item className="m-2 pb-2 cursor-pointer block" $move>
-              <ReactSVG  src='/icons/toolbox/rectangle.svg'/>
+              <ReactSVG src="/icons/toolbox/rectangle.svg" />
             </Item>
           </Tooltip>
         </div>
         <div
           ref={(ref) =>
-            create(ref, <Text fontSize="12" textAlign="left" text="Hi there" />)
+            create(
+              ref,
+              <Text fontSize="12" textAlign="left" text="Hi there" />
+            )
           }
         >
           <Tooltip title="Text" placement="right">
             <Item className="m-2 pb-2 cursor-pointer block" $move>
-              <ReactSVG  src='/icons/toolbox/text.svg'/>
+              <ReactSVG src="/icons/toolbox/text.svg" />
             </Item>
           </Tooltip>
         </div>
         <div ref={(ref) => create(ref, <Button />)}>
           <Tooltip title="Button" placement="right">
             <Item className="m-2 pb-2 cursor-pointer block" $move>
-              <ReactSVG  src='/icons/toolbox/button.svg'/>
+              <ReactSVG src="/icons/toolbox/button.svg" />
             </Item>
           </Tooltip>
         </div>
         <div ref={(ref) => create(ref, <Video />)}>
           <Tooltip title="Video" placement="right">
             <Item className="m-2 pb-2 cursor-pointer block" $move>
-            <ReactSVG  src='/icons/toolbox/video-line.svg'/>
+              <ReactSVG src="/icons/toolbox/video-line.svg" />
             </Item>
           </Tooltip>
         </div>

@@ -1,5 +1,10 @@
 import { useEditor } from '@rioe/core';
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  useCallback,
+} from 'react';
 import ContentEditable from 'react-contenteditable';
 
 import { useLayer } from '../useLayer';

@@ -2,7 +2,7 @@
   "name": "rio",
   "private": false,
   "scripts": {
-    "build": "sudo turbo build --filter=@rioe/*",
+    "build": "turbo build --filter=@rioe/*",
     "clean": "turbo clean",
     "dev": "turbo dev",
     "lint": "turbo lint",
@@ -12,15 +12,15 @@
   "type": "module",
   "devDependencies": {
     "turbo": "^2.3.3",
-    "typescript": "5.5.4"
+    "typescript": "5.7.3"
   },
-
-  "packageManager": "pnpm@9.0.0",
+  "packageManager": "pnpm@9.15.4",
   "dependencies": {
     "@changesets/cli": "^2.27.11",
     "changeset": "^0.2.6",
-    "cross-env": "6.0.3",
+    "cross-env": "7.0.3",
+    "prettier": "^3.4.2",
     "rimraf": "^6.0.1",
-    "rollup": "^4.29.1"
+    "rollup": "^4.30.1"
   }
 }

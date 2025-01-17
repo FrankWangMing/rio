@@ -9,18 +9,22 @@ type RenderNodeToElementProps = {
   render?: React.ReactElement;
   children?: React.ReactNode;
 };
-export const RenderNodeToElement = ({ render }: RenderNodeToElementProps) => {
+export const RenderNodeToElement = ({
+  render,
+}: RenderNodeToElementProps) => {
   const { hidden } = useInternalNode((node) => ({
     hidden: node.data.hidden,
   }));
 
-  const { onRender,state } = useInternalEditor((state) => ({
+  const { onRender, state } = useInternalEditor((state) => ({
     onRender: state.options.onRender,
-    state:state
+    state: state,
   }));
   // don't display the node since it's hidden
   if (hidden) {
     return null;
   }
-  return React.createElement(onRender, { render: render || <DefaultRender /> });
+  return React.createElement(onRender, {
+    render: render || <DefaultRender />,
+  });
 };

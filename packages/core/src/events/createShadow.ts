@@ -6,7 +6,8 @@ export const createShadow = (
   forceSingleShadow: boolean = false
 ) => {
   if (shadowsToCreate.length === 1 || forceSingleShadow) {
-    const { width, height } = shadowsToCreate[0].getBoundingClientRect();
+    const { width, height } =
+      shadowsToCreate[0].getBoundingClientRect();
     const shadow = shadowsToCreate[0].cloneNode(true) as HTMLElement;
 
     shadow.style.position = `absolute`;

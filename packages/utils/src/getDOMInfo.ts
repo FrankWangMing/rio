@@ -1,14 +1,6 @@
 export const getDOMInfo = (el: HTMLElement) => {
-  const {
-    x,
-    y,
-    top,
-    left,
-    bottom,
-    right,
-    width,
-    height,
-  } = el.getBoundingClientRect() as DOMRect;
+  const { x, y, top, left, bottom, right, width, height } =
+    el.getBoundingClientRect() as DOMRect;
 
   const style = window.getComputedStyle(el);
 

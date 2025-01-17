@@ -1,5 +1,10 @@
-import {  useEditor } from '@rioe/core';
-import React, { useRef, useEffect, useLayoutEffect, useState } from 'react';
+import { useEditor } from '@rioe/core';
+import React, {
+  useRef,
+  useEffect,
+  useLayoutEffect,
+  useState,
+} from 'react';
 
 import { LayerContextProvider } from './LayerContextProvider';
 import { useLayer } from './useLayer';
@@ -39,7 +44,7 @@ export const LayerNode = () => {
     setRegistered(true);
   }, [registerLayer, id]);
 
-  const expandedRef = useRef<boolean>(expanded);
+  const expandedRef = useRef < boolean > expanded;
   expandedRef.current = expanded;
 
   const shouldBeExpandedOnLoad = useRef<boolean>(
@@ -65,7 +70,11 @@ export const LayerNode = () => {
         {},
         children && expanded
           ? children.map((id) => (
-              <LayerContextProvider key={id} id={id} depth={depth + 1} />
+              <LayerContextProvider
+                key={id}
+                id={id}
+                depth={depth + 1}
+              />
             ))
           : null
       )}

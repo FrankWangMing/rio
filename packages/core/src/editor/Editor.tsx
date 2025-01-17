@@ -1,4 +1,7 @@
-import { ERROR_RESOLVER_NOT_AN_OBJECT, HISTORY_ACTIONS } from '@rioe/utils';
+import {
+  ERROR_RESOLVER_NOT_AN_OBJECT,
+  HISTORY_ACTIONS,
+} from '@rioe/utils';
 import React, { useEffect, useRef } from 'react';
 import invariant from 'tiny-invariant';
 
@@ -30,17 +33,26 @@ export const Editor = ({ children, ...options }: EditorProps) => {
 
   const context = useEditorStore(
     optionsRef.current,
-    (state, previousState, actionPerformedWithPatches, query, normalizer) => {
+    (
+      state,
+      previousState,
+      actionPerformedWithPatches,
+      query,
+      normalizer
+    ) => {
       if (!actionPerformedWithPatches) {
         return;
       }
 
-      const { patches, ...actionPerformed } = actionPerformedWithPatches;
+      const { patches, ...actionPerformed } =
+        actionPerformedWithPatches;
 
       for (let i = 0; i < patches.length; i++) {
         const { path } = patches[i];
         const isModifyingNodeData =
-          path.length > 2 && path[0] === 'nodes' && path[2] === 'data';
+          path.length > 2 &&
+          path[0] === 'nodes' &&
+          path[2] === 'data';
 
         let actionType = actionPerformed.type;
 
@@ -54,7 +66,9 @@ export const Editor = ({ children, ...options }: EditorProps) => {
         }
 
         if (
-          ['setState', 'deserialize'].includes(actionPerformed.type) ||
+          ['setState', 'deserialize'].includes(
+            actionPerformed.type
+          ) ||
           isModifyingNodeData
         ) {
           normalizer((draft) => {

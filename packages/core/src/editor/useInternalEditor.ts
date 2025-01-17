@@ -22,14 +22,15 @@ export type EditorCollector<C> = (
   query: QueryCallbacksFor<typeof QueryMethods>
 ) => C;
 
-export type useInternalEditorReturnType<C = null> = useCollectorReturnType<
-  EditorStore,
-  C
-> & {
-  inContext: boolean;
-  store: EditorStore;
-  connectors: EventHandlerConnectors<CoreEventHandlers, React.ReactElement>;
-};
+export type useInternalEditorReturnType<C = null> =
+  useCollectorReturnType<EditorStore, C> & {
+    inContext: boolean;
+    store: EditorStore;
+    connectors: EventHandlerConnectors<
+      CoreEventHandlers,
+      React.ReactElement
+    >;
+  };
 
 export function useInternalEditor<C>(
   collector?: EditorCollector<C>
@@ -54,7 +55,9 @@ export function useInternalEditor<C>(
   }, [connectorsUsage]);
 
   const connectors = useMemo(
-    () => connectorsUsage && wrapConnectorHooks(connectorsUsage.connectors),
+    () =>
+      connectorsUsage &&
+      wrapConnectorHooks(connectorsUsage.connectors),
     [connectorsUsage]
   );
 

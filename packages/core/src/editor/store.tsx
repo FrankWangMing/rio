@@ -8,7 +8,12 @@ import { ActionMethods } from './actions';
 import { QueryMethods } from './query';
 
 import { DefaultEventHandlers } from '../events';
-import { EditorState, Options, NodeEventTypes, NodeId } from '../interfaces';
+import {
+  EditorState,
+  Options,
+  NodeEventTypes,
+  NodeId,
+} from '../interfaces';
 
 export const editorInitialState: EditorState = {
   nodes: {},
@@ -68,17 +73,19 @@ export const ActionMethodsWithConfig = {
     Object.keys(state.nodes).forEach((id) => {
       const node = state.nodes[id];
 
-      Object.keys(node.events).forEach((eventName: NodeEventTypes) => {
-        const isEventActive = !!node.events[eventName];
+      Object.keys(node.events).forEach(
+        (eventName: NodeEventTypes) => {
+          const isEventActive = !!node.events[eventName];
 
-        if (
-          isEventActive &&
-          state.events[eventName] &&
-          !state.events[eventName].has(node.id)
-        ) {
-          node.events[eventName] = false;
+          if (
+            isEventActive &&
+            state.events[eventName] &&
+            !state.events[eventName].has(node.id)
+          ) {
+            node.events[eventName] = false;
+          }
         }
-      });
+      );
     });
   },
 };

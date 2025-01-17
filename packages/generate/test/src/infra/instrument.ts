@@ -1,14 +1,14 @@
-import { useEffect } from "react";
-import * as Sentry from "@sentry/react";
+import { useEffect } from 'react';
+import * as Sentry from '@sentry/react';
 import {
   createRoutesFromChildren,
   matchRoutes,
   useLocation,
   useNavigationType,
-} from "react-router-dom";
+} from 'react-router-dom';
 
 Sentry.init({
-  dsn: "https://examplePublicKey@o0.ingest.sentry.io/0",
+  dsn: 'https://examplePublicKey@o0.ingest.sentry.io/0',
   integrations: [
     // See docs for support of different versions of variation of react router
     // https://docs.sentry.io/platforms/javascript/guides/react/configuration/integrations/react-router/

@@ -1,15 +1,9 @@
-import http from "../http"
-
+import http from '../http';
 
 interface UserInfo {
-    user():void
-
+  user(): void;
 }
 
-export default ():PromiseLike<UserInfo> => {
-    return http.get('/user')
-}
-
-
-
-
+export default (): PromiseLike<UserInfo> => {
+  return http.get('/user');
+};

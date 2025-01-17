@@ -1,16 +1,15 @@
-
-import { createBrowserRouter } from "react-router";
-import App from "../pages/App";
+import { createBrowserRouter } from 'react-router';
+import App from '../pages/App';
 
 /** @type {import('react-router').RoutesProps} */
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     Component: App,
     children: [
       {
-        path: "shows/:showId",
+        path: 'shows/:showId',
         Component: App,
         loader: ({ request, params }) =>
           fetch(`/api/show/${params.id}.json`, {
@@ -20,8 +19,8 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/shows",
-  }
+    path: '/shows',
+  },
 ]);
 
 export default router;

@@ -1,4 +1,8 @@
-import { Overwrite, Delete, OverwriteFnReturnType } from '@rioe/utils';
+import {
+  Overwrite,
+  Delete,
+  OverwriteFnReturnType,
+} from '@rioe/utils';
 import { useMemo } from 'react';
 
 import {
@@ -50,7 +54,10 @@ export type useEditorReturnType<S = null> = Overwrite<
   useInternalEditorReturnType<S>,
   {
     actions: WithoutPrivateActions;
-    query: Delete<useInternalEditorReturnType<S>['query'], 'deserialize'>;
+    query: Delete<
+      useInternalEditorReturnType<S>['query'],
+      'deserialize'
+    >;
   }
 >;
 

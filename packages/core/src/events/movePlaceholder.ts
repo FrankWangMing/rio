@@ -20,7 +20,10 @@ export default function movePlaceholder(
       w = thickness;
       h = elDim.outerHeight;
       t = elDim.top;
-      l = where === 'before' ? elDim.left : elDim.left + elDim.outerWidth;
+      l =
+        where === 'before'
+          ? elDim.left
+          : elDim.left + elDim.outerWidth;
     } else {
       w = elDim.outerWidth;
       h = thickness;

@@ -2,14 +2,13 @@ import { useEditor } from '@rioe/core';
 import { Layers } from '@rioe/layers';
 import React, { useRef, useState } from 'react';
 import { styled } from 'styled-components';
-import { ReactSVG } from 'react-svg'
-
+import { ReactSVG } from 'react-svg';
 
 import { SidebarItem } from './SidebarItem';
-import { Toolbar }from '@rioe/components'
+import { Toolbar } from '@rioe/components';
 
-const LayerIcon = ()=> <ReactSVG  src='/icons/layers.svg'/>
-const CustomizeIcon = ()=> <ReactSVG  src='/icons/customize.svg'/>
+const LayerIcon = () => <ReactSVG src="/icons/layers.svg" />;
+const CustomizeIcon = () => <ReactSVG src="/icons/customize.svg" />;
 
 export const SidebarDiv = styled.div<{ $enabled: boolean }>`
   width: 280px;
@@ -28,9 +27,9 @@ const CarbonAdsContainer = styled.div`
   }
 
   #carbonads {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-      Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial,
-      sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue',
+      Helvetica, Arial, sans-serif;
 
     padding: 10px 0.5rem;
     border-top: 1px solid rgb(229 231 235);
@@ -103,7 +102,7 @@ const CarbonAdsContainer = styled.div`
 `;
 
 const Carbonads = () => {
-  const domRef = useRef<HTMLDivElement>(null);
+  const domRef = useRef < HTMLDivElement > null;
 
   React.useEffect(() => {
     const { current: dom } = domRef;
@@ -145,7 +144,10 @@ export const Sidebar = () => {
   }));
 
   return (
-    <SidebarDiv $enabled={enabled} className="sidebar transition bg-white w-2">
+    <SidebarDiv
+      $enabled={enabled}
+      className="sidebar transition bg-white w-2"
+    >
       <div className="flex flex-col h-full">
         <SidebarItem
           icon={CustomizeIcon}

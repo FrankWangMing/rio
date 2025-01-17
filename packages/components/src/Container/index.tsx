@@ -58,16 +58,16 @@ export const Container = (props: Partial<ContainerProps>) => {
     radius,
     children,
   } = props;
-  const data = useNode()
-  const {events} = data
-  data.actions.setCustom(()=>{
+  const data = useNode();
+  const { events } = data;
+  data.actions.setCustom(() => {
     return {
-      onClick:()=>{
-        console.log("JKJk")
-      }
-    }
-  })
-  console.log(data)
+      onClick: () => {
+        console.log('JKJk');
+      },
+    };
+  });
+  console.log(data);
   return (
     <Resizer
       propKey={{ width: 'width', height: 'height' }}

@@ -1,7 +1,6 @@
 import React from 'react';
 import { ToolbarItem, ToolbarSection } from '../Toolbar';
 
-
 export const VideoSettings = () => {
   return (
     <>

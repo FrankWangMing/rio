@@ -11,7 +11,8 @@ const LayerNodeDiv = styled.div<{
   $hasCanvases: boolean;
   $hovered: boolean;
 }>`
-  background: ${(props) => (props.$hovered ? '#f1f1f1' : 'transparent')};
+  background: ${(props) =>
+    props.$hovered ? '#f1f1f1' : 'transparent'};
   display: block;
   padding-bottom: ${(props) =>
     props.$hasCanvases && props.$expanded ? 5 : 0}px;

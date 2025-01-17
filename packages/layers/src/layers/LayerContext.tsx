@@ -7,7 +7,10 @@ import { LayerHandlers } from '../events/LayerHandlers';
 export type LayerContextType = {
   id: NodeId;
   depth: number;
-  connectors: EventHandlerConnectors<LayerHandlers, React.ReactElement>;
+  connectors: EventHandlerConnectors<
+    LayerHandlers,
+    React.ReactElement
+  >;
 };
 
 export const LayerContext = React.createContext<LayerContextType>(

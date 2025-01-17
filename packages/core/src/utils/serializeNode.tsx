@@ -5,7 +5,10 @@ import { resolveComponent } from './resolveComponent';
 import { NodeData, ReducedComp, SerializedNode } from '../interfaces';
 import { Resolver } from '../interfaces';
 
-const reduceType = (type: React.ElementType | string, resolver: Resolver) => {
+const reduceType = (
+  type: React.ElementType | string,
+  resolver: Resolver
+) => {
   if (typeof type === 'string') {
     return type;
   }
@@ -17,27 +20,34 @@ export const serializeComp = (
   resolver: Resolver
 ): ReducedComp => {
   let { type, isCanvas, props } = data;
-  props = Object.keys(props).reduce((result: Record<string, any>, key) => {
-    const prop = props[key];
+  props = Object.keys(props).reduce(
+    (result: Record<string, any>, key) => {
+      const prop = props[key];
 
-    if (prop === undefined || prop === null || typeof prop === 'function') {
+      if (
+        prop === undefined ||
+        prop === null ||
+        typeof prop === 'function'
+      ) {
+        return result;
+      }
+
+      if (key === 'children' && typeof prop !== 'string') {
+        result[key] = Children.map(prop, (child) => {
+          if (typeof child === 'string') {
+            return child;
+          }
+          return serializeComp(child, resolver);
+        });
+      } else if (typeof prop.type === 'function') {
+        result[key] = serializeComp(prop, resolver);
+      } else {
+        result[key] = prop;
+      }
       return result;
-    }
-
-    if (key === 'children' && typeof prop !== 'string') {
-      result[key] = Children.map(prop, (child) => {
-        if (typeof child === 'string') {
-          return child;
-        }
-        return serializeComp(child, resolver);
-      });
-    } else if (typeof prop.type === 'function') {
-      result[key] = serializeComp(prop, resolver);
-    } else {
-      result[key] = prop;
-    }
-    return result;
-  }, {});
+    },
+    {}
+  );
 
   return {
     type: reduceType(type, resolver),
@@ -52,7 +62,10 @@ export const serializeNode = (
 ): SerializedNode => {
   const { type, props, isCanvas, name, ...nodeData } = data;
 
-  const reducedComp = serializeComp({ type, isCanvas, props }, resolver);
+  const reducedComp = serializeComp(
+    { type, isCanvas, props },
+    resolver
+  );
 
   return {
     ...reducedComp,

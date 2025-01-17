@@ -28,7 +28,9 @@ describe('History Manager', () => {
 
     it('should add history to timeline', () => {
       history.add(patches, inversePatches);
-      expect(history.timeline).toMatchObject([{ patches, inversePatches }]);
+      expect(history.timeline).toMatchObject([
+        { patches, inversePatches },
+      ]);
     });
 
     it('should ignore adding empty history to timeline', () => {
@@ -40,14 +42,23 @@ describe('History Manager', () => {
   describe('Undo/Redo actions', () => {
     beforeAll(() => {
       history = new History();
-      history.add(dummyTimeline[0].patches, dummyTimeline[0].inversePatches);
-      history.add(dummyTimeline[1].patches, dummyTimeline[1].inversePatches);
+      history.add(
+        dummyTimeline[0].patches,
+        dummyTimeline[0].inversePatches
+      );
+      history.add(
+        dummyTimeline[1].patches,
+        dummyTimeline[1].inversePatches
+      );
     });
 
     it('should be able to undo', () => {
       const { state, inversePatches } = dummyTimeline[1];
       history.undo(state);
-      expect(applyPatches).toHaveBeenCalledWith(state, inversePatches);
+      expect(applyPatches).toHaveBeenCalledWith(
+        state,
+        inversePatches
+      );
     });
 
     it('should be able to redo', () => {

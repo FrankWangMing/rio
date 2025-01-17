@@ -33,7 +33,9 @@ export const LayerManagerProvider = ({
 
   return (
     <LayerManagerContext.Provider value={{ store }}>
-      <LayerEventContextProvider>{children}</LayerEventContextProvider>
+      <LayerEventContextProvider>
+        {children}
+      </LayerEventContextProvider>
     </LayerManagerContext.Provider>
   );
 };

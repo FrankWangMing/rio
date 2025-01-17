@@ -1,11 +1,19 @@
 import { isChromium, isLinux } from '@rioe/utils';
 import React from 'react';
 
-import { CoreEventHandlers, CreateHandlerOptions } from './CoreEventHandlers';
+import {
+  CoreEventHandlers,
+  CreateHandlerOptions,
+} from './CoreEventHandlers';
 import { Positioner } from './Positioner';
 import { createShadow } from './createShadow';
 
-import { Indicator, NodeId, DragTarget, NodeTree } from '../interfaces';
+import {
+  Indicator,
+  NodeId,
+  DragTarget,
+  NodeTree,
+} from '../interfaces';
 import { isFunction } from 'lodash';
 
 export type LogicEventHandlersOptions = {
@@ -40,7 +48,7 @@ export class LogicEventHandlers<O = {}> extends CoreEventHandlers<
 
     return {
       connect: (el: HTMLElement, id: NodeId) => {
-        console.log(el, "el")
+        console.log(el, 'el');
         store.actions.setDOM(id, el);
 
         return this.reflect((connectors) => {
@@ -51,10 +59,10 @@ export class LogicEventHandlers<O = {}> extends CoreEventHandlers<
         });
       },
       click: (el: HTMLElement, id: NodeId) => {
-        this.addCraftEventListener(el, "click", (e) => {
-          console.log(e)
-          console.log("test")
-        })
+        this.addCraftEventListener(el, 'click', (e) => {
+          console.log(e);
+          console.log('test');
+        });
       },
       select: (el: HTMLElement, id: NodeId) => {
         const unbindOnMouseDown = this.addCraftEventListener(
@@ -67,8 +75,11 @@ export class LogicEventHandlers<O = {}> extends CoreEventHandlers<
 
             if (id) {
               const { query } = store;
-              const selectedElementIds = query.getEvent('selected').all();
-              const isMultiSelect = this.options.isMultiSelectEnabled(e);
+              const selectedElementIds = query
+                .getEvent('selected')
+                .all();
+              const isMultiSelect =
+                this.options.isMultiSelectEnabled(e);
 
               /**
                * Retain the previously select elements if the multi-select condition is enabled
@@ -83,10 +94,15 @@ export class LogicEventHandlers<O = {}> extends CoreEventHandlers<
                     const descendants = query
                       .node(selectedId)
                       .descendants(true);
-                    const ancestors = query.node(selectedId).ancestors(true);
+                    const ancestors = query
+                      .node(selectedId)
+                      .ancestors(true);
 
                     // Deselect ancestors/descendants
-                    if (descendants.includes(id) || ancestors.includes(id)) {
+                    if (
+                      descendants.includes(id) ||
+                      ancestors.includes(id)
+                    ) {
                       return false;
                     }
 
@@ -100,33 +116,54 @@ export class LogicEventHandlers<O = {}> extends CoreEventHandlers<
               }
             }
 
-            store.actions.setNodeEvent('selected', newSelectedElementIds);
+            store.actions.setNodeEvent(
+              'selected',
+              newSelectedElementIds
+            );
           }
         );
 
-        const unbindOnClick = this.addCraftEventListener(el, 'click', (e) => {
-          e.craft.stopPropagation();
+        const unbindOnClick = this.addCraftEventListener(
+          el,
+          'click',
+          (e) => {
+            e.craft.stopPropagation();
 
-          const { query } = store;
-          const selectedElementIds = query.getEvent('selected').all();
+            const { query } = store;
+            const selectedElementIds = query
+              .getEvent('selected')
+              .all();
 
-          const isMultiSelect = this.options.isMultiSelectEnabled(e);
-          const isNodeAlreadySelected = this.currentSelectedElementIds.includes(
-            id
-          );
+            const isMultiSelect =
+              this.options.isMultiSelectEnabled(e);
+            const isNodeAlreadySelected =
+              this.currentSelectedElementIds.includes(id);
 
-          let newSelectedElementIds = [...selectedElementIds];
+            let newSelectedElementIds = [...selectedElementIds];
 
-          if (isMultiSelect && isNodeAlreadySelected) {
-            newSelectedElementIds.splice(newSelectedElementIds.indexOf(id), 1);
-            store.actions.setNodeEvent('selected', newSelectedElementIds);
-          } else if (!isMultiSelect && selectedElementIds.length > 1) {
-            newSelectedElementIds = [id];
-            store.actions.setNodeEvent('selected', newSelectedElementIds);
+            if (isMultiSelect && isNodeAlreadySelected) {
+              newSelectedElementIds.splice(
+                newSelectedElementIds.indexOf(id),
+                1
+              );
+              store.actions.setNodeEvent(
+                'selected',
+                newSelectedElementIds
+              );
+            } else if (
+              !isMultiSelect &&
+              selectedElementIds.length > 1
+            ) {
+              newSelectedElementIds = [id];
+              store.actions.setNodeEvent(
+                'selected',
+                newSelectedElementIds
+              );
+            }
+
+            this.currentSelectedElementIds = newSelectedElementIds;
           }
-
-          this.currentSelectedElementIds = newSelectedElementIds;
-        });
+        );
 
         return () => {
           unbindOnMouseDown();
@@ -208,7 +245,7 @@ export class LogicEventHandlers<O = {}> extends CoreEventHandlers<
       },
       drag: (el: HTMLElement, id: NodeId) => {
         if (!store.query.node(id).isDraggable()) {
-          return () => { };
+          return () => {};
         }
 
         el.setAttribute('draggable', 'true');
@@ -223,10 +260,10 @@ export class LogicEventHandlers<O = {}> extends CoreEventHandlers<
 
             let selectedElementIds = query.getEvent('selected').all();
 
-            const isMultiSelect = this.options.isMultiSelectEnabled(e);
-            const isNodeAlreadySelected = this.currentSelectedElementIds.includes(
-              id
-            );
+            const isMultiSelect =
+              this.options.isMultiSelectEnabled(e);
+            const isNodeAlreadySelected =
+              this.currentSelectedElementIds.includes(id);
 
             if (!isNodeAlreadySelected) {
               if (isMultiSelect) {
@@ -234,7 +271,10 @@ export class LogicEventHandlers<O = {}> extends CoreEventHandlers<
               } else {
                 selectedElementIds = [id];
               }
-              store.actions.setNodeEvent('selected', selectedElementIds);
+              store.actions.setNodeEvent(
+                'selected',
+                selectedElementIds
+              );
             }
 
             actions.setNodeEvent('dragged', selectedElementIds);
@@ -261,25 +301,29 @@ export class LogicEventHandlers<O = {}> extends CoreEventHandlers<
           }
         );
 
-        const unbindDragEnd = this.addCraftEventListener(el, 'dragend', (e) => {
-          e.craft.stopPropagation();
+        const unbindDragEnd = this.addCraftEventListener(
+          el,
+          'dragend',
+          (e) => {
+            e.craft.stopPropagation();
 
-          this.dropElement((dragTarget, indicator) => {
-            if (dragTarget.type === 'new') {
-              return;
-            }
+            this.dropElement((dragTarget, indicator) => {
+              if (dragTarget.type === 'new') {
+                return;
+              }
 
-            const index =
-              indicator.placement.index +
-              (indicator.placement.where === 'after' ? 1 : 0);
+              const index =
+                indicator.placement.index +
+                (indicator.placement.where === 'after' ? 1 : 0);
 
-            store.actions.move(
-              dragTarget.nodes,
-              indicator.placement.parent.id,
-              index
-            );
-          });
-        });
+              store.actions.move(
+                dragTarget.nodes,
+                indicator.placement.parent.id,
+                index
+              );
+            });
+          }
+        );
 
         return () => {
           el.setAttribute('draggable', 'false');
@@ -289,7 +333,9 @@ export class LogicEventHandlers<O = {}> extends CoreEventHandlers<
       },
       create: (
         el: HTMLElement,
-        userElement: React.ReactElement | (() => NodeTree | React.ReactElement),
+        userElement:
+          | React.ReactElement
+          | (() => NodeTree | React.ReactElement),
         options?: Partial<CreateHandlerOptions>
       ) => {
         el.setAttribute('draggable', 'true');
@@ -303,12 +349,16 @@ export class LogicEventHandlers<O = {}> extends CoreEventHandlers<
             if (typeof userElement === 'function') {
               const result = userElement();
               if (React.isValidElement(result)) {
-                tree = store.query.parseReactElement(result).toNodeTree();
+                tree = store.query
+                  .parseReactElement(result)
+                  .toNodeTree();
               } else {
                 tree = result;
               }
             } else {
-              tree = store.query.parseReactElement(userElement).toNodeTree();
+              tree = store.query
+                .parseReactElement(userElement)
+                .toNodeTree();
             }
 
             const dom = e.currentTarget as HTMLElement;
@@ -329,27 +379,31 @@ export class LogicEventHandlers<O = {}> extends CoreEventHandlers<
           }
         );
 
-        const unbindDragEnd = this.addCraftEventListener(el, 'dragend', (e) => {
-          e.craft.stopPropagation();
-          this.dropElement((dragTarget, indicator) => {
-            if (dragTarget.type === 'existing') {
-              return;
-            }
+        const unbindDragEnd = this.addCraftEventListener(
+          el,
+          'dragend',
+          (e) => {
+            e.craft.stopPropagation();
+            this.dropElement((dragTarget, indicator) => {
+              if (dragTarget.type === 'existing') {
+                return;
+              }
 
-            const index =
-              indicator.placement.index +
-              (indicator.placement.where === 'after' ? 1 : 0);
-            store.actions.addNodeTree(
-              dragTarget.tree,
-              indicator.placement.parent.id,
-              index
-            );
+              const index =
+                indicator.placement.index +
+                (indicator.placement.where === 'after' ? 1 : 0);
+              store.actions.addNodeTree(
+                dragTarget.tree,
+                indicator.placement.parent.id,
+                index
+              );
 
-            if (options && isFunction(options.onCreate)) {
-              options.onCreate(dragTarget.tree);
-            }
-          });
-        });
+              if (options && isFunction(options.onCreate)) {
+                options.onCreate(dragTarget.tree);
+              }
+            });
+          }
+        );
 
         return () => {
           el.removeAttribute('draggable');
@@ -378,7 +432,9 @@ export class LogicEventHandlers<O = {}> extends CoreEventHandlers<
     }
 
     if (draggedElementShadow) {
-      draggedElementShadow.parentNode.removeChild(draggedElementShadow);
+      draggedElementShadow.parentNode.removeChild(
+        draggedElementShadow
+      );
       this.draggedElementShadow = null;
     }
 

@@ -10,7 +10,9 @@ import {
 } from './interfaces';
 import { isEventBlockedByDescendant } from './isEventBlockedByDescendant';
 
-export abstract class EventHandlers<O extends Record<string, any> = {}> {
+export abstract class EventHandlers<
+  O extends Record<string, any> = {},
+> {
   options: O;
 
   registry: ConnectorRegistry = new ConnectorRegistry();
@@ -63,7 +65,9 @@ export abstract class EventHandlers<O extends Record<string, any> = {}> {
     listener: CraftEventListener<K>,
     options?: boolean | AddEventListenerOptions
   ) {
-    const bindedListener = (e: CraftDOMEvent<HTMLElementEventMap[K]>) => {
+    const bindedListener = (
+      e: CraftDOMEvent<HTMLElementEventMap[K]>
+    ) => {
       if (!isEventBlockedByDescendant(e, eventName, el)) {
         e.craft.stopPropagation = () => {
           if (!e.craft.blockedEvents[eventName]) {
@@ -79,11 +83,15 @@ export abstract class EventHandlers<O extends Record<string, any> = {}> {
 
     el.addEventListener(eventName, bindedListener, options);
 
-    return () => el.removeEventListener(eventName, bindedListener, options);
+    return () =>
+      el.removeEventListener(eventName, bindedListener, options);
   }
 
   // Defines the connectors and their logic
-  abstract handlers(): Record<string, (el: HTMLElement, ...args: any[]) => any>;
+  abstract handlers(): Record<
+    string,
+    (el: HTMLElement, ...args: any[]) => any
+  >;
 
   /**
    * Creates a record of chainable connectors and tracks their usages
@@ -162,7 +170,7 @@ export abstract class EventHandlers<O extends Record<string, any> = {}> {
 
   derive<C extends EventHandlers>(
     type: {
-      new(...args: any[]): C;
+      new (...args: any[]): C;
     },
     opts: C['options']
   ) {

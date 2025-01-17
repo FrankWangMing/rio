@@ -14,7 +14,8 @@ export type FrameProps = {
 const RenderRootNode = () => {
   const { timestamp } = useInternalEditor((state) => ({
     timestamp:
-      state.nodes[ROOT_NODE] && state.nodes[ROOT_NODE]._hydrationTimestamp,
+      state.nodes[ROOT_NODE] &&
+      state.nodes[ROOT_NODE]._hydrationTimestamp,
   }));
 
   if (!timestamp) {
@@ -44,16 +45,20 @@ export const Frame = ({ children, json, data }: FrameProps) => {
     if (initialData) {
       actions.history.ignore().deserialize(initialData);
     } else if (children) {
-      const rootNode = React.Children.only(children) as React.ReactElement;
+      const rootNode = React.Children.only(
+        children
+      ) as React.ReactElement;
 
-      const node = query.parseReactElement(rootNode).toNodeTree((node, jsx) => {
-        if (jsx === rootNode) {
-          node.id = ROOT_NODE;
-        }
-        return node;
-      });
+      const node = query
+        .parseReactElement(rootNode)
+        .toNodeTree((node, jsx) => {
+          if (jsx === rootNode) {
+            node.id = ROOT_NODE;
+          }
+          return node;
+        });
 
-      actions.history.ignore().addNodeTree(node,rootNode.key);
+      actions.history.ignore().addNodeTree(node, rootNode.key);
     }
 
     isLoaded.current = true;

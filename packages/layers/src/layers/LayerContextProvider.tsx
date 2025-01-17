@@ -8,7 +8,10 @@ import { LayerNode } from './LayerNode';
 import { useLayerEventHandler } from '../events/LayerEventContext';
 import { LayerManagerContext } from '../manager';
 
-export type LayerContextProviderProps = Omit<LayerContextType, 'connectors'>;
+export type LayerContextProviderProps = Omit<
+  LayerContextType,
+  'connectors'
+>;
 
 export const LayerContextProvider = ({
   id,
@@ -20,9 +23,10 @@ export const LayerContextProvider = ({
   const storeRef = useRef(store);
   storeRef.current = store;
 
-  const connectorsUsage = useMemo(() => handlers.createConnectorsUsage(), [
-    handlers,
-  ]);
+  const connectorsUsage = useMemo(
+    () => handlers.createConnectorsUsage(),
+    [handlers]
+  );
 
   const connectors = useMemo(
     () => wrapConnectorHooks(connectorsUsage.connectors),

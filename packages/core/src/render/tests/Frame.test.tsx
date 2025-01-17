@@ -29,7 +29,10 @@ describe('<Frame />', () => {
         })),
       },
     };
-    query = { createNode: jest.fn(), parseTreeFromReactNode: jest.fn() };
+    query = {
+      createNode: jest.fn(),
+      parseTreeFromReactNode: jest.fn(),
+    };
     mockEditor.mockImplementation(() => ({ actions, query }));
   });
 

@@ -13,8 +13,13 @@ type CachedResolverData = {
 
 let CACHED_RESOLVER_DATA: CachedResolverData | null = null;
 
-const getReversedResolver = (resolver: Resolver): ReversedResolver => {
-  if (CACHED_RESOLVER_DATA && CACHED_RESOLVER_DATA.resolver === resolver) {
+const getReversedResolver = (
+  resolver: Resolver
+): ReversedResolver => {
+  if (
+    CACHED_RESOLVER_DATA &&
+    CACHED_RESOLVER_DATA.resolver === resolver
+  ) {
     return CACHED_RESOLVER_DATA.reversed;
   }
 
@@ -30,7 +35,9 @@ const getReversedResolver = (resolver: Resolver): ReversedResolver => {
   return CACHED_RESOLVER_DATA.reversed;
 };
 
-const getComponentName = (component: React.ElementType): string | undefined => {
+const getComponentName = (
+  component: React.ElementType
+): string | undefined => {
   return (component as any).name || (component as any).displayName;
 };
 
@@ -54,7 +61,10 @@ export const resolveComponent = (
 
   invariant(
     resolvedName,
-    ERROR_NOT_IN_RESOLVER.replace('%node_type%', getComponentName(comp))
+    ERROR_NOT_IN_RESOLVER.replace(
+      '%node_type%',
+      getComponentName(comp)
+    )
   );
 
   return resolvedName;

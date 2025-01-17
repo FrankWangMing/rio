@@ -1,13 +1,10 @@
 import { useEditor } from '@rioe/core';
 import cx from 'classnames';
 import { styled } from 'styled-components';
-import { ReactSVG } from 'react-svg'
-import { useNavigate } from "react-router";
+import { ReactSVG } from 'react-svg';
+import { useNavigate } from 'react-router';
 import { Button, Tooltip } from 'antd';
 import generateCode from '../../../data/api/generateCode';
-
-
-
 
 const HeaderDiv = styled.div`
   width: 100%;
@@ -52,32 +49,39 @@ const Item = styled.a<{ disabled?: boolean }>`
 `;
 
 export const Header = () => {
-  const { enabled, canUndo, canRedo, actions ,parseReactElement} = useEditor((state, query) => ({
-    enabled: state.options.enabled,
-    canUndo: query.history.canUndo(),
-    canRedo: query.history.canRedo(),
-    parseReactElement: query.parseReactElement,
-    state: state,
-  }));
-  const {query} = useEditor()
+  const { enabled, canUndo, canRedo, actions, parseReactElement } =
+    useEditor((state, query) => ({
+      enabled: state.options.enabled,
+      canUndo: query.history.canUndo(),
+      canRedo: query.history.canRedo(),
+      parseReactElement: query.parseReactElement,
+      state: state,
+    }));
+  const { query } = useEditor();
 
-  const Omm = ()=>{
-    localStorage.setItem('editor', JSON.stringify(query.serialize()))
-    const data= query.serialize()
-    generateCode(data)
-  }
+  const Omm = () => {
+    localStorage.setItem('editor', JSON.stringify(query.serialize()));
+    const data = query.serialize();
+    generateCode(data);
+  };
   return (
     <HeaderDiv className="header text-white transition w-full">
       <div className="items-center flex w-full px-4 justify-end">
         {enabled && (
           <div className="flex-1 flex">
             <Tooltip title="Undo" placement="bottom">
-              <Item disabled={!canUndo} onClick={() => actions.history.undo()}>
+              <Item
+                disabled={!canUndo}
+                onClick={() => actions.history.undo()}
+              >
                 <ReactSVG src="/icons/toolbox/undo.svg" />
               </Item>
             </Tooltip>
             <Tooltip title="Redo" placement="bottom">
-              <Item disabled={!canRedo} onClick={() => actions.history.redo()}>
+              <Item
+                disabled={!canRedo}
+                onClick={() => actions.history.redo()}
+              >
                 <ReactSVG src="/icons/toolbox/redo.svg" />
               </Item>
             </Tooltip>
@@ -93,7 +97,9 @@ export const Header = () => {
               },
             ])}
             onClick={() => {
-              actions.setOptions((options) => (options.enabled = !enabled));
+              actions.setOptions(
+                (options) => (options.enabled = !enabled)
+              );
             }}
           >
             {/* {enabled ? <Checkmark /> : <Customize />} */}

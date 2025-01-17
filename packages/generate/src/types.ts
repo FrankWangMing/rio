@@ -1,14 +1,13 @@
-
 export interface FileNode {
-  name: string;           // 文件或文件夹的名称
+  name: string; // 文件或文件夹的名称
   type: 'file' | 'folder'; // 文件类型，可能是文件或文件夹
-  children?: FileNode[];   // 如果是文件夹，可能包含子节点
+  children?: FileNode[]; // 如果是文件夹，可能包含子节点
 }
 
 export interface ProjectStructure {
   nginx: FileNode;
   src: FileNode; // 文件夹和文件名
-  public: FileNode;              // 公共文件名
+  public: FileNode; // 公共文件名
 }
 
 export interface PackageConfig {

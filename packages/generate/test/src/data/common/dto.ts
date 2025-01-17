@@ -1,5 +1,3 @@
-export abstract class Dto{
-    constructor(){
-
-    }
+export abstract class Dto {
+  constructor() {}
 }

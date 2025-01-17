@@ -11,7 +11,9 @@ import { QueryMethods } from '../query';
 
 let mockedResolveComponent = jest.fn().mockImplementation(() => null);
 let mockedCreateNode = jest.fn().mockImplementation(() => null);
-let mockedParsedNodeFromJsx = jest.fn().mockImplementation(() => null);
+let mockedParsedNodeFromJsx = jest
+  .fn()
+  .mockImplementation(() => null);
 let mockedDeserializeNode = jest.fn().mockImplementation(() => null);
 
 jest.mock('../../utils/resolveComponent', () => ({
@@ -53,12 +55,14 @@ describe('query', () => {
       };
 
       beforeEach(() => {
-        mockedDeserializeNode = jest.fn().mockImplementation((...args) => {
-          const { deserializeNode } = jest.requireActual(
-            '../../utils/deserializeNode'
-          );
-          return deserializeNode(...args);
-        });
+        mockedDeserializeNode = jest
+          .fn()
+          .mockImplementation((...args) => {
+            const { deserializeNode } = jest.requireActual(
+              '../../utils/deserializeNode'
+            );
+            return deserializeNode(...args);
+          });
         query.parseSerializedNode(data).toNode();
       });
 
@@ -114,13 +118,17 @@ describe('query', () => {
 
     describe('when we cant resolve a name', () => {
       it('should throw an error', () => {
-        expect(() => query.parseReactElement(node).toNodeTree()).toThrow();
+        expect(() =>
+          query.parseReactElement(node).toNodeTree()
+        ).toThrow();
       });
     });
 
     describe('when we can resolve the type', () => {
       beforeEach(() => {
-        mockedResolveComponent = jest.fn().mockImplementation(() => name);
+        mockedResolveComponent = jest
+          .fn()
+          .mockImplementation(() => name);
         mockedParsedNodeFromJsx = jest.fn().mockImplementation(() => {
           return { ...rootNode.data, type: 'div' };
         });

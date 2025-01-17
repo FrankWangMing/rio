@@ -1,8 +1,11 @@
 import React from 'react';
 
-
-import {capitalize,weightDescription}from '../utils/text'
-import { ToolbarItem, ToolbarRadio, ToolbarSection } from '../Toolbar';
+import { capitalize, weightDescription } from '../utils/text';
+import {
+  ToolbarItem,
+  ToolbarRadio,
+  ToolbarSection,
+} from '../Toolbar';
 
 export const TextSettings = () => {
   return (
@@ -42,10 +45,30 @@ export const TextSettings = () => {
           }px`;
         }}
       >
-        <ToolbarItem propKey="margin" index={0} type="slider" label="Top" />
-        <ToolbarItem propKey="margin" index={1} type="slider" label="Right" />
-        <ToolbarItem propKey="margin" index={2} type="slider" label="Bottom" />
-        <ToolbarItem propKey="margin" index={3} type="slider" label="Left" />
+        <ToolbarItem
+          propKey="margin"
+          index={0}
+          type="slider"
+          label="Top"
+        />
+        <ToolbarItem
+          propKey="margin"
+          index={1}
+          type="slider"
+          label="Right"
+        />
+        <ToolbarItem
+          propKey="margin"
+          index={2}
+          type="slider"
+          label="Bottom"
+        />
+        <ToolbarItem
+          propKey="margin"
+          index={3}
+          type="slider"
+          label="Left"
+        />
       </ToolbarSection>
       <ToolbarSection
         title="Appearance"
@@ -66,7 +89,12 @@ export const TextSettings = () => {
           );
         }}
       >
-        <ToolbarItem full={true} propKey="color" type="color" label="Text" />
+        <ToolbarItem
+          full={true}
+          propKey="color"
+          type="color"
+          label="Text"
+        />
         <ToolbarItem
           full={true}
           propKey="shadow"

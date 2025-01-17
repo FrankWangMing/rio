@@ -48,7 +48,7 @@ export const Button: UserComponent<ButtonProps> = ({
     events,
   } = useNode((node) => ({
     selected: node.events.selected,
-    events:node.events,
+    events: node.events,
   }));
 
   return (
@@ -59,8 +59,9 @@ export const Button: UserComponent<ButtonProps> = ({
         {
           'shadow-lg': buttonStyle === 'full',
         },
-        "animate__animated","animate__bounce"])
-      }
+        'animate__animated',
+        'animate__bounce',
+      ])}
       $buttonStyle={buttonStyle}
       $background={background}
       $margin={margin}

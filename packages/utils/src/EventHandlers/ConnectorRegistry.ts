@@ -1,6 +1,9 @@
 import isEqual from 'shallowequal';
 
-import { ConnectorToRegister, RegisteredConnector } from './interfaces';
+import {
+  ConnectorToRegister,
+  RegisteredConnector,
+} from './interfaces';
 
 import { getRandomId } from '../getRandomId';
 
@@ -31,11 +34,19 @@ export class ConnectorRegistry {
     return `${connectorName}--${elementId}`;
   }
 
-  register(element: HTMLElement, connectorPayload: ConnectorToRegister) {
-    const existingConnector = this.getByElement(element, connectorPayload.name);
+  register(
+    element: HTMLElement,
+    connectorPayload: ConnectorToRegister
+  ) {
+    const existingConnector = this.getByElement(
+      element,
+      connectorPayload.name
+    );
 
     if (existingConnector) {
-      if (isEqual(connectorPayload.required, existingConnector.required)) {
+      if (
+        isEqual(connectorPayload.required, existingConnector.required)
+      ) {
         return existingConnector;
       }
 

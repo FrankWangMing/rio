@@ -9,7 +9,10 @@ export type NodeContextType = {
 
 export const NodeContext = React.createContext<NodeContextType>(null);
 
-export type NodeProviderProps = Omit<NodeContextType, 'connectors'> & {
+export type NodeProviderProps = Omit<
+  NodeContextType,
+  'connectors'
+> & {
   children?: React.ReactNode;
 };
 

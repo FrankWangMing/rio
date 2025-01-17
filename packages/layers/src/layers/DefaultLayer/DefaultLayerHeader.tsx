@@ -14,7 +14,8 @@ const StyledDiv = styled.div<{ $depth: number; $selected: boolean }>`
   flex-direction: row;
   align-items: center;
   padding: 4px 10px;
-  background: ${(props) => (props.$selected ? '#2680eb' : 'transparent')};
+  background: ${(props) =>
+    props.$selected ? '#2680eb' : 'transparent'};
   color: ${(props) => (props.$selected ? '#fff' : 'inherit')};
   svg {
     fill: ${(props) => (props.$selected ? '#fff' : '#808184')};
@@ -105,16 +106,18 @@ export const DefaultLayerHeader = () => {
     };
   });
 
-  const { hidden, actions, selected, topLevel } = useEditor((state, query) => {
-    // TODO: handle multiple selected elements
-    const selected = query.getEvent('selected').first() === id;
+  const { hidden, actions, selected, topLevel } = useEditor(
+    (state, query) => {
+      // TODO: handle multiple selected elements
+      const selected = query.getEvent('selected').first() === id;
 
-    return {
-      hidden: state.nodes[id] && state.nodes[id].data.hidden,
-      selected,
-      topLevel: query.node(id).isTopLevelCanvas(),
-    };
-  });
+      return {
+        hidden: state.nodes[id] && state.nodes[id].data.hidden,
+        selected,
+        topLevel: query.node(id).isTopLevelCanvas(),
+      };
+    }
+  );
 
   return (
     <StyledDiv $selected={selected} ref={drag} $depth={depth}>
@@ -138,7 +141,10 @@ export const DefaultLayerHeader = () => {
           </div>
           <div>
             {children && children.length ? (
-              <Expand $expanded={expanded} onMouseDown={() => toggleLayer()}>
+              <Expand
+                $expanded={expanded}
+                onMouseDown={() => toggleLayer()}
+              >
                 <Arrow />
               </Expand>
             ) : null}

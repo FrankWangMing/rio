@@ -19,7 +19,9 @@ export class CoreEventHandlers<O = {}> extends EventHandlers<
       drop: (el: HTMLElement, id: NodeId) => {},
       create: (
         el: HTMLElement,
-        UserElement: React.ReactElement | (() => NodeTree | React.ReactElement),
+        UserElement:
+          | React.ReactElement
+          | (() => NodeTree | React.ReactElement),
         options?: Partial<CreateHandlerOptions>
       ) => {},
     };
@@ -27,5 +29,5 @@ export class CoreEventHandlers<O = {}> extends EventHandlers<
 }
 
 export abstract class DerivedCoreEventHandlers<
-  O = {}
+  O = {},
 > extends DerivedEventHandlers<CoreEventHandlers, O> {}

@@ -1,8 +1,13 @@
 import { makeStyles } from '@mui/styles';
 import { useNode } from '@rioe/core';
-import {Accordion,AccordionSummary ,AccordionDetails,AccordionActions} from '@mui/material';
+import {
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  AccordionActions,
+} from '@mui/material';
 import React from 'react';
-import {Grid} from '@mui/material';
+import { Grid } from '@mui/material';
 import { Divider } from '@mui/material';
 
 const usePanelStyles = makeStyles((_) => ({
@@ -35,7 +40,12 @@ const useSummaryStyles = makeStyles((_) => ({
   },
 }));
 
-export const ToolbarSection = ({ title, props, summary, children }: any) => {
+export const ToolbarSection = ({
+  title,
+  props,
+  summary,
+  children,
+}: any) => {
   const panelClasses = usePanelStyles({});
   const summaryClasses = useSummaryStyles({});
   const { nodeProps } = useNode((node) => ({
@@ -47,10 +57,15 @@ export const ToolbarSection = ({ title, props, summary, children }: any) => {
       }, {}),
   }));
   return (
-    <Accordion  classes={panelClasses}>
+    <Accordion classes={panelClasses}>
       <AccordionSummary classes={summaryClasses}>
         <div className="px-6 w-full">
-          <Grid container direction="row" alignItems="center" spacing={3}>
+          <Grid
+            container
+            direction="row"
+            alignItems="center"
+            spacing={3}
+          >
             <Grid item xs={4}>
               <h5 className="text-sm text-light-gray-1 text-left font-medium text-dark-gray">
                 {title}
@@ -77,6 +92,6 @@ export const ToolbarSection = ({ title, props, summary, children }: any) => {
           {children}
         </Grid>
       </AccordionDetails>
-    </Accordion >
+    </Accordion>
   );
 };

@@ -12,7 +12,9 @@ export const RenderLayerIndicator = ({
   children,
 }: RenderLayerIndicatorProps) => {
   const { layers, events } = useLayerManager((state) => state);
-  const { query } = useEditor((state) => ({ enabled: state.options.enabled }));
+  const { query } = useEditor((state) => ({
+    enabled: state.options.enabled,
+  }));
   const { indicator: indicatorStyles } = query.getOptions();
 
   const indicatorPosition = useMemo(() => {
@@ -26,13 +28,15 @@ export const RenderLayerIndicator = ({
       const layerId = currentNode ? currentNode.id : parent.id;
 
       let top;
-      const color = error ? indicatorStyles.error : indicatorStyles.success;
+      const color = error
+        ? indicatorStyles.error
+        : indicatorStyles.success;
 
       if (indicator.onCanvas && layers[parent.id].dom != null) {
-        const parentPos = layers[parent.id].dom.getBoundingClientRect();
-        const parentHeadingPos = layers[
-          parent.id
-        ].headingDom.getBoundingClientRect();
+        const parentPos =
+          layers[parent.id].dom.getBoundingClientRect();
+        const parentHeadingPos =
+          layers[parent.id].headingDom.getBoundingClientRect();
         return {
           top: parentHeadingPos.top,
           left: parentPos.left,
@@ -44,7 +48,8 @@ export const RenderLayerIndicator = ({
         };
       } else {
         if (!layers[layerId]) return;
-        const headingPos = layers[layerId].headingDom.getBoundingClientRect();
+        const headingPos =
+          layers[layerId].headingDom.getBoundingClientRect();
         const pos = layers[layerId].dom.getBoundingClientRect();
 
         if (where === 'after' || !currentNode) {
@@ -63,7 +68,12 @@ export const RenderLayerIndicator = ({
         };
       }
     }
-  }, [events, indicatorStyles.error, indicatorStyles.success, layers]);
+  }, [
+    events,
+    indicatorStyles.error,
+    indicatorStyles.success,
+    layers,
+  ]);
 
   return (
     <div>

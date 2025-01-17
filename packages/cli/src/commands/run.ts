@@ -1,13 +1,8 @@
-import {runServer} from "@rioe/server"
-const runEditor  = ()=>{
+import { runServer } from '@rioe/server';
+const runEditor = () => {};
 
-}
-
-
-const run = ()=>{
-    console.log("run")
-    runServer()
-}
-export {
-    run
-}
+const run = () => {
+  console.log('run');
+  runServer();
+};
+export { run };

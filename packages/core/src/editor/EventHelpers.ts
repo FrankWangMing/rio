@@ -1,6 +1,9 @@
 import { EditorState, NodeId, NodeEventTypes } from '../interfaces';
 
-export function EventHelpers(state: EditorState, eventType: NodeEventTypes) {
+export function EventHelpers(
+  state: EditorState,
+  eventType: NodeEventTypes
+) {
   const event = state.events[eventType];
   return {
     contains(id: NodeId) {

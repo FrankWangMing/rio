@@ -35,19 +35,33 @@ export type Node = {
   _hydrationTimestamp: number;
 };
 
-export type NodeHelpersType = QueryCallbacksFor<typeof QueryMethods>['node'];
+export type NodeHelpersType = QueryCallbacksFor<
+  typeof QueryMethods
+>['node'];
 export type NodeRules = {
   canDrag(node: Node, helpers: NodeHelpersType): boolean;
-  canDrop(dropTarget: Node, self: Node, helpers: NodeHelpersType): boolean;
-  canMoveIn(canMoveIn: Node[], self: Node, helpers: NodeHelpersType): boolean;
-  canMoveOut(canMoveOut: Node[], self: Node, helpers: NodeHelpersType): boolean;
+  canDrop(
+    dropTarget: Node,
+    self: Node,
+    helpers: NodeHelpersType
+  ): boolean;
+  canMoveIn(
+    canMoveIn: Node[],
+    self: Node,
+    helpers: NodeHelpersType
+  ): boolean;
+  canMoveOut(
+    canMoveOut: Node[],
+    self: Node,
+    helpers: NodeHelpersType
+  ): boolean;
 };
 export type NodeRelated = Record<string, React.ElementType>;
 
 export type NodeData = {
   props: Record<string, any>;
   // events?: Record<string, MouseEventHandler<any>>
-  events?: Record<string, any>
+  events?: Record<string, any>;
   type: string | React.ElementType;
   name: string;
   displayName: string;
@@ -68,8 +82,8 @@ export type FreshNode = {
 export type ReduceCompType =
   | string
   | {
-    resolvedName: string;
-  };
+      resolvedName: string;
+    };
 
 export type ReducedComp = {
   type: ReduceCompType;
@@ -112,12 +126,12 @@ export enum NodeSelectorType {
 }
 
 export type NodeSelector<
-  T extends NodeSelectorType = NodeSelectorType.Any
+  T extends NodeSelectorType = NodeSelectorType.Any,
 > = T extends NodeSelectorType.Id
   ? NodeIdSelector
   : T extends NodeSelectorType.Obj
-  ? NodeObjSelector
-  : NodeIdSelector | NodeObjSelector;
+    ? NodeObjSelector
+    : NodeIdSelector | NodeObjSelector;
 
 export type NodeSelectorWrapper = {
   node: Node;

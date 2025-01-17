@@ -64,18 +64,22 @@ export function createNode(
       ...node.data.props,
     };
 
-    node.data.props = Object.keys(node.data.props).reduce((props, key) => {
-      if (Object.keys(defaultElementProps).includes(key)) {
-        // If a <Element /> specific props is found (ie: "is", "canvas")
-        // Replace the node.data with the value specified in the prop
-        node.data[elementPropToNodeData[key] || key] = mergedProps[key];
-      } else {
-        // Otherwise include the props in the node as usual
-        props[key] = node.data.props[key];
-      }
+    node.data.props = Object.keys(node.data.props).reduce(
+      (props, key) => {
+        if (Object.keys(defaultElementProps).includes(key)) {
+          // If a <Element /> specific props is found (ie: "is", "canvas")
+          // Replace the node.data with the value specified in the prop
+          node.data[elementPropToNodeData[key] || key] =
+            mergedProps[key];
+        } else {
+          // Otherwise include the props in the node as usual
+          props[key] = node.data.props[key];
+        }
 
-      return props;
-    }, {});
+        return props;
+      },
+      {}
+    );
 
     actualType = node.data.type;
     node.data.name = getNodeTypeName(actualType);
@@ -93,7 +97,8 @@ export function createNode(
   }
 
   // TODO: use UserComponentConfig type
-  const userComponentConfig = actualType.craft as UserComponentConfig<any>;
+  const userComponentConfig =
+    actualType.craft as UserComponentConfig<any>;
 
   if (userComponentConfig) {
     node.data.displayName =
@@ -102,7 +107,9 @@ export function createNode(
       node.data.displayName;
 
     node.data.props = {
-      ...(userComponentConfig.props || userComponentConfig.defaultProps || {}),
+      ...(userComponentConfig.props ||
+        userComponentConfig.defaultProps ||
+        {}),
       ...node.data.props,
     };
 
@@ -120,7 +127,11 @@ export function createNode(
 
     if (userComponentConfig.rules) {
       Object.keys(userComponentConfig.rules).forEach((key) => {
-        if (['canDrag', 'canDrop', 'canMoveIn', 'canMoveOut'].includes(key)) {
+        if (
+          ['canDrag', 'canDrop', 'canMoveIn', 'canMoveOut'].includes(
+            key
+          )
+        ) {
           node.rules[key] = userComponentConfig.rules[key];
         }
       });
@@ -137,7 +148,10 @@ export function createNode(
           React.createElement(
             NodeProvider,
             relatedNodeContext,
-            React.createElement(userComponentConfig.related[comp], props)
+            React.createElement(
+              userComponentConfig.related[comp],
+              props
+            )
           );
       });
     }
@@ -147,6 +161,6 @@ export function createNode(
     }
   }
 
-  console.log(node)
+  console.log(node);
   return node;
 }

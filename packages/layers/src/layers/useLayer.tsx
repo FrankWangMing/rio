@@ -8,13 +8,19 @@ import { Layer } from '../interfaces';
 import { useLayerManager } from '../manager';
 
 export function useLayer<S = null>(collect?: (layer: Layer) => S) {
-  const { id, depth, connectors: internalConnectors } = useContext(
-    LayerContext
-  );
+  const {
+    id,
+    depth,
+    connectors: internalConnectors,
+  } = useContext(LayerContext);
 
-  const { actions: managerActions, ...collected } = useLayerManager((state) => {
-    return id && state.layers[id] && collect && collect(state.layers[id]);
-  });
+  const { actions: managerActions, ...collected } = useLayerManager(
+    (state) => {
+      return (
+        id && state.layers[id] && collect && collect(state.layers[id])
+      );
+    }
+  );
 
   const { children } = useEditor((state, query) => ({
     children: state.nodes[id] && query.node(id).descendants(),

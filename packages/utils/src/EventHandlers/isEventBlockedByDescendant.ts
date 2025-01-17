@@ -4,7 +4,9 @@ import { CraftDOMEvent } from './interfaces';
  * Check if a specified event is blocked by a child
  * that's a descendant of the specified element
  */
-export function isEventBlockedByDescendant<K extends keyof HTMLElementEventMap>(
+export function isEventBlockedByDescendant<
+  K extends keyof HTMLElementEventMap,
+>(
   e: CraftDOMEvent<HTMLElementEventMap[K]>,
   eventName: K,
   el: HTMLElement
@@ -17,7 +19,8 @@ export function isEventBlockedByDescendant<K extends keyof HTMLElementEventMap>(
     };
   }
 
-  const blockingElements = (e.craft && e.craft.blockedEvents[eventName]) || [];
+  const blockingElements =
+    (e.craft && e.craft.blockedEvents[eventName]) || [];
 
   for (let i = 0; i < blockingElements.length; i++) {
     const blockingElement = blockingElements[i];

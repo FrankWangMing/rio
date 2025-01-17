@@ -56,7 +56,9 @@ describe('EventHandlers', () => {
           triggerMouseEvent(childDom, 'mousedown');
         });
         it('should stopPropagation on parent DOM element', () => {
-          expect(handlers.select.events.mousedown).toHaveBeenCalledTimes(1);
+          expect(
+            handlers.select.events.mousedown
+          ).toHaveBeenCalledTimes(1);
           expect(
             handlers.select.events.mousedown.mock.calls[0][0].target
           ).toEqual(childDom);

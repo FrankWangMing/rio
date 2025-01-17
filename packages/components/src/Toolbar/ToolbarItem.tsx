@@ -1,6 +1,6 @@
 import { useNode } from '@rioe/core';
 
-import { Slider, RadioGroup, Grid  } from '@mui/material';
+import { Slider, RadioGroup, Grid } from '@mui/material';
 import { withStyles } from '@mui/styles';
 
 import { ThemeProvider } from '@mui/styles';
@@ -13,9 +13,9 @@ import { ToolbarTextInput } from './ToolbarTextInput';
 const iOSBoxShadow =
   '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.13),0 0 0 1px rgba(0,0,0,0.02)';
 
-  const defaultTheme = {};
+const defaultTheme = {};
 
-  const SliderStyled = withStyles({
+const SliderStyled = withStyles({
   root: {
     color: '#3880ff',
     height: 2,
@@ -91,7 +91,9 @@ export const ToolbarItem = ({
   } = useNode((node) => ({
     propValue: node.data.props[propKey],
   }));
-  const value = Array.isArray(propValue) ? propValue[index] : propValue;
+  const value = Array.isArray(propValue)
+    ? propValue[index]
+    : propValue;
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -105,9 +107,13 @@ export const ToolbarItem = ({
               onChange={(value) => {
                 setProp((props: any) => {
                   if (Array.isArray(propValue)) {
-                    props[propKey][index] = onChange ? onChange(value) : value;
+                    props[propKey][index] = onChange
+                      ? onChange(value)
+                      : value;
                   } else {
-                    props[propKey] = onChange ? onChange(value) : value;
+                    props[propKey] = onChange
+                      ? onChange(value)
+                      : value;
                   }
                 }, 500);
               }}
@@ -115,7 +121,9 @@ export const ToolbarItem = ({
           ) : type === 'slider' ? (
             <>
               {props.label ? (
-                <h4 className="text-sm text-light-gray-2">{props.label}</h4>
+                <h4 className="text-sm text-light-gray-2">
+                  {props.label}
+                </h4>
               ) : null}
               <SliderStyled
                 value={parseInt(value) || 0}
@@ -127,7 +135,9 @@ export const ToolbarItem = ({
                           ? onChange(value)
                           : value;
                       } else {
-                        props[propKey] = onChange ? onChange(value) : value;
+                        props[propKey] = onChange
+                          ? onChange(value)
+                          : value;
                       }
                     }, 1000);
                   }) as any
@@ -137,14 +147,18 @@ export const ToolbarItem = ({
           ) : type === 'radio' ? (
             <>
               {props.label ? (
-                <h4 className="text-sm text-light-gray-2">{props.label}</h4>
+                <h4 className="text-sm text-light-gray-2">
+                  {props.label}
+                </h4>
               ) : null}
               <RadioGroup
                 value={value || 0}
                 onChange={(e) => {
                   const value = e.target.value;
                   setProp((props: any) => {
-                    props[propKey] = onChange ? onChange(value) : value;
+                    props[propKey] = onChange
+                      ? onChange(value)
+                      : value;
                   });
                 }}
               >
@@ -157,7 +171,9 @@ export const ToolbarItem = ({
               onChange={(value) =>
                 setProp(
                   (props: any) =>
-                    (props[propKey] = onChange ? onChange(value) : value)
+                    (props[propKey] = onChange
+                      ? onChange(value)
+                      : value)
                 )
               }
               {...props}

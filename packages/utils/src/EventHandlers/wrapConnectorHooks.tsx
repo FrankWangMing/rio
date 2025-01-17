@@ -1,4 +1,4 @@
-import React,{ isValidElement, ReactElement } from 'react';
+import React, { isValidElement, ReactElement } from 'react';
 import { cloneElement } from 'react';
 import invariant from 'tiny-invariant';
 
@@ -41,7 +41,9 @@ export function cloneWithRef(
   }
 }
 
-function throwIfCompositeComponentElement(element: React.ReactElement<any>) {
+function throwIfCompositeComponentElement(
+  element: React.ReactElement<any>
+) {
   if (typeof element.type === 'string') {
     return;
   }

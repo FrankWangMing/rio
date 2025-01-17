@@ -1,7 +1,12 @@
 import { ERROR_INVALID_NODEID } from '@rioe/utils';
 import invariant from 'tiny-invariant';
 
-import { Nodes, Node, NodeSelectorWrapper, NodeSelector } from '../interfaces';
+import {
+  Nodes,
+  Node,
+  NodeSelectorWrapper,
+  NodeSelector,
+} from '../interfaces';
 
 type config = { existOnly: boolean; idOnly: boolean };
 export const getNodesFromSelector = (
@@ -43,7 +48,8 @@ export const getNodesFromSelector = (
 
   if (mergedConfig.existOnly) {
     invariant(
-      nodeSelectors.filter((selector) => !selector.exists).length === 0,
+      nodeSelectors.filter((selector) => !selector.exists).length ===
+        0,
       ERROR_INVALID_NODEID
     );
   }

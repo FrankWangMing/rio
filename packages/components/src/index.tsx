@@ -1,4 +1,4 @@
-import './index.css'
+import './index.css';
 
 export * from './Container';
 export * from './Text';
