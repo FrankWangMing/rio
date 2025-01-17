@@ -9,12 +9,15 @@ export default {
   mode: 'development',
   entry: './src/main.tsx',
   output: {
-    path: path.resolve( '../server',"web" ),
+    path:  __dirname + '/dist',
     filename: 'editor.js'
   },
   devtool: "eval-source-map",
   resolve: {
     extensions: ['.mjs', '.js', '.ts', '.tsx', '.json'], // 添加常用扩展名
+    alias: {
+      '@rioe': path.resolve(__dirname, '../'), // 设置别名
+    },
   },
   // devtool:"source-map",
   // optimization: {
@@ -25,7 +28,6 @@ export default {
   // ],
   // },
   module: {
-    noParse: /@rioe/g,
     rules: [
       {
         test: /\.(ts|tsx)$/,
@@ -57,7 +59,6 @@ export default {
     new HtmlWebpackPlugin({
       template: __dirname + "/public/index.html"
     }),
-    new TerserPlugin(),
     new CleanWebpackPlugin(),
   ],
   devServer: {

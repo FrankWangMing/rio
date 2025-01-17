@@ -23,7 +23,7 @@
     "test":{},
     "publish": {
       "dependsOn": ["build"],
-      "outputs": ["dist/**"]
+      "outputs": []
     }
   }
 }

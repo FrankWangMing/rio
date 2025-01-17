@@ -1,1 +1,0 @@
-{"version":3,"file":"connectEditor.d.ts","sourceRoot":"","sources":["../../../src/hooks/legacy/connectEditor.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,OAAO,CAAC;AAE1B,OAAO,EAAE,WAAW,EAAE,MAAM,kBAAkB,CAAC;AAG/C,wBAAgB,aAAa,CAAC,CAAC,EAAE,OAAO,CAAC,EAAE,CAAC,KAAK,EAAE,WAAW,KAAK,CAAC,sBACxC,KAAK,CAAC,WAAW,aAC1B,GAAG,uBAKrB"}

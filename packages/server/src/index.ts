@@ -16,7 +16,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 // 中间件：解析 JSON 请求体
 app.use(express.json());
 
-app.use(express.static( path.join(__dirname,'../web'), {
+app.use(express.static(path.join(__dirname,'../web'), {
   setHeaders: setCustomCacheControl
 }));
 

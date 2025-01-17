@@ -1,1 +1,0 @@
-{"version":3,"file":"RenderNode.d.ts","sourceRoot":"","sources":["../../src/render/RenderNode.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,OAAO,CAAC;AAO1B,KAAK,wBAAwB,GAAG;IAC9B,MAAM,CAAC,EAAE,KAAK,CAAC,YAAY,CAAC;IAC5B,QAAQ,CAAC,EAAE,KAAK,CAAC,SAAS,CAAC;CAC5B,CAAC;AACF,eAAO,MAAM,mBAAmB,eAAgB,wBAAwB;YAK1D,MAAO,YAAY;6CAUhC,CAAC"}

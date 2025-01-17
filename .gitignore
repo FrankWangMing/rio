@@ -21,6 +21,8 @@ coverage
 # Vercel
 .vercel
 
+.rollup.cache/
+
 # Build Outputs
 .next/
 out/

@@ -1,5 +1,5 @@
 {
-  "extends": "@rioe/common/base",
+  "extends": "../common/base.json",
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
@@ -10,7 +10,7 @@
     "target": "esnext",
     "module": "esnext",
     "strict": false,
-    "types": ["node"]
+    "types": ["node"],
   },
   "include": ["src/index.ts"]
 }

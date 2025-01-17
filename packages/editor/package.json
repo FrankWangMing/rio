@@ -55,7 +55,9 @@
     "webpack": "^5.97.1",
     "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.2.0"
+    "webpack-dev-server": "^5.2.0",
+    "@rioe/common":"workspace:*",
+    "@rioe/eslint-config": "workspace:*"
   },
   "peerDependencies": {
     "@types/react": "^17.0.0 || ^18.0.0 ",
@@ -66,12 +68,6 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
-    "@rioe/common": "workspace:*",
-    "@rioe/components": "workspace:*",
-    "@rioe/core": "workspace:*",
-    "@rioe/generate": "workspace:*",
-    "@rioe/layers": "workspace:*",
-    "@rioe/utils": "workspace:*",
     "@sentry/react": "^8.47.0",
     "@swc/register": "^0.1.10",
     "antd": "^5.22.7",

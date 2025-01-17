@@ -2,7 +2,7 @@
   "name": "rio",
   "private": false,
   "scripts": {
-    "build": "turbo build --filter=@rioe/*",
+    "build": "sudo turbo build --filter=@rioe/*",
     "clean": "turbo clean",
     "dev": "turbo dev",
     "lint": "turbo lint",

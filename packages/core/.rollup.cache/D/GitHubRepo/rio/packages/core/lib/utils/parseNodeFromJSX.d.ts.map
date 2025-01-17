@@ -1,1 +1,0 @@
-{"version":3,"file":"parseNodeFromJSX.d.ts","sourceRoot":"","sources":["../../src/utils/parseNodeFromJSX.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAmB,MAAM,OAAO,CAAC;AAIxC,OAAO,EAAE,IAAI,EAAE,MAAM,eAAe,CAAC;AAErC,wBAAgB,gBAAgB,CAC9B,GAAG,EAAE,KAAK,CAAC,YAAY,GAAG,MAAM,EAChC,SAAS,CAAC,EAAE,CAAC,IAAI,EAAE,IAAI,EAAE,GAAG,EAAE,KAAK,CAAC,YAAY,KAAK,IAAI,QAuB1D"}

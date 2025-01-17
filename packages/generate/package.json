@@ -1,6 +1,6 @@
 {
   "name": "@rioe/generate",
-  "description": "A Photoshop-like layers panel for your page editor",
+  "description": " ",
   "keywords": [],
   "version": "0.0.1",
   "author": "Frank Wang <jasonming1998@gmail.com>",
@@ -33,16 +33,13 @@
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.25.9",
     "@babel/runtime-corejs3": "^7.26.0",
-    "@rioe/core": "workspace:*",
-    "@rioe/utils": "workspace:*",
     "core-js": "^3.39.0",
     "ejs": "^3.1.10",
     "fs": "0.0.1-security",
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "@rioe/common": "workspace:*",
-    "@rioe/eslint-config": "workspace:*",
+    "@rioe/common":"workspace:*",
     "@svgr/rollup": "8.1.0",
     "@types/node": "^22.10.2",
     "react": "^18.0.0",

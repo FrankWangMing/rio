@@ -19,7 +19,8 @@
   },
 
   "files": [
-    "dist"
+    "dist",
+    "web"
   ],
   "scripts": {
     "build": "rollup -c",
@@ -32,9 +33,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@rioe/common": "workspace:*",
-    "@rioe/editor": "workspace:*",
-    "@rioe/generate": "workspace:*",
     "@rollup/plugin-commonjs": "^28.0.2",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-typescript": "^12.1.2",
@@ -43,7 +41,9 @@
     "rollup": "^4.29.1",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "@rioe/common": "workspace:*",
+    "@rioe/eslint-config": "workspace:*"
   },
   "dependencies": {
     "@rollup/plugin-json": "^6.1.0",

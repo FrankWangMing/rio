@@ -1,16 +1,20 @@
 {
-  "extends": "@rioe/common/base",
+  "extends": "../common/base",
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
-   "jsx": "react-jsx",
+    "jsx": "react-jsx",
     "declaration": true,
     "declarationMap": true,
     "outDir": "./dist",
     "declarationDir": "./dist/types",
     "target": "esnext",
     "module": "esnext",
-    "strict": false
+    "strict": false,
+    "paths": {
+      "@rioe/utils/*": ["../utils/*"],
+      "@rioe/layers/*": ["../layers/*"],
+    }
   },
   "include": ["./src/index.tsx"]
 }

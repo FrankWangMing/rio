@@ -1,6 +1,6 @@
 
 import path from 'path';
-
+import alias from '@rollup/plugin-alias';
 import babel from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
@@ -32,6 +32,9 @@ if ( typeof window !== 'undefined' ) {
   `;
 };
 
+function checkNodeEnv() {
+  return process.env.NODE_ENV === 'production';
+}
 export default [{
   input: './src/index.ts',
   output: [
@@ -43,26 +46,31 @@ export default [{
         react: 'React',
         'react-dom': 'ReactDOM',
       },
-      sourcemap: true,
+      sourcemap: checkNodeEnv()?false:true,
     },
     {
       file: 'dist/index.cjs',
       intro: injectPackageVersion(),
       format: 'cjs',
-      sourcemap: true,
+      sourcemap: checkNodeEnv()?false:true,
     },
   ],
 }].map((entry) => ({
   ...entry,
   plugins: [
+    alias({
+      entries: [
+        { find: '@rioe', replacement: path.resolve(path.dirname('../../')) },
+      ]
+    }),
     resolve(
       {
         extensions:['.js', '.mjs'], // 确保包含常见的文件扩展名
+        preferBuiltins: true,
       }
     ), // 支持解析 TS 和 TSX 文件
     commonjs(),
-    typescript({
-    }),
+    typescript({}),
     babel({
       babelHelpers:"runtime",
       include:"src/**",

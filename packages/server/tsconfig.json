@@ -1,5 +1,5 @@
 {
-  "extends": "@rioe/common/base",
+  "extends": "../common/base",
   "compilerOptions": {
     "target": "ES2020",
     "outDir": "./dist",

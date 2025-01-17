@@ -1,5 +1,5 @@
 {
-  "extends": "@rioe/common/base",
+  "extends": "../common/base",
   "compilerOptions": {
     "jsx": "react-jsx",
     "declaration": true,

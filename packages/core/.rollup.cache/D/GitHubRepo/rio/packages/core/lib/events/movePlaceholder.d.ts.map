@@ -1,1 +1,0 @@
-{"version":3,"file":"movePlaceholder.d.ts","sourceRoot":"","sources":["../../src/events/movePlaceholder.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,YAAY,EAAE,OAAO,EAAE,MAAM,eAAe,CAAC;AAEtD,MAAM,CAAC,OAAO,UAAU,eAAe,CACrC,GAAG,EAAE,YAAY,EACjB,aAAa,EAAE,OAAO,EAAE,4BAA4B;AACpD,iBAAiB,EAAE,OAAO,GAAG,IAAI,EAAE,sDAAsD;AACzF,SAAS,GAAE,MAAU;;;;;EA0CtB"}

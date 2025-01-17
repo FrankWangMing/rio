@@ -1,1 +1,0 @@
-{"version":3,"file":"useInternalNode.d.ts","sourceRoot":"","sources":["../../src/nodes/useInternalNode.ts"],"names":[],"mappings":"AAUA,OAAO,EAAE,IAAI,EAAE,MAAM,eAAe,CAAC;AAErC,wBAAgB,eAAe,CAAC,CAAC,GAAG,IAAI,EAAE,OAAO,CAAC,EAAE,CAAC,IAAI,EAAE,IAAI,KAAK,CAAC;;;;;sBA0BjD,GAAG,iBAAiB,MAAM;wBAOxB,GAAG,iBAAiB,MAAM;0BAOxB,OAAO;;;uBAtBR,WAAW;oBACd,WAAW;;EAiC9B"}
