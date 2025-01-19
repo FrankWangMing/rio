@@ -44,7 +44,7 @@ export const LayerNode = () => {
     setRegistered(true);
   }, [registerLayer, id]);
 
-  const expandedRef = useRef < boolean > expanded;
+  const expandedRef = useRef<boolean>(expanded);
   expandedRef.current = expanded;
 
   const shouldBeExpandedOnLoad = useRef<boolean>(

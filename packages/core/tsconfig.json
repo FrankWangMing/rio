@@ -11,10 +11,6 @@
     "target": "esnext",
     "module": "esnext",
     "strict": false,
-    "paths": {
-      "@rioe/utils/*": ["../utils/*"],
-      "@rioe/layers/*": ["../layers/*"],
-    }
   },
   "include": ["./src/index.tsx"]
 }
