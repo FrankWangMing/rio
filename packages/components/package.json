@@ -29,16 +29,14 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "@babel/core": "^7.26.0",
-    "@babel/plugin-syntax-flow": "^7.26.0",
-    "@babel/plugin-transform-runtime": "^7.25.9",
-    "@babel/preset-flow": "^7.25.9",
     "@babel/runtime-corejs3": "^7.26.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/material": "^6.3.1",
     "@mui/styled-engine-sc": "^6.3.1",
     "@mui/styles": "^6.3.1",
+    "@rioe/common": "workspace:*",
+    "@rioe/core": "workspace:*",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@sentry/react": "^8.47.0",
     "animate.css": "^4.1.1",
@@ -57,8 +55,7 @@
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
-
-    "@rioe/common":"workspace:*",
+    "@rioe/eslint-config": "workspace:*",
     "@svgr/rollup": "8.1.0"
   },
   "peerDependencies": {

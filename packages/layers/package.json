@@ -27,6 +27,7 @@
   "dependencies": {
     "@babel/runtime-corejs3": "^7.26.0",
     "animate.css": "^4.1.1",
+    "@rioe/common": "workspace:*",
     "core-js": "^3.39.0",
     "react-contenteditable": "^3.3.7"
   },
@@ -34,9 +35,7 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-
   "devDependencies": {
-    "@rioe/common": "workspace:*",
     "@rioe/eslint-config": "workspace:*",
     "@svgr/rollup": "8.1.0",
     "styled-components": "6.1.13"

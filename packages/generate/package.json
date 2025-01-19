@@ -29,7 +29,6 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.25.9",
     "@babel/runtime-corejs3": "^7.26.0",
@@ -39,19 +38,20 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "@rioe/common":"workspace:*",
     "@svgr/rollup": "8.1.0",
     "@types/node": "^22.10.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "styled-components": "6.1.13",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "@rioe/common": "workspace:*",
+    "@rioe/eslint-config": "workspace:*"
   },
   "peerDependencies": {
-    "@types/react":"^17.0.0 || ^18.0.0 ",
+    "@types/react": "^17.0.0 || ^18.0.0 ",
     "@types/react-dom": "^17.0.0 || ^18.0.0 ",
     "react": "^17.0.0 || ^18.0.0 ",
-    "react-dom":"^17.0.0 || ^18.0.0 ",
+    "react-dom": "^17.0.0 || ^18.0.0 ",
     "styled-components": ">= 6.1"
   }
 }

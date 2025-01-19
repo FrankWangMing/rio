@@ -17,7 +17,6 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-
   "files": [
     "dist",
     "web"
@@ -42,10 +41,10 @@
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.7.2",
-    "@rioe/common": "workspace:*",
     "@rioe/eslint-config": "workspace:*"
   },
   "dependencies": {
+    "@rioe/common": "workspace:*",
     "@rollup/plugin-json": "^6.1.0",
     "express": "^4.21.2",
     "tslib": "^2.8.1",

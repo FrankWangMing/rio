@@ -1,0 +1,37 @@
+{
+    "compilerOptions": {
+        "target": "ES2020",
+        "useDefineForClassFields": true,
+        "lib": ["ES2020", "DOM", "DOM.Iterable"],
+        "module": "ESNext",
+        "skipLibCheck": true,
+
+
+        "jsx": "react-jsx",
+        "allowImportingTsExtensions": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "bundler",
+        "noEmit": true,
+        "allowJs": true,
+
+
+        "strict": true,
+        "noUnusedLocals": false,  // 未使用的变量报错
+        "noUnusedParameters": false,// 未使用的参数报错
+        "noFallthroughCasesInSwitch": false, // 不允许switch语句贯穿
+
+
+
+    },
+    "include": [
+        "src",
+        "tests",
+        "webpack.config.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+
+}

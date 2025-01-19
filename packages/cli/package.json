@@ -41,10 +41,10 @@
     "fs-extra": "^10.1.0",
     "inquirer": "^8.2.6",
     "ora": "^4.0.0",
+    "@rioe/common": "workspace:*",
     "rollup-plugin-copy": "^3.5.0"
   },
   "devDependencies": {
-    "@rioe/common": "workspace:*",
     "@rioe/eslint-config": "workspace:*",
     "@types/node": "^22.10.5",
     "react": "^18.0.0",
