@@ -9,12 +9,12 @@ export async function createTemplates(
   context: Record<string, any>
 ): Promise<void> {
   for (const template of templates) {
-    const templatePath = path.join(
+    const templatePath = path.resolve(
       __dirname,
-      '../templates',
+      './templates',
       template.templateFile
     );
-    const outputPath = path.join(basePath, './', template.outputFile);
+    const outputPath = path.resolve(basePath, './', template.outputFile);
 
     const rendered = await ejs.renderFile(templatePath, context);
     fs.writeFileSync(outputPath, rendered, 'utf8');

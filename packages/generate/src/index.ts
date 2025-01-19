@@ -2,6 +2,7 @@ import { createStructure } from './structure';
 import { createPackageJson } from './config';
 import { createTemplates } from './template';
 import { ProjectConfig } from './types';
+import { cwd } from 'process';
 
 const projectConfig: ProjectConfig = {
   basePath: '',
@@ -394,6 +395,7 @@ async function main(viewConfig): Promise<void> {
 }
 
 const generate = (config) => {
+  console.log(cwd())
   main(config);
 };
 const generateRioFile = async (config) => {
