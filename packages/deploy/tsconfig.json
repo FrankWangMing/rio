@@ -31,7 +31,8 @@
     ],
     "exclude": [
         "node_modules",
-        "dist"
+        "dist",
+        "src/components/selectors/dte/*.tsx"
     ]
 
 }

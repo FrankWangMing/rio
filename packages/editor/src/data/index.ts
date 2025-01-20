@@ -8,5 +8,5 @@
 // }
 // export const dataLayer = new DataLayer(http);
 
-export * from './api/getUserInfo';
+export * from './api/update';
 export * from './api/generateCode';

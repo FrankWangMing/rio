@@ -49,21 +49,22 @@
     "webpack-dev-server": "^5.2.0"
   },
   "peerDependencies": {
-    "@types/react": "^17.0.0 || ^18.0.0",
-    "@types/react-dom": "^17.0.0 || ^18.0.0",
-    "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0"
+    "@types/react": "^17.0.0 || ^18.0.0 ",
+    "@types/react-dom": "^17.0.0 || ^18.0.0 ",
+    "react": "^17.0.0 || ^18.0.0 ",
+    "react-dom": "^17.0.0 || ^18.0.0 "
   },
   "dependencies": {
+    "@rioe/components": "workspace:*",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/material": "^6.3.1",
     "@mui/styled-engine-sc": "^6.3.1",
     "@mui/styles": "^6.3.1",
-    "@rioe/components": "workspace:*",
     "@rioe/core": "workspace:*",
+    "@rioe/generate": "workspace:*",
+    "@rioe/layers": "workspace:*",
     "@sentry/react": "^8.47.0",
-    "@swc-node/register": "^0.1.10",
     "@swc/register": "^0.1.10",
     "antd": "^5.22.6",
     "axios": "^1.7.9",

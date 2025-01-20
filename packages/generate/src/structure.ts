@@ -27,6 +27,14 @@ export async function createStructure(
   const srcPath = path.resolve(basePath);
 
   createFileByFileNode(structure, srcPath);
+  createFileByFileNode({
+    type: "folder",
+    name: "data",
+    children: [{
+      type: "file",
+      name: "data.json"
+    }]
+  }, srcPath);
   // const nginxPath = path.join(basePath, "nginx");
   // for (const file of structure.nginx) {
   //   createFile(path.join(nginxPath, file), "<!-- Static File -->");

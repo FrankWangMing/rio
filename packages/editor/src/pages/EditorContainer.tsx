@@ -4,7 +4,7 @@ import { Viewport } from '../components/editor';
 
 export default () => {
   const editor = useEditor();
-  const json = localStorage.getItem('editor');
+
   // editor.actions.deserialize(JSON.parse(json))
 
   return (

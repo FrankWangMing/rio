@@ -17,22 +17,27 @@ export const runServer = () => {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     next();
   });
-  // 中间件：解析 JSON 请求体
   app.use(express.json());
-
   app.use(
     express.static(path.resolve(__dirname, './web'), {
       setHeaders: setCustomCacheControl,
     })
   );
 
+
+  app.post('/update', (req: Request, res: Response) => {
+
+    console.log(req)
+    res.status(201).json({
+      id: Math.floor(Math.random() * 1000),
+    });
+  });
+
   // 路由：获取用户信息
-  app.get('/users/:id', (req: Request, res: Response) => {
-    const userId = req.params.id;
+  app.get('/data', (req: Request, res: Response) => {
+
     res.json({
-      id: userId,
-      name: 'John Doe',
-      email: 'johndoe@example.com',
+
     });
   });
 
