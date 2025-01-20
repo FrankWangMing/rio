@@ -16,15 +16,6 @@ import {
 import { RenderNode } from '../components/editor/index.ts';
 
 export default observer(() => {
-  const state = useLocalObservable(() => ({
-    count: 0,
-    setCount() {
-      this.count++;
-    },
-    get double() {
-      return this.count * 2;
-    },
-  }));
   return (
     <Editor
       resolver={{

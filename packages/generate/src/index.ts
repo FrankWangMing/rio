@@ -326,7 +326,6 @@ const projectConfig: ProjectConfig = {
       templateFile: 'src/data/index.ts.ejs',
       outputFile: 'src/data/index.ts',
     },
-
     {
       templateFile: 'src/pages/App.tsx.ejs',
       outputFile: 'src/pages/App.tsx',
@@ -343,16 +342,14 @@ const projectConfig: ProjectConfig = {
       templateFile: 'src/routes/index.ts.ejs',
       outputFile: 'src/routes/index.ts',
     },
-
     {
       templateFile: 'src/index.scss.ejs',
       outputFile: 'src/index.scss',
     },
     { templateFile: 'src/main.tsx.ejs', outputFile: 'src/main.tsx' },
 
-    { templateFile: '.babelrc.ejs', outputFile: '.babelrc' },
-    { templateFile: '.gitignore.ejs', outputFile: '.gitignore' },
-    { templateFile: 'data.json.ejs', outputFile: 'data.json' },
+    { templateFile: 'babel.config.js.ejs', outputFile: 'babel.config.js' },
+    // { templateFile: '.gitignore.ejs', outputFile: '.gitignore' },
     { templateFile: 'Dockerfile.ejs', outputFile: 'Dockerfile' },
     {
       templateFile: 'eslint.config.mjs.ejs',

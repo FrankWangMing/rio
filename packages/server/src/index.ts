@@ -1,5 +1,6 @@
 import express, { Request, Response, NextFunction } from 'express';
-import { generateCode, dev } from './logic/generate';
+import { generateCode } from './logic/generate';
+import { dev } from './logic/dev';
 import path from 'path';
 export const runServer = () => {
   console.log('runServer');
@@ -40,11 +41,19 @@ export const runServer = () => {
     const { data } = req.body;
     // console.log(JSON.parse(data))
     generateCode(data);
+    res.status(201).json({
+      id: Math.floor(Math.random() * 1000),
+    });
+  });
+
+  app.post('/development', (req: Request, res: Response) => {
+    // console.log(JSON.parse(data))
     dev();
     res.status(201).json({
       id: Math.floor(Math.random() * 1000),
     });
   });
+
 
   // 全局错误处理
   app.use(

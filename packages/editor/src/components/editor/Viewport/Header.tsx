@@ -5,6 +5,7 @@ import { ReactSVG } from 'react-svg';
 import { useNavigate } from 'react-router';
 import { Button, Tooltip } from 'antd';
 import generateCode from '../../../data/api/generateCode';
+import development from '../../../data/api/development';
 
 const HeaderDiv = styled.div`
   width: 100%;
@@ -59,11 +60,16 @@ export const Header = () => {
     }));
   const { query } = useEditor();
 
-  const Omm = () => {
-    localStorage.setItem('editor', JSON.stringify(query.serialize()));
+  const Generate = () => {
     const data = query.serialize();
     generateCode(data);
   };
+  const Development = () => {
+
+    const data = query.serialize();
+    development(data);
+  };
+
   return (
     <HeaderDiv className="header text-white transition w-full">
       <div className="items-center flex w-full px-4 justify-end">
@@ -105,7 +111,8 @@ export const Header = () => {
             {/* {enabled ? <Checkmark /> : <Customize />} */}
             {enabled ? 'Finish Editing' : 'Edit'}
           </Btn>
-          <Button onClick={Omm}>Generate</Button>
+          <Button onClick={Generate}>Generate</Button>
+          <Button onClick={Development}>预览</Button>
         </div>
       </div>
     </HeaderDiv>

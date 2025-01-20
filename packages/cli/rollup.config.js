@@ -10,6 +10,8 @@ export default rollupConfig.map(config => {
           targets: [
             { src: '../editor/dist/*', dest: 'dist/web' },
             { src: '../generate/templates/*', dest: 'dist/templates' },
+            { src: '../generate/templates/.gitignore.ejs', dest: 'dist/templates/.gitignore.ejs' },
+
           ]
         })
       ],

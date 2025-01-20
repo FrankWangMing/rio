@@ -14,8 +14,8 @@ export async function createTemplates(
       './templates',
       template.templateFile
     );
-    const outputPath = path.resolve(basePath, './', template.outputFile);
 
+    const outputPath = path.resolve(basePath, './', template.outputFile);
     const rendered = await ejs.renderFile(templatePath, context);
     fs.writeFileSync(outputPath, rendered, 'utf8');
   }

@@ -7,7 +7,6 @@ export default () => {
   const json = localStorage.getItem('editor');
   // editor.actions.deserialize(JSON.parse(json))
 
-  console.log(editor);
   return (
     <Viewport>
       <Frame>

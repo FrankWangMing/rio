@@ -24,7 +24,8 @@ export async function createStructure(
   basePath: string,
   structure: FileNode
 ): Promise<void> {
-  const srcPath = path.join(basePath);
+  const srcPath = path.resolve(basePath);
+
   createFileByFileNode(structure, srcPath);
   // const nginxPath = path.join(basePath, "nginx");
   // for (const file of structure.nginx) {
