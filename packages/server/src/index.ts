@@ -20,7 +20,7 @@ export const runServer = () => {
   app.use(express.json());
 
   app.use(
-    express.static(path.join(__dirname, './web'), {
+    express.static(path.resolve(__dirname, './web'), {
       setHeaders: setCustomCacheControl,
     })
   );

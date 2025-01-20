@@ -8,8 +8,8 @@ export default rollupConfig.map(config => {
         ...config.plugins,
         copy({
           targets: [
-            { src: '../editor/dist/index.html', dest: 'web' },
-            { src: '../editor/dist/editor.js', dest: 'web' }
+            { src: '../editor/dist/*', dest: 'dist/web' },
+            { src: '../generate/templates/*', dest: 'dist/templates' },
           ]
         })
       ],
