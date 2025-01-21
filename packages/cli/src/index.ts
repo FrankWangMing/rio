@@ -6,6 +6,7 @@ import { run } from './commands/run';
 import { init } from './commands/init';
 import * as server from '@rioe/server'
 const program = new Command();
+
 program.name('rio').description('A simple CLI tool').version('1.0.0');
 
 program
