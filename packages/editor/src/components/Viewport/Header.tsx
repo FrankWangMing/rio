@@ -2,10 +2,10 @@ import { useEditor } from '@rioe/core';
 import cx from 'classnames';
 import { styled } from 'styled-components';
 import { ReactSVG } from 'react-svg';
-import { useNavigate } from 'react-router';
 import { Button, Tooltip } from 'antd';
-import generateCode from '../../../data/api/generateCode';
-import development from '../../../data/api/development';
+import generateCode from '../../data/api/generateCode';
+import development from '../../data/api/development';
+import PagesSelect from './PacesSelect';
 
 const HeaderDiv = styled.div`
   width: 100%;
@@ -65,7 +65,6 @@ export const Header = () => {
     generateCode(data);
   };
   const Development = () => {
-
     const data = query.serialize();
     development(data);
   };
@@ -75,6 +74,7 @@ export const Header = () => {
       <div className="items-center flex w-full px-4 justify-end">
         {enabled && (
           <div className="flex-1 flex">
+            <PagesSelect />
             <Tooltip title="Undo" placement="bottom">
               <Item
                 disabled={!canUndo}

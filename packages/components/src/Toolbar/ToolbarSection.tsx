@@ -1,5 +1,5 @@
 import { makeStyles } from '@mui/styles';
-import { useNode } from '@rioe/core';
+import { useNode, UserComponent } from '@rioe/core';
 import {
   Accordion,
   AccordionSummary,
@@ -40,7 +40,7 @@ const useSummaryStyles = makeStyles((_) => ({
   },
 }));
 
-export const ToolbarSection = ({
+export const ToolbarSection: UserComponent = ({
   title,
   props,
   summary,

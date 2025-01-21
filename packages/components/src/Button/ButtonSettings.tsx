@@ -1,10 +1,11 @@
+import { UserComponent } from '@rioe/core/dist/types';
 import {
   ToolbarSection,
   ToolbarItem,
   ToolbarRadio,
 } from '../Toolbar';
 
-export const ButtonSettings = () => {
+export const ButtonSettings: UserComponent = () => {
   return (
     <>
       <ToolbarSection

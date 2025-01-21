@@ -13,9 +13,11 @@ import {
   Custom3BtnDrop,
   Custom2VideoDrop,
 } from '@rioe/components';
-import { RenderNode } from '../components/editor/index.ts';
+import { RenderNode } from '../components/index.ts';
+import { model } from '../model/index.ts';
 
-export default observer(() => {
+export default () => {
+  console.log(model);
   return (
     <Editor
       resolver={{
@@ -36,4 +38,4 @@ export default observer(() => {
       <EditorContainer />
     </Editor>
   );
-});
+};
