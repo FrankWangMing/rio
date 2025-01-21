@@ -48,6 +48,8 @@ export function createNode(
       selected: false,
       dragged: false,
       hovered: false,
+      change: false,
+      click: false
     },
     rules: {
       canDrag: () => true,

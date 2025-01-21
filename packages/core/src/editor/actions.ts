@@ -26,6 +26,7 @@ import {
   SerializedNodes,
   NodeSelector,
   NodeSelectorType,
+  EditorEventTypes,
 } from '../interfaces';
 import { fromEntries } from '../utils/fromEntries';
 import { getNodesFromSelector } from '../utils/getNodesFromSelector';
@@ -172,6 +173,14 @@ const Methods = (
       }
 
       addNodeTreeToParent(tree, parentId, { type: 'linked', id });
+    },
+
+    on(name:EditorEventTypes,cb: (state:EditorState) => void){
+      console.log(name)
+      state.events["change"].forEach(i=>{
+        console.log("jj")
+      })
+      cb(state)
     },
 
     /**

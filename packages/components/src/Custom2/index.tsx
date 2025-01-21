@@ -1,9 +1,9 @@
-import { Element, useNode } from '@rioe/core';
+import { Element, useNode, UserComponent } from '@rioe/core';
 
 import { Container } from '../Container';
 import { Video } from '../Video';
 
-export const Custom2VideoDrop = ({ children }) => {
+export const Custom2VideoDrop:UserComponent  = ({ children }) => {
   const {
     connectors: { connect },
   } = useNode();

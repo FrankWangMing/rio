@@ -22,7 +22,7 @@ export type UserComponent<T = any> = React.ComponentType<T> & {
 };
 
 export type NodeId = string;
-export type NodeEventTypes = 'selected' | 'dragged' | 'hovered';
+export type NodeEventTypes = 'selected' | 'dragged' | 'hovered' | "change" | "click" ;
 
 export type Node = {
   id: NodeId;

@@ -54,7 +54,9 @@ export interface Indicator {
   error: string | null;
 }
 
-export type EditorEvents = Record<NodeEventTypes, Set<NodeId>>;
+export type EditorEvents = Record<NodeEventTypes, Set<NodeId>>
+
+export type EditorEventTypes = "change" | "add" | "remove"
 
 export type EditorState = {
   nodes: Nodes;

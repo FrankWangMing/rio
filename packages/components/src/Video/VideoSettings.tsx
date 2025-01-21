@@ -1,7 +1,7 @@
 import React from 'react';
 import { ToolbarItem, ToolbarSection } from '../Toolbar';
 
-export const VideoSettings = () => {
+export const VideoSettings:React.FC = () => {
   return (
     <>
       <ToolbarSection title="Youtube">

@@ -65,7 +65,7 @@ export class DefaultEventHandlers<O = {}> extends CoreEventHandlers<
           this.options.store.getState() as unknown as EditorState;
         this.addCraftEventListener(el, 'click', (e) => {
           e.craft.stopPropagation();
-          console.log(state.nodes[id]);
+          // console.log(state.nodes[id]);
           state.nodes[id].data.events?.onclick &&
             state.nodes[id].data.events.onclick();
         });

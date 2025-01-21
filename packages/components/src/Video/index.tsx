@@ -1,4 +1,4 @@
-import { useNode, useEditor } from '@rioe/core';
+import { useNode, useEditor, UserComponent } from '@rioe/core';
 import React from 'react';
 import YouTube from 'react-youtube';
 import { styled } from 'styled-components';
@@ -18,7 +18,7 @@ const YoutubeDiv = styled.div<{ $enabled: boolean }>`
   }
 `;
 
-export const Video = (props: any) => {
+export const Video:UserComponent = (props: any) => {
   const { enabled } = useEditor((state) => ({
     enabled: state.options.enabled,
   }));

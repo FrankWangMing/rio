@@ -1,5 +1,5 @@
 {
-  "exec": "node -r ts-node/register src/index.ts",
+  "exec": "node dist/index.cjs",
   "inspect": true,
-  "watch": ["src","node_modules"]
+  "watch": ["dist"]
 }

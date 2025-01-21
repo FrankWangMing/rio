@@ -3,9 +3,10 @@ import { createPackageJson } from './config';
 import { createTemplates } from './template';
 import { ProjectConfig } from './types';
 import { cwd } from 'process';
+import path from 'path';
 
 const projectConfig: ProjectConfig = {
-  basePath: '',
+  basePath: path.resolve(__dirname,"../../deploy"),
   structure: {
     name: '',
     type: 'folder',

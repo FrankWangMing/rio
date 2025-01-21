@@ -30,6 +30,8 @@
     "@babel/preset-react": "^7.26.3",
     "@babel/preset-typescript": "^7.26.0",
     "@eslint/js": "^9.17.0",
+    "@rioe/common": "workspace:*",
+    "@rioe/eslint-config": "workspace:*",
     "@types/node": "^22.10.2",
     "autoprefixer": "^10.4.20",
     "babel": "^6.23.0",
@@ -56,9 +58,7 @@
     "webpack": "^5.97.1",
     "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.2.0",
-    "@rioe/common": "workspace:*",
-    "@rioe/eslint-config": "workspace:*"
+    "webpack-dev-server": "^5.2.0"
   },
   "peerDependencies": {
     "@types/react": "^17.0.0 || ^18.0.0 ",
@@ -71,6 +71,7 @@
     "@emotion/styled": "^11.14.0",
     "@sentry/react": "^8.47.0",
     "@swc/register": "^0.1.10",
+    "ahooks": "^3.8.4",
     "antd": "^5.22.7",
     "axios": "^1.7.9",
     "classnames": "^2.5.1",
