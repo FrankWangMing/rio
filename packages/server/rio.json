@@ -11,7 +11,7 @@
     {
       "page_id": "",
       "route": "",
-      "data": {
+      "view": {
         "ROOT": {
           "type": { "resolvedName": "Container" },
           "isCanvas": true,

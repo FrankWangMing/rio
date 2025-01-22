@@ -1,32 +1,126 @@
 {
-    "name": "my-web-project",
-    "version": "1.0.0",
-    "description": "A sample web project",
-    "author": "John Doe",
-    "license": "MIT",
-    "dependencies": {
-      "react": "^18.0.0",
-      "react-dom": "^18.0.0"
+  "name": "test",
+  "version": "0.0.0",
+  "private": false,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "pages": [
+    {
+      "page_id": "1",
+      "page_name": "index",
+      "route": "index",
+      "view": {
+        "ROOT": {
+          "type": { "resolvedName": "Container" },
+          "isCanvas": true,
+          "props": {
+            "flexDirection": "column",
+            "alignItems": "flex-start",
+            "justifyContent": "flex-start",
+            "fillSpace": "no",
+            "padding": ["40", "40", "40", "40"],
+            "margin": ["0", "0", "0", "0"],
+            "background": { "r": 255, "g": 255, "b": 255, "a": 1 },
+            "color": { "r": 0, "g": 0, "b": 0, "a": 1 },
+            "shadow": 0,
+            "radius": 0,
+            "width": "800px",
+            "height": "auto"
+          },
+          "events": {},
+          "displayName": "Container",
+          "custom": { "displayName": "App" },
+          "parent": null,
+          "hidden": false,
+          "nodes": ["KmxrVsYXQk"],
+          "linkedNodes": {}
+        },
+        "KmxrVsYXQk": {
+          "type": { "resolvedName": "Container" },
+          "isCanvas": true,
+          "props": {
+            "flexDirection": "column",
+            "alignItems": "flex-start",
+            "justifyContent": "flex-start",
+            "fillSpace": "no",
+            "padding": ["0", "0", "0", "0"],
+            "margin": ["0", "0", "0", "0"],
+            "background": { "r": 78, "g": 78, "b": 78, "a": 1 },
+            "color": { "r": 0, "g": 0, "b": 0, "a": 1 },
+            "shadow": 0,
+            "radius": 0,
+            "width": "424px",
+            "height": "228px"
+          },
+          "events": {},
+          "displayName": "Container",
+          "custom": {},
+          "parent": "ROOT",
+          "hidden": false,
+          "nodes": [],
+          "linkedNodes": {}
+        }
+      }
     },
-    "devDependencies": {
-      "vite": "^4.0.0"
-    },
-    "scripts": {
-      "start": "vite",
-      "build": "vite build",
-      "test": "jest"
-    },
-    "structure": {
-      "src": {
-        "components": ["Header.js", "Footer.js"],
-        "pages": ["HomePage.js", "AboutPage.js"],
-        "assets": ["logo.png", "styles.css"]
-      },
-      "public": ["index.html", "favicon.ico"]
-    },
-    "config": {
-      "env": "development",
-      "buildTool": "Vite",
-      "port": 3000
+    {
+      "page_id": "2",
+      "page_name": "index2",
+      "route": "index2",
+      "view": {
+        "ROOT": {
+          "type": { "resolvedName": "Container" },
+          "isCanvas": true,
+          "props": {
+            "flexDirection": "column",
+            "alignItems": "flex-start",
+            "justifyContent": "flex-start",
+            "fillSpace": "no",
+            "padding": ["40", "40", "40", "40"],
+            "margin": ["0", "0", "0", "0"],
+            "background": { "r": 255, "g": 255, "b": 255, "a": 1 },
+            "color": { "r": 0, "g": 0, "b": 0, "a": 1 },
+            "shadow": 0,
+            "radius": 0,
+            "width": "800px",
+            "height": "auto"
+          },
+          "events": {},
+          "displayName": "Container",
+          "custom": { "displayName": "App" },
+          "parent": null,
+          "hidden": false,
+          "nodes": ["KmxrVsYXQk"],
+          "linkedNodes": {}
+        },
+        "KmxrVsYXQk": {
+          "type": { "resolvedName": "Container" },
+          "isCanvas": true,
+          "props": {
+            "flexDirection": "column",
+            "alignItems": "flex-start",
+            "justifyContent": "flex-start",
+            "fillSpace": "no",
+            "padding": ["0", "0", "0", "0"],
+            "margin": ["0", "0", "0", "0"],
+            "background": { "r": 78, "g": 78, "b": 78, "a": 1 },
+            "color": { "r": 0, "g": 0, "b": 0, "a": 1 },
+            "shadow": 0,
+            "radius": 0,
+            "width": "424px",
+            "height": "228px"
+          },
+          "events": {},
+          "displayName": "Container",
+          "custom": {},
+          "parent": "ROOT",
+          "hidden": false,
+          "nodes": [],
+          "linkedNodes": {}
+        }
+      }
     }
-  }
+  ]
+}

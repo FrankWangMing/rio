@@ -23,29 +23,38 @@
     "start": "cross-env NODE_ENV=development rollup -c",
     "build": "cross-env NODE_ENV=production rollup -c",
     "clean": "rimraf dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
+    "@babel/core": "^7.26.0",
     "@babel/plugin-transform-runtime": "^7.25.9",
+    "@babel/preset-env": "^7.26.0",
     "@babel/runtime-corejs3": "^7.26.0",
+    "@jest/transform": "^29.7.0",
+    "babel-jest": "^29.7.0",
     "core-js": "^3.39.0",
     "ejs": "^3.1.10",
     "fs": "0.0.1-security",
     "path": "^0.12.7"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.26.0",
+    "@jest/globals": "^29.7.0",
+    "@rioe/common": "workspace:*",
+    "@rioe/eslint-config": "workspace:*",
     "@svgr/rollup": "8.1.0",
+    "@types/jest": "^29.5.14",
     "@types/node": "^22.10.2",
+    "jest": "^29.7.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "styled-components": "6.1.13",
-    "typescript": "^5.7.2",
-    "@rioe/common": "workspace:*",
-    "@rioe/eslint-config": "workspace:*"
+    "ts-jest": "29.0.5",
+    "typescript": "^4.9.5"
   },
   "peerDependencies": {
     "@types/react": "^17.0.0 || ^18.0.0 ",

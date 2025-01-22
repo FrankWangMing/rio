@@ -380,7 +380,9 @@ const projectConfig: ProjectConfig = {
   },
 };
 
-async function main(viewConfig): Promise<void> {
+
+const generate = async (viewConfig) => {
+  console.log(cwd())
   const { basePath, structure, config, templates, context } =
     projectConfig;
 
@@ -390,11 +392,7 @@ async function main(viewConfig): Promise<void> {
   await createStructure(basePath, structure);
   await createPackageJson(basePath, config);
   await createTemplates(basePath, templates, context);
-}
-
-const generate = (config) => {
-  console.log(cwd())
-  main(config);
+  return {}
 };
 const generateRioFile = async (config) => {
   await createStructure('', {
