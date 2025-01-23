@@ -71,9 +71,9 @@ export class Page {
     update(view: any) {
         this.view = view
     }
-    get json(){
+    get json() {
         return {
-            view:this.view
+            view: this.view
         }
     }
 }
@@ -111,11 +111,11 @@ export class Pages {
         console.log(this.active)
         this.update = Date.now()
     }
-    get json(){
-        return Array.from(this.map.values()).map(i=>{
+    get json() {
+        return Array.from(this.map.values()).map(i => {
             return {
-                route:i.path,
-                view:i.view
+                route: i.path,
+                view: i.view
             }
         })
     }
