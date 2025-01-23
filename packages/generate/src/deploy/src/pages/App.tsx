@@ -3,13 +3,10 @@ import { observer } from 'mobx-react-lite';
 import { Container,Text,Custom1,Custom2,Custom3,Video,OnlyButtons,Custom3BtnDrop,Custom2VideoDrop } from '@rioe/components';
 
 import EditorContainer from './EditorContainer.tsx';
-import { Outlet, useNavigate } from 'react-router';
-import {Button} from 'antd'
-export default observer((props) => {
 
-  const nav = useNavigate()
-return  <>
-<Editor
+export default observer(() => {
+
+return  <Editor
         resolver={{
           Container,
           Text,
@@ -25,9 +22,4 @@ return  <>
         enabled={false} >
   <EditorContainer/>
 </Editor>
-  <Button onClick={()=>{
-    nav('test1')
-  }}>12</Button>
-
-</>
 });

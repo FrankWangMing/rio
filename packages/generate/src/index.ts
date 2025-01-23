@@ -4,7 +4,9 @@ import { createTemplates } from './template';
 import { ProjectConfig } from './types';
 import { cwd } from 'process';
 import path from 'path';
+import ejs from 'ejs';
 
+import {createBasicFromDeploy} from './createBasicFromDeploy'
 const projectConfig: ProjectConfig = {
   basePath: path.resolve(__dirname,"../../deploy"),
   structure: {
@@ -18,6 +20,7 @@ const projectConfig: ProjectConfig = {
           {
             name: 'nginx.conf',
             type: 'file',
+            content:""
           },
           {
             name: 'fe.conf',
@@ -380,34 +383,33 @@ const projectConfig: ProjectConfig = {
   },
 };
 
-
+import {loader} from './loader'
+import RioJson from '../schema/rio.json'
 const generate = async (viewConfig) => {
-  console.log(cwd())
+
   const { basePath, structure, config, templates, context } =
     projectConfig;
 
-  Object.assign(context, {
-    view: viewConfig,
-  });
+  // await createBasicFromDeploy(basePath)
+  const {pages,routes} =await loader(RioJson)
+
   await createStructure(basePath, structure);
-  await createPackageJson(basePath, config);
-  await createTemplates(basePath, templates, context);
-  return {}
+
+
 };
-const generateRioFile = async (config) => {
-  await createStructure('', {
+const generateRioFile = async (context) => {
+  const { basePath, structure,templates } =
+  projectConfig;
+  const srcPath = path.resolve(basePath);
+  await createStructure(path.resolve(srcPath), {
     type: 'file',
     name: 'rio.json',
+    content: await ejs.renderFile(
+      path.resolve(
+        __dirname,
+        './templates',
+        "rio.json.ejs"
+      ), context)
   });
-  await createTemplates(
-    '',
-    [
-      {
-        templateFile: 'rio/rio.json.ejs',
-        outputFile: 'rio.json',
-      },
-    ],
-    config
-  );
 };
 export { generate, generateRioFile };

@@ -8,16 +8,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     Component: App,
-    children: [
-      {
-        path: "shows/:showId",
-        Component: App,
-        loader: ({ request, params }) =>
-          fetch(`/api/show/${params.id}.json`, {
-            signal: request.signal,
-          }),
-      },
-    ],
   },
   {
     path: "/shows",

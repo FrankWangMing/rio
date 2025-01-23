@@ -35,11 +35,13 @@
     "@babel/preset-env": "^7.26.0",
     "@babel/runtime-corejs3": "^7.26.0",
     "@jest/transform": "^29.7.0",
+    "babel": "^6.23.0",
     "babel-jest": "^29.7.0",
     "core-js": "^3.39.0",
     "ejs": "^3.1.10",
     "fs": "0.0.1-security",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "write-file-atomic": "^6.0.0"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.26.0",
