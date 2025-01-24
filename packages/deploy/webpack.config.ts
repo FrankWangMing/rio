@@ -9,7 +9,7 @@ export default {
   mode: 'development',
   entry: './src/main.tsx',
   output: {
-    path: __dirname + '/dist',
+    path: path.resolve(__dirname, 'dist'),
     filename: 'index.js'
   },
   devtool: "eval-source-map",
@@ -38,7 +38,7 @@ export default {
           MiniCssExtractPlugin.loader, // 提取 CSS 到独立文件,
           "css-loader",
           "sass-loader",
-          'postcss-loader' // 使用 PostCSS 处理 CSS
+          'postcss-loader'
         ],
         exclude: /node_modules/
       }
@@ -46,7 +46,7 @@ export default {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: __dirname + "/public/index.html"
+      template: __dirname + "/public/index.html",
     }),
     new MiniCssExtractPlugin({
       filename: 'styles.css', // 输出的 CSS 文件名
@@ -59,9 +59,9 @@ export default {
     new CleanWebpackPlugin(),
   ],
   devServer: {
-    // static: {
-    //   directory: path.join(__dirname, 'public'),
-    // },
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
     compress: true,
     port: 9009,
     hot: true

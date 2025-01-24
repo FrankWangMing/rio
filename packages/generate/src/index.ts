@@ -325,17 +325,16 @@ const projectConfig: ProjectConfig = {
 };
 
 import {loader} from './loader'
-import RioJson from '../schema/rio.json'
-const generate = async (viewConfig) => {
 
-  const { basePath, structure, config, templates, context } =
-    projectConfig;
+const generate = async (RioJson) => {
+
+  const { basePath, structure, config, templates, context } = projectConfig;
 
   // await createBasicFromDeploy(basePath)
   const {pages} =await loader(RioJson)
 
   // await createBasicFromDeploy(basePath, structure);
-  await createTemplates(basePath,[
+ return await createTemplates(basePath,[
     {
       templateFile: 'routes/index.ts.ejs',
       outputFile: 'src/routes/index.tsx',
@@ -346,8 +345,7 @@ const generate = async (viewConfig) => {
 
 };
 const generateRioFile = async (context) => {
-  const { basePath, structure,templates } =
-  projectConfig;
+  const { basePath, structure,templates } = projectConfig;
   const srcPath = path.resolve(basePath);
   await createStructure(path.resolve(srcPath), {
     type: 'file',
