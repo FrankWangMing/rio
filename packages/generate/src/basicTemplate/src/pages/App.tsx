@@ -11,14 +11,11 @@ import {
   Custom3BtnDrop,
   Custom2VideoDrop,
 } from '@rioe/components';
-
-import EditorContainer from './EditorContainer.tsx';
 import { Outlet, useNavigate } from 'react-router';
 import { Button } from 'antd';
 export default observer((props) => {
   const nav = useNavigate();
   return (
-    <>
       <Editor
         resolver={{
           Container,
@@ -36,13 +33,5 @@ export default observer((props) => {
       >
         <Outlet></Outlet>
       </Editor>
-      <Button
-        onClick={() => {
-          nav('test1');
-        }}
-      >
-        12
-      </Button>
-    </>
   );
 });

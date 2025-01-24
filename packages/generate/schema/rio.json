@@ -1,12 +1,6 @@
 {
   "name": "test",
   "version": "0.0.0",
-  "private": false,
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
   "pages": [
     {
       "page_id": "1",

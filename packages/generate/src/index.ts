@@ -1,47 +1,15 @@
 import { createStructure } from './structure';
-import { createPackageJson } from './config';
 import { createTemplates } from './template';
 import { ProjectConfig } from './types';
-import { cwd } from 'process';
 import path from 'path';
 import ejs from 'ejs';
 
-import {createBasicFromDeploy} from './createBasicFromDeploy'
 const projectConfig: ProjectConfig = {
   basePath: path.resolve(__dirname,"../../deploy"),
   structure: {
     name: '',
     type: 'folder',
     children: [
-      {
-        name: 'nginx',
-        type: 'folder',
-        children: [
-          {
-            name: 'nginx.conf',
-            type: 'file',
-            content:""
-          },
-          {
-            name: 'fe.conf',
-            type: 'file',
-          },
-        ],
-      },
-      {
-        name: 'public',
-        type: 'folder',
-        children: [
-          {
-            name: 'index.html',
-            type: 'file',
-          },
-          {
-            name: 'favicon.ico',
-            type: 'file',
-          },
-        ],
-      },
       {
         name: 'src',
         type: 'folder',
@@ -298,34 +266,7 @@ const projectConfig: ProjectConfig = {
     },
   },
   templates: [
-    {
-      templateFile: 'nginx/nginx.conf.ejs',
-      outputFile: 'nginx/nginx.conf',
-    },
-    {
-      templateFile: 'nginx/fe.conf.ejs',
-      outputFile: 'nginx/fe.conf',
-    },
-    {
-      templateFile: 'public/index.html.ejs',
-      outputFile: 'public/index.html',
-    },
-    {
-      templateFile: 'src/data/api/getUserInfo.ts.ejs',
-      outputFile: 'src/data/api/getUserInfo.ts',
-    },
-    {
-      templateFile: 'src/data/common/dto.ts.ejs',
-      outputFile: 'src/data/common/dto.ts',
-    },
-    {
-      templateFile: 'src/data/http.ts.ejs',
-      outputFile: 'src/data/http.ts',
-    },
-    {
-      templateFile: 'src/data/common/dto.ts.ejs',
-      outputFile: 'src/data/common/dto.ts',
-    },
+
     {
       templateFile: 'src/data/index.ts.ejs',
       outputFile: 'src/data/index.ts',
@@ -391,10 +332,17 @@ const generate = async (viewConfig) => {
     projectConfig;
 
   // await createBasicFromDeploy(basePath)
-  const {pages,routes} =await loader(RioJson)
+  const {pages} =await loader(RioJson)
 
-  await createStructure(basePath, structure);
-
+  // await createBasicFromDeploy(basePath, structure);
+  await createTemplates(basePath,[
+    {
+      templateFile: 'routes/index.ts.ejs',
+      outputFile: 'src/routes/index.tsx',
+    },
+  ],{
+    pages
+  })
 
 };
 const generateRioFile = async (context) => {

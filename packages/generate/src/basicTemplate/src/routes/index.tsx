@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom'; // 确保使用 react-router-dom，而不是 react-router
 import App from '../pages/App';
 import Test1 from '../pages/Test1';
-import EditorContainer from '../pages/EditorContainer';
+import Container  from '../pages/Container';
 
 /** @type {import('react-router-dom').RouteObject[]} */
 const router = createHashRouter([
@@ -16,15 +16,15 @@ const router = createHashRouter([
       {
         index: true,
         path: '',
-        element: <EditorContainer />,
+        element: <Container />,
       },
       {
         path: 'test1',
-        element: <Test1 />,
+        element: <Container />,
       },
       {
         path: 't',
-        element: <EditorContainer />,
+        element: <Container />,
       },
     ],
   },

@@ -1,0 +1,27 @@
+import {
+  createHashRouter,
+  Navigate,
+} from 'react-router-dom';
+import App from '../pages/App';
+import Container from '../pages/Container';
+
+/** @type {import('react-router-dom').RouteObject[]} */
+const router = createHashRouter([
+  {
+    path: '/',
+    element: <App />,
+    children: [
+      <% for (let i = 0; i < pages.length; i++) { %> {
+          path: '<%= pages[i].route%>',
+          element: <Container data={<%- JSON.stringify(pages[i].view) %>}/>,
+        },
+      <% } %>
+    ],
+  },
+  {
+    path: '*',
+    element: <Navigate to="/<%= pages[0].route%>" replace />,
+  },
+]);
+
+export default router;

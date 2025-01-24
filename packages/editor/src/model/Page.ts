@@ -1,5 +1,4 @@
 import { makeAutoObservable } from "mobx"
-import getdata from "../data/api/getdata"
 
 
 const defaultPageView = {
@@ -62,13 +61,13 @@ type PageProps = {
 export class Page {
     name: string
     path: string
-    view: any = defaultPageView
+    view: unknown = defaultPageView
     constructor(props: PageProps) {
         this.name = props.name
         this.path = props.path
     }
 
-    update(view: any) {
+    update(view: unknown) {
         this.view = view
     }
     get json() {
