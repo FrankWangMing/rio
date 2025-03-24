@@ -16,8 +16,6 @@ describe('loader', () => {
     // 调用 loader 函数，传入模拟的 rioJson
     const result = await loader(rioJson);
 
-
-
     const mockData = { id: '123', name: 'John Dode' };
     expect(result).toEqual(mockData);
   });

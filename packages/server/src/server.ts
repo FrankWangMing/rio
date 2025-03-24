@@ -42,10 +42,12 @@ export const runServer = () => {
     app.post('/generate', (req: Request, res: Response) => {
       const { data } = req.body;
       // console.log(JSON.parse(data))
-      generateCode(data);
-      res.status(201).json({
-        id: Math.floor(Math.random() * 1000),
-      });
+      generateCode(data).then(r=>{
+        res.status(201).json({
+          id: Math.floor(Math.random() * 1000),
+        });
+      })
+
     });
 
     app.post('/development', (req: Request, res: Response) => {

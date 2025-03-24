@@ -8,3 +8,5 @@
 
 // }
 // export const dataLayer = new DataLayer(http);
+
+export * from './api/getUserInfo'

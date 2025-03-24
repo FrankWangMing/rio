@@ -6,6 +6,7 @@ import { Button, Tooltip } from 'antd';
 import generateCode from '../../data/api/generateCode';
 import development from '../../data/api/development';
 import PagesSelect from './PacesSelect';
+import { model } from '../../model';
 
 const HeaderDiv = styled.div`
   width: 100%;
@@ -61,8 +62,7 @@ export const Header = () => {
   const { query } = useEditor();
 
   const Generate = () => {
-    const data = query.serialize();
-    generateCode(data);
+    model.generate()
   };
   const Development = () => {
     const data = query.serialize();

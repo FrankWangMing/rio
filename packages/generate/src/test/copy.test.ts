@@ -15,7 +15,7 @@ import { createBasicFromDeploy } from '../createBasicFromDeploy';
 describe('loader', () => {
   it('should resolve the basePath and call loader with the correct arguments', async () => {
 
-    const srcFolder = path.resolve(__dirname,'../deploy'); // 源文件夹路径
+    const srcFolder = path.resolve(__dirname,'../basicTemplate'); // 源文件夹路径
     const destFolder = path.resolve(__dirname,"../../../deploy"); // 目标文件夹路径
 
     await createBasicFromDeploy(srcFolder, destFolder);

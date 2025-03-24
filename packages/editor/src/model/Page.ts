@@ -1,58 +1,59 @@
 import { makeAutoObservable } from "mobx"
-import getdata from "../data/api/getdata"
 
 
-const defaultPageView = {
-    "ROOT": {
-        "type": {
-            "resolvedName": "Container"
-        },
-        "isCanvas": true,
-        "props": {
-            "flexDirection": "column",
-            "alignItems": "flex-start",
-            "justifyContent": "flex-start",
-            "fillSpace": "no",
-            "padding": [
-                "40",
-                "40",
-                "40",
-                "40"
-            ],
-            "margin": [
-                "0",
-                "0",
-                "0",
-                "0"
-            ],
-            "background": {
-                "r": 255,
-                "g": 255,
-                "b": 255,
-                "a": 1
+const defaultPageView = JSON.stringify(
+    {
+        "ROOT": {
+            "type": {
+                "resolvedName": "Container"
             },
-            "color": {
-                "r": 0,
-                "g": 0,
-                "b": 0,
-                "a": 1
+            "isCanvas": true,
+            "props": {
+                "flexDirection": "column",
+                "alignItems": "flex-start",
+                "justifyContent": "flex-start",
+                "fillSpace": "no",
+                "padding": [
+                    "40",
+                    "40",
+                    "40",
+                    "40"
+                ],
+                "margin": [
+                    "0",
+                    "0",
+                    "0",
+                    "0"
+                ],
+                "background": {
+                    "r": 255,
+                    "g": 255,
+                    "b": 255,
+                    "a": 1
+                },
+                "color": {
+                    "r": 0,
+                    "g": 0,
+                    "b": 0,
+                    "a": 1
+                },
+                "shadow": 0,
+                "radius": 0,
+                "width": "788px",
+                "height": "530px"
             },
-            "shadow": 0,
-            "radius": 0,
-            "width": "788px",
-            "height": "530px"
-        },
-        "events": {},
-        "displayName": "Container",
-        "custom": {
-            "displayName": "App"
-        },
-        "parent": null,
-        "hidden": false,
-        "nodes": [],
-        "linkedNodes": {}
+            "events": {},
+            "displayName": "Container",
+            "custom": {
+                "displayName": "App"
+            },
+            "parent": null,
+            "hidden": false,
+            "nodes": [],
+            "linkedNodes": {}
+        }
     }
-}
+)
 type PageProps = {
     id?: string
     name: string
@@ -62,13 +63,13 @@ type PageProps = {
 export class Page {
     name: string
     path: string
-    view: any = defaultPageView
+    view: string = defaultPageView
     constructor(props: PageProps) {
         this.name = props.name
         this.path = props.path
     }
 
-    update(view: any) {
+    update(view: string) {
         this.view = view
     }
     get json() {
@@ -87,7 +88,6 @@ export class Pages {
     update: number = Date.now()
     constructor() {
         makeAutoObservable(this)
-
         // console.log(getdata({}))
         this.createPage({
             name: "index",
