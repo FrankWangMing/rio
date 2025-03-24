@@ -12,6 +12,7 @@ import {
   OnlyButtons,
   Custom3BtnDrop,
   Custom2VideoDrop,
+  Button,
 } from '@rioe/components';
 import { RenderNode } from '../components/index.ts';
 import { model } from '../model/index.ts';
@@ -23,7 +24,7 @@ export default () => {
       resolver={{
         Container,
         Text,
-        // Button,
+        Button,
         Custom1,
         Custom2,
         Custom2VideoDrop,

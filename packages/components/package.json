@@ -44,6 +44,7 @@
     "classnames": "^2.5.1",
     "core-js": "^3.39.0",
     "lil-gui": "^0.20.0",
+    "monaco-editor": "^0.52.2",
     "postcss": "^8.4.49",
     "re-resizable": "6.1.0",
     "react-color": "^2.19.3",

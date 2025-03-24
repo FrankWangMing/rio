@@ -88,6 +88,13 @@ export const ButtonSettings: UserComponent = () => {
           <ToolbarRadio value="outline" label="Outline" />
         </ToolbarItem>
       </ToolbarSection>
+      <ToolbarSection title="源码">
+        <ToolbarItem
+          propKey="buttonStyle"
+          type="radio"
+          label="TS"
+        ></ToolbarItem>
+      </ToolbarSection>
     </>
   );
 };
