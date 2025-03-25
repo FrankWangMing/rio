@@ -1,11 +1,10 @@
-import { Frame, useEditor, Element } from '@rioe/core';
-import { Container } from '@rioe/components';
+import { Frame, useEditor } from '@rioe/core';
 import { Viewport } from '../components';
 
 import { useDebounceFn } from 'ahooks';
 import update from '../data/api/update';
 import { pages } from '../model';
-import { useCallback, useEffect, useMemo } from 'react';
+import { useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 export default observer(() => {
   const editor = useEditor();
@@ -29,9 +28,7 @@ export default observer(() => {
     };
   });
   useEffect(() => {
-    console.log(pages.active);
     editor.actions.deserialize(pages.active?.view);
-    console.log(pages);
   }, [pages.update]);
   // editor.actions.on("add",(state)=>{
   //   console.log("jk")

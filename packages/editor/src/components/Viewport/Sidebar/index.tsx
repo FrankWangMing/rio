@@ -1,11 +1,11 @@
 import { useEditor } from '@rioe/core';
-import { Layers } from '@rioe/layers';
 import React, { useRef, useState } from 'react';
 import { styled } from 'styled-components';
 import { ReactSVG } from 'react-svg';
 
 import { SidebarItem } from './SidebarItem';
 import { Toolbar } from '@rioe/components';
+import { Layers } from '../../layers';
 
 const LayerIcon = () => <ReactSVG src="/icons/layers.svg" />;
 const CustomizeIcon = () => <ReactSVG src="/icons/customize.svg" />;

@@ -33,7 +33,7 @@ export default () => {
         OnlyButtons,
         Video,
       }}
-      enabled={false}
+      enabled={true}
       onRender={RenderNode}
     >
       <EditorContainer />
