@@ -1,4 +1,4 @@
-import { useEditor } from '@rioe/core';
+import { Frame, useEditor } from '@rioe/core';
 import cx from 'classnames';
 import React, { useEffect } from 'react';
 
@@ -21,9 +21,7 @@ export const Viewport: React.FC<{ children?: React.ReactNode }> = ({
     if (!window) {
       return;
     }
-
     window.requestAnimationFrame(() => {
-      // Notify doc site
       window.parent.postMessage(
         {
           LANDING_PAGE_LOADED: true,
@@ -60,8 +58,10 @@ export const Viewport: React.FC<{ children?: React.ReactNode }> = ({
               connectors.select(connectors.hover(ref, null), null)
             }
           >
-            <div className="relative flex-col flex items-center pt-8">
-              {children}
+            <div
+              className={cx(['relative flex-col flex items-center pt-8'])}
+            >
+              <Frame>{children}</Frame>
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { Frame, useEditor } from '@rioe/core';
+import { useEditor } from '@rioe/core';
 import { Viewport } from '../components';
 
 import { useDebounceFn } from 'ahooks';
@@ -37,7 +37,6 @@ export default observer(() => {
 
   return (
     <Viewport>
-      <Frame></Frame>
     </Viewport>
   );
 });
